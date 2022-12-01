@@ -1,29 +1,27 @@
 import React from 'react'
 import { client_id, client_secret } from './private/Client Information'
 
-export function getToken() {
-var request = require('request')
-var authOptions = {
-  url: 'https://accounts.spotify.com/api/token',
-  headers: {
-    'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-  },
-  form: {
-    grant_type: 'client_credentials'
-  },
-  json: true
-};
+const express = require('express');
+const req = require('request');
+const querystring = require('querystring');
+const app = express();
 
-request.post(authOptions, function(error : any, response : any, body : any) {
-  if (!error && response.statusCode === 200) {
-    let token = body.access_token;
-    console.log(body)
-    return <p>{token}</p>
-  }
+var redirect_uri = 'http://localhost:3000';
+
+app.get('/login', function(req, res)) {
+
+  var state = generateRandomString(16);
+  var scope = 'user-read-private user-read-email';
+
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    querystring.stringify({
+      response_type: 'code',
+      client_id: client_id,
+      scope: scope,
+      redirect_uri: redirect_uri,
+      state: state
+    }));
 });
-return <p></p>
-}
-
 // fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
 //   method: "GET",
 //   headers: {
