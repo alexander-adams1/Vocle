@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.25",
+    "@types/request": "^2.48.8",
     "request": "^2.88.2"
   },
   "description": "ls",

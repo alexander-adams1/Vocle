@@ -1,36 +1,47 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import { client_id, client_secret } from './private/Client Information'
 
-const express = require('express');
-const req = require('request');
-const querystring = require('querystring');
-const app = express();
 
-var redirect_uri = 'http://localhost:3000';
+export const TEXT_submit_button_text = 'Submit Guess'
 
-app.get('/login', function(req, res)) {
+// Defines an interface which specifies the type or argument accepted by the 
+// RegisterInput components 
+interface RegisterInputProps {
+  addCommand: (guess: string) => void,
+}
 
-  var state = generateRandomString(16);
-  var scope = 'user-read-private user-read-email';
+function RegisterInput({addGuess} : RegisterInputProps) {
+  const[userInput, setUserInput] = useState<string>('');
+  return (
+      <div className="Command-Handler">
+          <div className="Input">
+              <legend>Enter a command</legend>
+              <ControlledInput value={userInput} setValue={setUserInput} ariaLabel={''}/>
+          </div>
+          <div>
+              <button className="submitButton" onClick={() => {
+                      addGuess(userInput)
+                      setUserInput('') // Reset userInput
+                  }}>
+                  {TEXT_submit_button_text}
+              </button>
+          </div>
+      </div>
+  );
+}
 
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      client_id: client_id,
-      scope: scope,
-      redirect_uri: redirect_uri,
-      state: state
-    }));
-});
-// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
-//   method: "GET",
-//   headers: {
-//     Authorization: `Bearer ${userAccessToken}`
-//   }
-// })
-// .then(response => response.json())
-// .then(({beats}) => {
-//   beats.forEach((beat : any , index : any) => {
-//     console.log(`Beat ${index} starts at ${beat.start}`);
-//   })
-// })
+interface ControlledInputProps {
+  value: string, 
+  setValue: Dispatch<SetStateAction<string>>,
+  ariaLabel: string 
+}
+
+function ControlledInput({value, setValue, ariaLabel}: ControlledInputProps) {
+  return (
+      <input value={value} 
+              onChange={(ev) => setValue(ev.target.value)}
+              aria-label={ariaLabel}
+              placeholder="Input a command">
+              </input>
+  );
+}
