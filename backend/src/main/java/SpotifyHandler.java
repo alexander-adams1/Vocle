@@ -1,10 +1,9 @@
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -18,15 +17,40 @@ public class SpotifyHandler implements Route {
   @Override
   public Object handle(Request request, Response response)
       throws Exception {
-    HttpRequest tokenRequest =
-        HttpRequest.newBuilder()
-            .uri(new URI("https://accounts.spotify.com/authorize?client_id=fbf528e0063e4820b4fd570f750f297d&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A3232%2FSpotifyHandler&scopes=playlist-read-private"))
-            .GET()
-            .build();
-    HttpResponse<String> tokenResponse =
-        HttpClient.newBuilder().build().send(tokenRequest, BodyHandlers.ofString());
-    System.out.println(tokenRequest);
-    System.out.println(tokenResponse);
+    //create url access point
+    URL url = new URL(tokenURL);
+
+    //open http connection to url
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setDoOutput(true);
+    conn.setDoInput(true);
+
+    //setup post function and request headers
+    conn.setRequestMethod("POST");
+    conn.setRequestProperty("Authorization",String.format("Basic %s", clientCredEncode));
+    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+    //set body for posting
+    String body = "grant_type=client_credentials";
+
+    //calculate and set content length
+    byte[] out = body.getBytes(StandardCharsets.UTF_8);
+    int length = out.length;
+    conn.setFixedLengthStreamingMode(length);
+
+    //connect to http
+    conn.connect();
+    //}
+
+    //send bytes to spotify
+    try(OutputStream os = conn.getOutputStream()) {
+      os.write(out);
+    }
+
+    //receive access token
+    InputStream result = conn.getInputStream();
+    String s = new String(result.readAllBytes());
+    System.out.println(s);
     return 1;
   }
 }
