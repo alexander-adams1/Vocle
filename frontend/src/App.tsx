@@ -1,28 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import WebPlayback from './WebPlayBack'
-import './App.css';
-import Login from './Login';
-
+import React from 'react';
 function App() {
-
-  const [token, setToken] = useState('');
-
-  useEffect(() => {
-
-    async function getToken() {
-      const response = await fetch('/auth/token');
-      const json = await response.json();
-      setToken(json.access_token);
-    }
-
-    getToken();
-
-  }, []);
-
   return (
-    <>
-        { (token === '') ? <Login/> : <WebPlayback token={token} /> }
-    </>
+    <div className="App">
+    </div>
   );
 }
 
