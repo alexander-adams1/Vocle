@@ -1,0 +1,701 @@
+
+  body {
+    font-size: 14px;
+  }
+  .v1_3 {
+    width: 100%;
+    height: 953px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0 px;
+    overflow: hidden;
+    z-index: 0
+  }
+
+  .v10_67 {
+    width: 760px;
+    height: 1000px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v10_67.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: -50px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v122_912 {
+    width: 313px;
+    height: 107px;
+    background-color: transparent;
+    background-size: cover;
+    padding: 0;
+    border: none;
+    margin: 10px;
+    position: absolute;
+    top: 189px;
+    left: 115px;
+  }
+  .v10_7 {
+    width: 293px;
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: center;
+    z-index: 0
+  }
+  .v122_913 {
+    width: 974px;
+    height: 1087px;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 10px 10px;
+    margin: 10px;
+    opacity: 1;
+    position: absolute;
+    top: 120px;
+    left: 756px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v45_3 {
+    width: 954px;
+    height: 100%;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v45_3.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v71_26 {
+    width: 100%;
+    height: 138px;
+    background: rgba(62,194,107,0.9399999976158142);
+    padding: 19px 103px;
+    margin: 0px;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 0
+  }
+  .v71_31 {
+    width: 73px;
+    height: 76px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v71_31.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 30px;
+    left: 103px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v71_29 {
+    width: 77px;
+    height: 76px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v71_29.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 30px;
+    left: 356px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v71_28 {
+    width: 248px;
+
+    position: absolute;
+    top: 19px;
+    left: 613px;
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 80px;
+    opacity: 1;
+    text-align: center;
+    z-index: 0
+  }
+  .v71_30 {
+    width: 65px;
+    height: 73px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v71_30.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 32px;
+    left: 1250px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v71_33 {
+    width: 98px;
+    height: 94px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/images/v71_33.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 21px;
+    left: 1000px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v122_915 {
+    width: 251px;
+    height: 68px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    
+    position: absolute;
+    top: 205px;
+    left: 975px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v10_8 {
+    width: 231px;
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: left;
+    z-index: 0
+  }
+
+  .v54_46 {
+    width: 561px;
+    height: 82px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align: middle;
+    
+    overflow: hidden;
+    top: 500px;
+    z-index: 1
+  }
+  .v46_8 {
+    width: 239px;
+    height: 82px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 322px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v46_9 {
+    width: 239px;
+    height: 82px;
+    background: rgba(59,183,101,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    z-index: 0
+  }
+  .v46_10 {
+    width: 218px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 25px;
+    opacity: 1;
+    text-align: center;
+    z-index: 0
+  }
+  .v46_7 {
+    width: 239px;
+    height: 82px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: visible;
+    z-index: 0
+  }
+  .v46_6 {
+    width: 239px;
+    height: 82px;
+    background: rgba(59,183,101,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v10_65 {
+    width: 218px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 25px;
+    opacity: 1;
+    text-align: center;
+    z-index: 1
+  }
+  .v10_9 {
+    width: 100%;
+    height: 953px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v10_60 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 552px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v10_56 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 248px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v54_89 {
+    width: 777px;
+    height: 50px;
+    background: rgba(199,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 172px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v54_106 {
+    width: 449px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 172px;
+    left: 544px;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v10_57 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 324px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v10_58 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 400px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v10_59 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 476px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v54_92 {
+    width: 188px;
+    height: 73px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 852px;
+    left: 980px;
+    overflow: hidden;
+  }
+  .v54_91 {
+    width: 188px;
+    height: 73px;
+    background: rgba(59,183,101,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_90 {
+    width: 154px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 9px;
+    left: 17px;
+    font-family: Avenir;
+    font-weight: Black;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v54_93 {
+    width: 188px;
+    height: 73px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 852px;
+    left: 376px;
+    overflow: hidden;
+  }
+  .v54_94 {
+    width: 188px;
+    height: 73px;
+    background: rgba(59,183,101,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_95 {
+    width: 91px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 9px;
+    left: 49px;
+    font-family: Avenir;
+    font-weight: Black;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v54_108 {
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 612px;
+    left: 733px;
+    overflow: hidden;
+  }
+  .v54_101 {
+    width: 70px;
+    height: 70px;
+    background: rgba(59,183,101,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+  }
+  .v54_100 {
+    width: 70px;
+    height: 70px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v54_100.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_112 {
+    width: 777px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 766px;
+    left: 380px;
+    overflow: hidden;
+  }
+  .v54_109 {
+    width: 777px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_110 {
+    width: 471px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 4px;
+    left: 45px;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v54_111 {
+    width: 28px;
+    height: 34px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+  }
+  .v71_15 {
+    width: 461px;
+    height: 50px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v110_15.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 701px;
+    left: 541px;
+    overflow: hidden;
+  }
+  .v71_13 {
+    width: 461px;
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v110_11 {
+    width: 100%;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v110_12 {
+    width: 100%;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .v110_13 {
+    width: 100%;
+    height: 140px;
+    background: rgba(62,194,107,0.9399999976158142);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v110_14 {
+    width: 248px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 18px;
+    left: 635px;
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 80px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v110_15 {
+    width: 77px;
+    height: 76px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v110_15.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 31px;
+    left: 377px;
+    overflow: hidden;
+  }
+  .v110_16 {
+    width: 65px;
+    height: 73px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v110_16.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 33px;
+    left: 1064px;
+    overflow: hidden;
+  }
+  .v110_17 {
+    width: 73px;
+    height: 76px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v110_17.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 31px;
+    left: 124px;
+    overflow: hidden;
+  }
+  .v110_18 {
+    width: 98px;
+    height: 94px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 22px;
+    left: 1310px;
+    overflow: hidden;
+  }
+  .v110_19 {
+    width: 98px;
+    height: 94px;
+    background: url("/Users/alexanderadams/CS32/term-project-aadams39-agupt137-aparmesw-isung2/frontend/src/singleplayerImages/v110_19.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+
+  .v101_2 {
+    width: 843px;
+    height: 688px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: relative;
+    margin-left: auto;
+    margin-right:auto;
+    vertical-align: middle;
+    top: 100px;
+    
+    overflow: hidden;
+  }
+  .v101_4 {
+    width: 289px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 65px;
+    left: 277px;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 72px;
+    opacity: 1;
+    text-align: center;
+  }
+  .name {
+    color: #fff;
+  }
+  .v91_4 {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 9px;
+    left: 778px;
+  }
+  .v106_10 {
+    width: 574px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 424px;
+    left: 134px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+  }
