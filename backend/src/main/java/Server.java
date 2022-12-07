@@ -11,6 +11,7 @@ public class Server {
           response.header("Access-Control-Allow-Methods", "*");
         });
     Spark.get("SpotifyTokenHandler", new SpotifyTokenHandler());
+    Spark.get("GenerateTrackHandler", new GenerateTrackHandler());
     Spark.init();
     Spark.awaitInitialization();
     System.out.println("Server started.");
