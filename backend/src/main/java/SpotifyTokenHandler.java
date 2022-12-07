@@ -12,6 +12,7 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
+// Citing thread which was helpful https://stackoverflow.com/questions/63876345/how-to-get-access-token-from-spotify-api-java
 public class SpotifyTokenHandler implements Route {
   private String accessToken = "";
   private String expiresIn = "";
