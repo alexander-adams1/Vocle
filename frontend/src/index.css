@@ -400,6 +400,7 @@
     font-size: 40px;
     opacity: 1;
     text-align: center;
+    z-index: 0;
   }
   .v54_93 {
     width: 188px;
@@ -472,7 +473,7 @@
   }
   .v54_112 {
     width: 777px;
-    height: 50px;
+    height: 400px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -481,6 +482,7 @@
     top: 766px;
     left: 380px;
     overflow: hidden;
+    z-index: 10;
   }
   .v54_109 {
     width: 777px;
@@ -722,4 +724,10 @@
     margin-left: auto;
     margin-right:auto;
     vertical-align: middle;
+  }
+
+  .dropdown {
+    background: blue;
+    position: absolute;
+    z-index: 99999;
   }
