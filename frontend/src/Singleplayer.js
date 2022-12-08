@@ -1,10 +1,10 @@
 import React, {useState,  SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
+import Question from './Questions';
 class Singleplayer extends Component{
     render() {
-        console.log("it happened")
+        console.log()
         return (
                 <div className="v10_9">
                     <div className="v10_60">

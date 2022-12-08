@@ -7,15 +7,16 @@ import {
     Link,
   } from "react-router-dom";
 import {useState} from "react";
+import Home from "./Home";
 
 const LoginModal = () => 
 {
     console.log("catcha man")
     return(
             <div class="v101_2">
-            <span class="v101_4">Login</span><
+            <span class="login-screen">Login</span><
                 div class="name"></div><div class="v91_4">
-                    </div><span class="v106_10" >CONTINUE AS GUEST</span></div>
+                    </div><button className="guest-login" onClick = {Home.displayQuestion}>CONTINUE AS GUEST</button></div>
    
     );
 }

@@ -663,7 +663,7 @@
     
     overflow: hidden;
   }
-  .v101_4 {
+  .login-screen {
     width: 289px;
     color: rgba(255,255,255,1);
     position: absolute;
@@ -687,7 +687,7 @@
     top: 9px;
     left: 778px;
   }
-  .v106_10 {
+  .guest-login {
     width: 574px;
     color: rgba(255,255,255,1);
     position: absolute;
@@ -698,4 +698,28 @@
     font-size: 40px;
     opacity: 1;
     text-align: center;
+  }
+
+  .textBoxUserPlaylist {
+    width: 400px;
+    height: 300px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: relative;
+    margin-left: auto;
+    margin-right:auto;
+    vertical-align: middle;
+    top: 100px;
+    overflow: hidden;
+  }
+
+  .submitUserPlaylist {
+    width: 100px;
+    height: 56px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    margin-left: auto;
+    margin-right:auto;
+    vertical-align: middle;
   }
