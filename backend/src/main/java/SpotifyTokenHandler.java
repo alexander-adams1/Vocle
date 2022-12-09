@@ -8,6 +8,8 @@ import java.net.URL;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import javax.xml.crypto.Data;
+import org.json.JSONObject;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -40,10 +42,10 @@ public class SpotifyTokenHandler implements Route {
 
   public void getAccessToken() throws IOException {
     URL url = new URL(TokenEndpoints.TOKEN_URL);
-    HttpURLConnection http = (HttpURLConnection) url.openConnection();
-    http.setRequestMethod("POST");
-    http.setDoOutput(true);
-    http.setRequestProperty("content-type", "application/x-www-form-urlencoded");
+    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+    httpURLConnection.setRequestMethod("POST");
+    httpURLConnection.setDoOutput(true);
+    httpURLConnection.setRequestProperty("content-type", "application/x-www-form-urlencoded");
 
     String data =
         "grant_type=client_credentials&client_id=" + TokenEndpoints.CLIENT_ID + "&client_secret="
@@ -51,19 +53,21 @@ public class SpotifyTokenHandler implements Route {
 
     byte[] out = data.getBytes(StandardCharsets.UTF_8);
 
-    OutputStream stream = http.getOutputStream();
+    OutputStream stream = httpURLConnection.getOutputStream();
     stream.write(out);
 
-    BufferedReader Lines = new BufferedReader(new InputStreamReader(http.getInputStream()));
+    BufferedReader Lines = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
     String currentLine = Lines.readLine();
     StringBuilder response = new StringBuilder();
+
     while (currentLine != null) {
       response.append(currentLine).append("\n");
       currentLine = Lines.readLine();
     }
-    this.accessToken = response.substring(17, 132);
-    this.expiresIn = response.substring(169, 173);
-    System.out.println(response);
-    http.disconnect();
+
+    JSONObject DataJSON = new JSONObject(response.toString());
+    this.accessToken = DataJSON.getString("access_token");
+    this.expiresIn = String.valueOf(DataJSON.getInt("expires_in"));
+    httpURLConnection.disconnect();
   }
 }
