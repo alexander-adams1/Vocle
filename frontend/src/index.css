@@ -5,13 +5,13 @@
   .v1_3 {
     width: 100%;
     height: 953px;
-    background: rgba(0,0,0,1);
+    background: rgb(62, 194, 106);
     opacity: 1;
     position: relative;
     top: 0px;
     left: 0 px;
     overflow: hidden;
-    z-index: 0
+    z-index: 0;
   }
 
   .v10_67 {
@@ -71,32 +71,26 @@
     z-index: 0
   }
   .v45_3 {
-    width: 954px;
+    width: 1000px;
     height: 100%;
     background: url("images/v45_3.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     opacity: 1;
-    position: absolute;
+    position: relative;
     top: 10px;
     left: -20px;
     overflow: hidden;
-    z-index: 0
+    z-index: 1
   }
   .v71_26 {
     width: 100%;
     height: 138px;
-    background: rgba(62,194,107,0.9399999976158142);
+    background: rgb(62, 194, 106);
     padding: 19px 103px;
-    margin: 0px;
-    opacity: 1;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    z-index: 0
+    opacity: 1;
+    z-index: 0;
   }
   .v71_31 {
     width: 73px;
@@ -110,7 +104,7 @@
     top: 30px;
     left: 103px;
     overflow: hidden;
-    z-index: 0
+    z-index: 0;
   }
   .v71_29 {
     width: 77px;
@@ -417,11 +411,11 @@
     width: 188px;
     height: 73px;
     background: rgba(59,183,101,1);
-    opacity: 1;
+
     position: absolute;
     top: 0px;
     left: 0px;
-    overflow: hidden;
+
   }
   .v54_95 {
     width: 91px;
@@ -701,25 +695,60 @@
   }
 
   .textBoxUserPlaylist {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     background: rgba(0,0,0,1);
     opacity: 1;
     position: relative;
     margin-left: auto;
     margin-right:auto;
     vertical-align: middle;
-    top: 100px;
+    top: 400px;
+
     overflow: hidden;
+    z-index: 1
   }
 
   .submitUserPlaylist {
     width: 100px;
-    height: 56px;
-    background: rgba(255,255,255,1);
+    color: black;
+    position: relative;
+    top: 110px;
+    left: 100px;
+    vertical-align: middle;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+    z-index: 1
+  }
+
+  .instructionsText {
+    width: 100px;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    vertical-align: middle;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+    z-index: 1
+  }
+
+  .textBox {
+    width: 220px;
+    height: 25px;
+    background: rgb(255, 255, 255);
     opacity: 1;
     position: relative;
-    margin-left: auto;
-    margin-right:auto;
     vertical-align: middle;
+    top: 80px;
+    left: 40px;
+
+    overflow: hidden;
+    z-index: 1
   }
