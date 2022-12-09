@@ -71,6 +71,7 @@ public class GenerateTrackHandler implements Route {
     JSONObject DataJSON = new JSONObject(response.toString());
     this.trackID = response.toString();
     int track_number = getRandomInteger(0, DataJSON.getInt("total"));
+    this.responseMap.put("Result", "Success")
     this.trackID = DataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("id");
     System.out.println(httpURLConnection.getResponseCode() + " " + httpURLConnection.getResponseMessage());
   }
