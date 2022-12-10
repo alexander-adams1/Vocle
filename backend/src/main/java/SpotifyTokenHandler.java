@@ -8,8 +8,11 @@ import java.net.URL;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import javax.xml.crypto.Data;
 import org.json.JSONObject;
+import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -28,6 +31,12 @@ public class SpotifyTokenHandler implements Route {
   public Object handle(Request request, Response response)
       throws Exception {
     HashMap<String, String> responseMap = new HashMap<>();
+    QueryParamsMap QueryMapParameters = request.queryMap();
+    if (!request.queryParams().equals(new HashSet<>(
+        List.of()))) {
+      responseMap.put("Result", "Invalid Parameters");
+      return new GenericResponse(responseMap).serialize();
+    }
     try {
       this.getAccessToken();
       responseMap.put("Result", "Success, got an access token");
