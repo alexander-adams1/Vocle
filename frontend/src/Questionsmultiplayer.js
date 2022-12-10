@@ -10,14 +10,15 @@ import {
 import { render } from '@testing-library/react';
 import Home from './Home';
 import Inputplaylist from './inputplaylist';
+import Multiplayer from './Multiplayer';
 
-const Question = () => 
+const Questionmulti = () => 
 {
     const navigate = useNavigate();
 
-    const navigatetoSingleplayer = () => 
+    const navigatetoMultiplayer = () => 
     {
-        navigate('/singleplayer', {state:{id:1,name:'default'}})
+        navigate('/multiplayer', {state:{id:1,name:'default'}})
     }
 
     const[custom, setCustom] = useState(false);
@@ -47,10 +48,9 @@ const Question = () =>
     return (
         <div className="v54_46">
             <div className="v46_8">
-                <div className="v46_9">
-                </div>
-                <span className="v46_10" onClick={navigatetoSingleplayer}>Use Default Playlist</span>
-        
+                <button className="v46_9">
+                <span className="v46_10" onClick={navigatetoMultiplayer}>Use Default Playlist</span>
+                </button>
             </div>
                 <div className="v46_7">
             <button className="v46_6">
@@ -64,4 +64,4 @@ const Question = () =>
     
 };
 
-export default Question;
+export default Questionmulti;

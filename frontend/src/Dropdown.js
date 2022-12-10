@@ -9,7 +9,7 @@ const Dropdown = () => {
     ]
 
     const handleChange = (selectedOption) => {
-       console.log("handleChange", selectedOption); 
+       console.log("handleChange", selectedOption.value); 
     };
 
     const loadOptions = (searchValue, callback) => {
