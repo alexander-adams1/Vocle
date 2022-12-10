@@ -13,7 +13,6 @@ import Home from './Home';
 const Inputplaylist = () =>
 {
     const navigate = useNavigate();
-    let url = null;
     function nice() 
     {
         const text: Element | null = document.getElementById('nice')

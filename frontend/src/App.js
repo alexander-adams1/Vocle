@@ -2,14 +2,18 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import React, {useState,  SetStateAction, Component } from 'react'
 import Singleplayer from './Singleplayer';
+import Multiplayer from './Multiplayer';
 
 class App extends Component{
   render() {
+    console.log("app")
     return (
           <Routes>
-            <Route path = "*" element={<Home />} />
+            <Route path = "*" element={< Home />} />
             <Route path = "/singleplayer"
               element={< Singleplayer />} />
+            <Route path = "/multiplayer"
+              element={< Multiplayer />} />
           </Routes>
     )
   }
