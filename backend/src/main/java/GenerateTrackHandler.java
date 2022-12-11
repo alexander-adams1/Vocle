@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.http.HttpRequest;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -68,12 +69,19 @@ public class GenerateTrackHandler implements Route {
       currentLine = Lines.readLine();
     }
 
-    JSONObject DataJSON = new JSONObject(response.toString());
+    JSONObject TrackDataJSON = new JSONObject(response.toString());
     this.trackID = response.toString();
-    int track_number = getRandomInteger(0, DataJSON.getInt("total"));
+    int track_number = getRandomInteger(0, TrackDataJSON.getInt("total"));
     this.responseMap.put("Result", "Success");
-    this.trackID = DataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("id");
-    System.out.println(httpURLConnection.getResponseCode() + " " + httpURLConnection.getResponseMessage());
+    this.trackID = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("id");
+    ArrayList<String> trackNameAndArtistList = new ArrayList<>();
+    for (int i = 0; i < TrackDataJSON.getInt("total"); i++) {
+      String trackName = TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getString("name");
+      JSONObject ArtistsDataJSON = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getJSONArray("artists").get(0).toString());
+      String artistName = ArtistsDataJSON.getString("name");
+      trackNameAndArtistList.add(trackName + " - " + artistName);
+    }
+    this.responseMap.put("Track and Artists List", trackNameAndArtistList.toString());
   }
 
   private int getRandomInteger(int min, int max) {
