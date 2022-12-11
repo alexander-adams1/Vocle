@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react-sound": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/react-sound": "^1.2.3"
+  }
+}

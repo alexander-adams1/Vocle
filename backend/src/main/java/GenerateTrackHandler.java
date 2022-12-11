@@ -74,6 +74,7 @@ public class GenerateTrackHandler implements Route {
     int track_number = getRandomInteger(0, TrackDataJSON.getInt("total"));
     this.responseMap.put("Result", "Success");
     this.trackID = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("id");
+    String trackURL = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONObject("external_urls").getString("spotify");
     ArrayList<String> trackNameAndArtistList = new ArrayList<>();
     for (int i = 0; i < TrackDataJSON.getInt("total"); i++) {
       String trackName = TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getString("name");
@@ -82,6 +83,7 @@ public class GenerateTrackHandler implements Route {
       trackNameAndArtistList.add(trackName + " - " + artistName);
     }
     this.responseMap.put("Track and Artists List", trackNameAndArtistList.toString());
+    this.responseMap.put("Track URL", trackURL);
   }
 
   private int getRandomInteger(int min, int max) {
