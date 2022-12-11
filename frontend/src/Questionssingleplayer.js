@@ -9,7 +9,7 @@ import {
   } from "react-router-dom";
 import { render } from '@testing-library/react';
 import Home from './Home';
-import Inputplaylist from './inputplaylist';
+import Inputplaylistsingle from './inputplaylistsingle';
 
 const Questionsingle = () => 
 {
@@ -34,7 +34,7 @@ const Questionsingle = () =>
         // TODO: need to have the input box to get the spotify playlist URL to load in. hide the other div elements
         return(
             <div>
-                <Inputplaylist/>
+                <Inputplaylistsingle />
             </div>
         )
         customPlaylist = null;

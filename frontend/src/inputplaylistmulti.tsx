@@ -10,7 +10,7 @@ import {
 import { render } from '@testing-library/react';
 import Home from './Home';
 
-const Inputplaylist = () =>
+const Inputplaylistmulti = () =>
 {
     const navigate = useNavigate();
     function nice() 
@@ -23,8 +23,9 @@ const Inputplaylist = () =>
         } else {
             console.log(text.value)
         }
-        navigate('/singleplayer')
+            navigate('/multiplayer')
     }
+
     console.log("its being called")
     return(
         <div className="textBoxUserPlaylist">
@@ -39,4 +40,4 @@ const Inputplaylist = () =>
     
 };
 
-export default Inputplaylist;
+export default Inputplaylistmulti;

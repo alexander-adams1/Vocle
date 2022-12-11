@@ -37,7 +37,7 @@ class Singleplayer extends Component{
                             </button></div>
                             <div className="v54_93"><button className="v54_94"><span className="v54_95" onClick={submitSong}>SKIP</span>
                             </button></div><div className="v54_108"><div className="v54_101"></div><div className="v54_100"></div></div>
-                            <div className="v54_112" id={"greatness"}><Dropdown />
+                            <div className="v54_112" ><Dropdown />
                             {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                             {/* <div className="v54_111"></div> */}
                             </div>
