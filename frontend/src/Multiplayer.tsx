@@ -6,6 +6,7 @@ import Dropdown from './Dropdown';
 import Home from './Home';
 import { Timer } from './timer';
 
+export const TEXT_Submit_button = "Submit-button"
 
 class Multiplayer extends Component{
     
@@ -18,13 +19,15 @@ class Multiplayer extends Component{
         } else if (!(text instanceof HTMLDivElement)) {
             console.log(`Found element ${text}, but it wasn't an input`)
         } else {
-            console.log(text.className)
+
+            console.log(text.textContent)
+    
         }
         console.log("submit called")
     }
     
         return (
-            <div className="v10_61"onClick={submitSong} >
+            <div className="v10_61" >
                 <Timer />
                 <div className="v54_113" >
                 <Dropdown />
@@ -33,9 +36,9 @@ class Multiplayer extends Component{
                     <button className="v71_5">
                     
                         <div className="v71_6">
-                        </div><span className="v71_7" >SUBMIT</span></button>
+                        </div><span className="v71_7" role="Submit"  aria-label={TEXT_Submit_button} onClick={submitSong}>SUBMIT</span></button>
                         <div className="v71_11"></div>
-                        <div className="v71_39"><div className="v71_34"></div><span className="v71_35" >Lobby:</span>
+                        <div className="v71_39"><div className="v71_34"></div><span className="v71_35" > Points: </span>
                         <div className="v89_3"></div>
                         
                         </div>

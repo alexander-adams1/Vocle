@@ -288,6 +288,7 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
+    z-index: 0
   }
   .v10_60 {
     width: 777px;
@@ -369,10 +370,10 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 852px;
-    left: 980px;
+    top: 750px;
+    left: 1200px;
     overflow: hidden;
-    z-index: 1
+    z-index: 10;
   }
   .v54_91 {
     width: 188px;
@@ -383,6 +384,7 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
+    z-index: 10;
   }
   .v54_90 {
     width: 154px;
@@ -395,7 +397,7 @@
     font-size: 40px;
     opacity: 1;
     text-align: center;
-    z-index: 0;
+    z-index: 9999;
   }
   .v54_93 {
     width: 188px;
@@ -405,8 +407,8 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 852px;
-    left: 376px;
+    top: 755px;
+    left: 120px;
     overflow: hidden;
   }
   .v54_94 {
@@ -724,7 +726,7 @@
     font-size: 20px;
     opacity: 1;
     text-align: center;
-    z-index: 1
+    z-index: 1;
   }
 
   .instructionsText {
@@ -819,8 +821,8 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 846px;
-    left: 662px;
+    top: 750px;
+    left: 1200px;
     overflow: hidden;
     z-index:0;
   }
@@ -1088,5 +1090,23 @@
     font-family: Proxima Nova;
     font-weight: Regular;
     font-size: 20px;
+  }
+
+  .addGuess {
+    height: 500px;
+    width: 500px;
+    color: red;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: fixed;
+    z-index: 99999;
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 80px;
+    overflow: hidden;
   }
 
