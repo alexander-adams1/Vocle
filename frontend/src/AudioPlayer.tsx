@@ -1,15 +1,7 @@
-import { accessToken } from 'mapbox-gl';
-import Sound from 'react-sound';
-import { generateAccessToken, generateTrack } from './GenerateSong';
+import SpotifyPlayer from 'react-spotify-web-playback';
 
-// var URL = generateTrack(`https://open.spotify.com/playlist/4sX9J6HyFYZxtauo6Xu37o`, accessToken)
-// export default function PlaySound() {
-//     return (
-//         <div>
-//             <Sound
-//                 url={URL.toString()}
-//                 playFromPosition={0}
-//             />
-//         </div>
-//     )
-// }
+<SpotifyPlayer
+    token="accessToken"
+    uris={['spotify:track:7v8wKvNQQIxkugCFFjrkaO']}
+    autoPlay
+/>
