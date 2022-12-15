@@ -1,6 +1,5 @@
 import AsyncSelect from "react-select/async";
 
-let select = null;
 const Dropdown = () => {
     // mocking data taken from backend API request.
     const mockOptions = [
@@ -8,15 +7,11 @@ const Dropdown = () => {
         {value: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton", label: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton"},
         {value: "Antidode - Travis Scott", label: "Antidote - Travis Scott"}
     ]
-
+     
     const handleChange = (selectedOption) => {
        console.log("handleChange", selectedOption.value); 
-       select = selectedOption.value;
+       return selectedOption.value
     };
-
-    
-
-
 
 
     const loadOptions = (searchValue, callback) => {
@@ -40,7 +35,7 @@ const Dropdown = () => {
         }
     }
 
-    return <AsyncSelect className={select} id="greatness" placeholder={<div>Know the song? Search for the artist/title</div>} loadOptions={loadOptions} onChange={handleChange}/>
+    return <AsyncSelect className="dropdown" id="greatness" placeholder={<div>Know the song? Search for the artist/title</div>} loadOptions={loadOptions} onChange={handleChange} />
    
 }
 

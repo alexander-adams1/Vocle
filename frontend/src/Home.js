@@ -39,6 +39,37 @@ class Home extends Component {
     })
   }
 
+  // prepareSingleplayerButtonPress = () => {
+  //   singleplayerButton = document.getElementByID('singleplayer-button')
+    
+  //   if (singleplayerButton == null) {
+  //     console.log('could not find button')
+  //   }
+
+  //   else if (!(singleplayerButton instanceof Button)) {
+  //     console.log('singleplayerButton found, but not instance of button')
+  //   }
+  //   else {
+  //     singleplayerButton.addEventListener("click", this.displayQuestionSingle)
+  //   }
+  // }
+
+  // prepareMultiplayerButtonPress = () => {
+  //   multiplayerButton = document.getElementById('multiplayer-button')
+
+  //   if (multiplayerButton == null) {
+  //     console.log('could not find button')
+  //   }
+
+  //   else if (!(multiplayerButton instanceof Button)) {
+  //     console.log('multiplayerButton found, but not instance of button')
+  //   }
+  //   else {
+  //     multiplayerButton.addEventListener("click")
+  //   }
+    
+  // }
+
   render() {
 
     console.log('nice')
@@ -76,7 +107,7 @@ class Home extends Component {
           <div className="v10_67"></div>
         </div>
         <div className="v122_909">
-          <button className="v122_912" onClick={this.displayQuestionSingle}><span className="v10_7">Singleplayer
+          <button id="singleplayer-button" className="v122_912" onClick = {this.displayQuestionSingle}><span className="v10_7">Singleplayer
           </span></button>
           {singlequestions}
         </div>
@@ -91,7 +122,7 @@ class Home extends Component {
           <div className="v71_33"></div>
         </div>
         <div className="v122_999">
-          <button className="v122_915" onClick={this.displayQuestionMulti}><span className="v10_8">Multiplayer
+          <button id="multiplayer-button" className="v122_915" onClick={this.displayQuestionMulti}><span className="v10_8">Multiplayer
           </span>
           </button>
           {multiquestions}
