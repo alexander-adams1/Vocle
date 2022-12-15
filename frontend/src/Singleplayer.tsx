@@ -6,6 +6,7 @@ import Dropdown from './Dropdown';
 import Home from './Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
+import playAudio from './AudioPlayer';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 class Singleplayer extends Component{
@@ -41,7 +42,7 @@ class Singleplayer extends Component{
             console.log(`Found element ${text}, but it wasn't an input`)
         } else {
             console.log(text.textContent)
-            this.displayAnswerSingle
+            // this.displayAnswerSingle
             return(
                 <div className="addGuess"> {text.textContent}
                 </div>)
@@ -71,7 +72,7 @@ class Singleplayer extends Component{
                         <div className="v54_92" >
                             <button className="v54_91" role="Submit"  aria-label={TEXT_Submit_button_singleplayer} onClick={submitSong}><span className="v54_90" >SUBMIT</span>
                             </button></div>
-                            <div className="v54_93"><button className="v54_94" onClick={skipSong}>
+                            <div className="v54_93"><button className="v54_94" onClick={playAudio}>
                                 <span className="v54_95" >SKIP</span>
                             </button></div><div className="v54_108"><div className="v54_101"></div><div className="v54_100"></div></div>
                             <div className="v54_112" ><Dropdown />

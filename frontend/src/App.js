@@ -10,7 +10,6 @@ class App extends Component{
     console.log("app")
     return (
           <Routes>
-            <playAudio/>
             <Route path = "*" element={< Home />} />
             <Route path = "/singleplayer"
               element={< Singleplayer />} />
