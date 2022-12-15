@@ -3,12 +3,14 @@ import Home from './Home';
 import React, {useState,  SetStateAction, Component } from 'react'
 import Singleplayer from './Singleplayer';
 import Multiplayer from './Multiplayer';
+import playAudio from './AudioPlayer';
 
 class App extends Component{
   render() {
     console.log("app")
     return (
           <Routes>
+            <playAudio/>
             <Route path = "*" element={< Home />} />
             <Route path = "/singleplayer"
               element={< Singleplayer />} />

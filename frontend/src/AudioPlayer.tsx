@@ -1,7 +1,7 @@
 import SpotifyPlayer from 'react-spotify-web-playback';
 
-<SpotifyPlayer
-    token="accessToken"
-    uris={['spotify:track:7v8wKvNQQIxkugCFFjrkaO']}
-    autoPlay
-/>
+export default function playAudio() {
+    return (
+        <audio controls src="https://open.spotify.com/track/7v8wKvNQQIxkugCFFjrkaO"></audio>
+    )
+}
