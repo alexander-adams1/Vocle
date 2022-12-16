@@ -468,7 +468,7 @@
     left: 0px;
     overflow: hidden;
   }
-  .v54_112 {
+  .bottom_of_page {
     width: 777px;
     height: 400px;
     background-repeat: no-repeat;
@@ -537,7 +537,7 @@
     opacity: 1;
     text-align: center;
   }
-  .v110_11 {
+  .header {
     width: 100%;
     height: 140px;
     background-repeat: no-repeat;
@@ -549,7 +549,7 @@
     left: 0px;
     overflow: hidden;
   }
-  .v110_12 {
+  .header_div {
     width: 100%;
     height: 140px;
     background-repeat: no-repeat;
@@ -562,7 +562,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     overflow: hidden;
   }
-  .v110_13 {
+  .header_background {
     width: 100%;
     height: 140px;
     background: rgba(62,194,107,0.9399999976158142);
@@ -572,7 +572,7 @@
     left: 0px;
     overflow: hidden;
   }
-  .v110_14 {
+  .vocle_label {
     width: 248px;
     color: rgba(0,0,0,1);
     position: absolute;
@@ -584,7 +584,7 @@
     opacity: 1;
     text-align: center;
   }
-  .v110_15 {
+  .information {
     width: 77px;
     height: 76px;
     background: url("singleplayerImages/v110_15.png");
@@ -597,7 +597,7 @@
     left: 377px;
     overflow: hidden;
   }
-  .v110_16 {
+  .stats {
     width: 65px;
     height: 73px;
     background: url("singleplayerImages/v110_16.png");
@@ -610,7 +610,7 @@
     left: 1064px;
     overflow: hidden;
   }
-  .v110_17 {
+  .spotify {
     width: 73px;
     height: 76px;
     background: url("singleplayerImages/v110_17.png");
@@ -623,7 +623,7 @@
     left: 124px;
     overflow: hidden;
   }
-  .v110_18 {
+  .login {
     width: 98px;
     height: 94px;
     background-repeat: no-repeat;
@@ -635,7 +635,7 @@
     left: 1310px;
     overflow: hidden;
   }
-  .v110_19 {
+  .login_icon {
     width: 98px;
     height: 94px;
     background: url("singleplayerImages/v110_19.png");
@@ -758,13 +758,13 @@
     z-index: 1
   }
 
-  .dropdown {
+  .dropdown_class {
     background: blue;
     position: absolute;
     z-index: 99999;
   }
 
-  .v10_61 {
+  .multiplayer {
     width: 100%;
     height: 953px;
     background: rgba(0,0,0,1);
@@ -775,7 +775,7 @@
     overflow: hidden;
     z-index:0
   }
-  .v54_113 {
+  .dropdown_bar {
     width: 800px;
     height: 400px;
     background-repeat: no-repeat;
@@ -813,7 +813,7 @@
     text-align: center;
     z-index:0;
   }
-  .v71_5 {
+  .submit_button_multi {
     width: 188px;
     height: 73px;
     background-repeat: no-repeat;
@@ -826,7 +826,7 @@
     overflow: hidden;
     z-index:0;
   }
-  .v71_6 {
+  .submit_button_multi_background {
     width: 188px;
     height: 73px;
     background: rgba(59,183,101,1);
@@ -837,7 +837,7 @@
     overflow: hidden;
     z-index:0;
   }
-  .v71_7 {
+  .submit_button_multi_label {
     width: 148px;
     color: rgba(0,0,0,1);
     position: absolute;
@@ -850,7 +850,7 @@
     text-align: center;
     z-index:1;
   }
-  .v71_11 {
+  .multi_guesses {
     width: 777px;
     height: 403px;
     background: rgba(255,255,255,0.5);
@@ -877,7 +877,7 @@
     text-align: center;
     z-index: 0;
   }
-  .v71_39 {
+  .points {
     width: 270px;
     height: 403px;
     background-repeat: no-repeat;
@@ -890,7 +890,7 @@
     overflow: hidden;
     z-index:0;
   }
-  .v71_34 {
+  .points_background {
     width: 266px;
     height: 403px;
     background: rgba(217,217,217,1);
@@ -905,7 +905,7 @@
     overflow: hidden;
     z-index:0;
   }
-  .v71_35 {
+  .points_label {
     width: 270px;
     color: rgba(0,0,0,1);
     position: absolute;
@@ -918,7 +918,7 @@
     text-align: center;
     z-index:0;
   }
-  .v89_3 {
+  .points_line {
     width: 266px;
     height: 5px;
     background: rgba(0,0,0,1);
