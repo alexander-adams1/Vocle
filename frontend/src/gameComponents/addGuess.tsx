@@ -59,8 +59,9 @@ function Addsong() {
     <>
         <div className="services">
           <div className="first-division">
+            
             <div className="v54_92">
-              <button className="v54_91" role="Submit" aria-label={TEXT_Submit_button_singleplayer} onClick={handleServiceAdd} ><span className="v54_90">SUBMIT</span>
+              <button className="v54_91" onClick={handleServiceAdd} ><span className="v54_90" role="submit">SUBMIT</span>
               </button>
             </div>
             <div className="v54_93"><button className="v54_94" onClick={handleNullSongAdd}>
@@ -68,10 +69,10 @@ function Addsong() {
             </button></div>
           </div></div>
 
-      <div className="output">
+      <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
-          <ul className="output_list">
-            <li className="output_el" key={index}>{item.song}</li>
+          <ul className="output_list" >
+            <li className="output_el"  aria-label={item.song} key={index}>{item.song}</li>
           </ul>
         ))}
       </div>

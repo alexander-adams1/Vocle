@@ -1,7 +1,12 @@
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 import * as home from '../mainPages/Home.js';
 import Multiplayer, {TEXT_Submit_button} from '../mainPages/Multiplayer';
 import Addsong, {TEXT_Submit_button_singleplayer} from '../gameComponents/addGuess'
+import '@testing-library/jest-dom';
+import Dropdown from '../gameComponents/Dropdown.js';
+import Singleplayer from '../mainPages/Singleplayer'
+import userEvent from '@testing-library/user-event';
 
 
 // defaultHTML = `<div className="v1_3">
@@ -29,13 +34,26 @@ import Addsong, {TEXT_Submit_button_singleplayer} from '../gameComponents/addGue
 // </div>
 // </div>`
 
-test('render multiplayer', () => {
-  render(<Multiplayer />)
-  const inputButton = screen.getAllByRole("Submit", {name: TEXT_Submit_button})
+test('render dropdown menu', () => {
+  render(<Dropdown />)
+  const inputButton = screen.getByRole('combobox', 'dropdown')
+  expect(inputButton).toBeInTheDocument()
 });
 
 test('render submit singleplayer', () => {
   render(<Addsong />)
-  const inputButton = screen.getAllByRole("Submit", {name: TEXT_Submit_button_singleplayer})
+  const inputButton = screen.getByRole('submit')
+  expect(inputButton).toBeInTheDocument()
 });
 
+
+
+test('check if input is retrieved by the submit button', () => {
+  render(<Singleplayer />)
+  const inputButton = screen.getByRole('combobox', 'dropdown')
+  const submitButton = screen.getByRole('submit')
+  userEvent.type(inputButton, "22 - Taylor Swift")
+  userEvent.click(submitButton)
+  const guessOutput = screen.getByRole('output')
+  expect(guessOutput).toBeInTheDocument()
+})

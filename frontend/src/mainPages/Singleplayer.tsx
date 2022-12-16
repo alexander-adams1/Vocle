@@ -9,7 +9,7 @@ import { ListComponent } from '../gameComponents/listComponent';
 import { SingleTimer } from '../timer/timer';
 import GoHome from '../navigateHome';
 
-import Addsong from '../gameComponents/addGuess';
+import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
 
 import playAudio from '../audioImplementation/AudioPlayer';
 
@@ -29,6 +29,7 @@ class Singleplayer extends Component {
 
 
     render() {
+        
 
         // if (this.state.displayAnswer) {
         //     <div className="addGuess"> Skipped Guess</div>
@@ -59,7 +60,7 @@ class Singleplayer extends Component {
         // }
 
         return (
-            <div className="v10_9">
+            <div className="v10_9" aria-label={TEXT_Submit_button_singleplayer}>
                 <SingleTimer />
 
                 {/* </div><div className="v10_56"></div>
@@ -75,7 +76,7 @@ class Singleplayer extends Component {
                     {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                     {/* <div className="v54_111"></div> */}
                 </div>
-                <div className="v71_15"><span className="v71_13">Time Elapsed: 2 Seconds</span></div><div><GoHome/></div></div>
+                <div className="v71_15"><span className="v71_13">Time Elapsed: 2 Seconds</span></div><div><GoHome /> </div></div>
         )
     }
 }
