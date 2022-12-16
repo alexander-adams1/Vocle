@@ -22,7 +22,7 @@ function generateTrack(playlistURL : String, accessToken: string) {
     .then(res => res.json())
     .then(response => {
         if (response.result === `Success`) {
-            return response.TrackURL
+            return response
         }
         else if (response.result === `Error`) {
             return response.Track
