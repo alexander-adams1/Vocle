@@ -1,6 +1,6 @@
 import React from "react";
 
-function generateAccessToken() {
+function generateAccessToken(): any {
     fetch('localhost:3232/SpotifyToken')
     .then(res => res.json())
     .then(response => {
@@ -16,7 +16,7 @@ function generateAccessToken() {
     })
 }
 
-function generateTrack(playlistURL : String, accessToken: string) {
+function generateTrack(playlistURL : string, accessToken: string) {
     const playlistID = playlistURL.split('/').slice(-1)[0]
     fetch(`localhost:3232/GenerateTrack?accessToken=${accessToken}&playlistID=${playlistID}`)
     .then(res => res.json())
