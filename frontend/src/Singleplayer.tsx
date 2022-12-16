@@ -7,6 +7,7 @@ import Home from './Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
 import { SingleTimer } from './timer';
+import GoHome from './navigateHome';
 
 import Addsong from './addGuess';
 
@@ -29,9 +30,9 @@ class Singleplayer extends Component {
 
     render() {
 
-        if (this.state.displayAnswer) {
-            <div className="addGuess"> Skipped Guess</div>
-        }
+        // if (this.state.displayAnswer) {
+        //     <div className="addGuess"> Skipped Guess</div>
+        // }
 
         const submitSong = () => {
             const text: Element | null = document.getElementById('greatness')
@@ -48,14 +49,14 @@ class Singleplayer extends Component {
             console.log("submit called")
         }
 
-        const skipSong = () => {
-            console.log("song skipped")
+        // const skipSong = () => {
+        //     console.log("song skipped")
 
-            return (
-                <div className="addGuess"> Skipped Song
-                </div>
-            )
-        }
+        //     return (
+        //         <div className="addGuess"> Skipped Song
+        //         </div>
+        //     )
+        // }
 
         return (
             <div className="v10_9">
@@ -74,8 +75,7 @@ class Singleplayer extends Component {
                     {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                     {/* <div className="v54_111"></div> */}
                 </div>
-                <div className="v71_15"><span className="v71_13">Time Elapsed: 2 Seconds</span></div><div className="header"><div className="header_div"><div className="header_background"></div>
-                    <span className="vocle_label">Vocle</span><div className="information"></div><div className="stats"></div><div className="spotify"></div></div><div className="login"><div className="login_icon"></div></div></div></div>
+                <div className="v71_15"><span className="v71_13">Time Elapsed: 2 Seconds</span></div><div><GoHome/></div></div>
         )
     }
 }

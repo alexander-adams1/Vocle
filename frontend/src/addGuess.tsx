@@ -8,12 +8,15 @@ import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';
 
+// Adds the song guess to the screen
 function Addsong() {
+  // Initializes an empty array to keep track of the songs
   var [service, setService] = useState<{ song: string }[]>([]);
   const handleServiceAdd = () => {
     console.log("song called")
+    // Resets newSong
     let newSong = '';
-
+    // Gets the text from the dropdown
     const text: Element | null = document.getElementById('dropdown_class')
     if (text == null) {
       console.log("No text in the text box")
@@ -21,10 +24,11 @@ function Addsong() {
     } else if (!(text instanceof HTMLDivElement)) {
       console.log(`Found element ${text}, but it wasn't an input`)
     } else {
-      //this.displayAnswerSingle
+      // Checks that the text is of type string before storing its value
       if (typeof text.textContent === 'string') {
         newSong = text.textContent
       }
+      // If the input text isn't simply the placeholder text
       if (newSong !== 'Know the song? Search for the artist/title') {
         if (service.length < 6) {
           setService([...service, { song: newSong }]);
@@ -39,24 +43,15 @@ function Addsong() {
   };
   const handleNullSongAdd = () => {
     console.log("called")
+    // Adds to the list of guesses if it's under 6 (the amount that's in the single player game)
     if (service.length < 6) {
       setService([...service, { song: 'Guess skipped' }]);
     } else { 
+      // Otherwise clears the list
       service.splice(0, service.length);
       // TODO: Add method for bringing up the modal and ending the round
     }
   };
-
-  // Code below is for only allowing button to call helper method when text box isn't empty
-
-  // <button className="v54_91" role="Submit" onClick={() => {
-  //   const text: Element | null = document.getElementById('dropdown_class')
-  //   if (text != null && !(text instanceof HTMLDivElement) ) {
-  //     if (text.textContent?.includes('')) {
-  //       handleServiceAdd();
-  //     }
-  //   }
-  // }} >
 
   return (
     <>

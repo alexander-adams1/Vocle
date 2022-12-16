@@ -8,6 +8,7 @@ import playAudio from './AudioPlayer';
 class App extends Component{
   render() {
     console.log("app")
+    // Contains information for which endpoint should render which page
     return (
           <Routes>
             <Route path = "*" element={< Home />} />

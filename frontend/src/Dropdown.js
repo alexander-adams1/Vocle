@@ -8,12 +8,13 @@ const Dropdown = () => {
         {value: "Antidode - Travis Scott", label: "Antidote - Travis Scott"}
     ]
      
+    // dictates which option in the list is to be returned (based on which was selected)
     const handleChange = (selectedOption) => {
        console.log("handleChange", selectedOption.value); 
        return selectedOption.value
     };
 
-
+    // loads the options from the mock options list based on what's being typed in the bar
     const loadOptions = (searchValue, callback) => {
         setTimeout(() => {
             const filteredOptions = mockOptions.filter((option) => 

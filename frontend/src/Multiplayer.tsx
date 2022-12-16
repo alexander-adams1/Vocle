@@ -5,12 +5,14 @@ import Question from './Questionssingleplayer';
 import Dropdown from './Dropdown';
 import Home from './Home';
 import { MultiTimer } from './timer';
+import GoHome from './navigateHome';
 
 export const TEXT_Submit_button = "Submit-button"
 
 class Multiplayer extends Component {
 
     render() {
+        // Gets the text from the dropdown bar
         function submitSong() {
             const text: Element | null = document.getElementById("dropdown_class")
             if (text == null) {
@@ -43,9 +45,8 @@ class Multiplayer extends Component {
                     <div className="points_line"></div>
 
                 </div>
-                <div className="header"><div className="header_div"><div className="header_background"> </div>
-
-                    <span className="vocle_label">Vocle</span><div className="information"></div><div className="stats"></div><div className="spotify"></div></div><div className="login"><div className="login_icon"></div></div></div></div>
+                <div><GoHome /></div>
+                </div>
 
         )
 
