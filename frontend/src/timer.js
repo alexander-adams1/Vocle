@@ -16,11 +16,11 @@ export const Timer = (
   );
   const start = () => {
     setRunning(true);
-    playAudio(`https://p.scdn.co/mp3-preview/4bcf32c781f2c3fa99cf363a5226ada30aff9c83?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
+    playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
   }
   const pause = () => {
     setRunning(false);
-    playAudio(`https://p.scdn.co/mp3-preview/4bcf32c781f2c3fa99cf363a5226ada30aff9c83?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
+    playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
   }
   const reset = () => setSeconds(0);
   const stop = () => {
@@ -31,7 +31,7 @@ export const Timer = (
   use1Second(tick);
   return (
     <div className="timerclass">
-      <div className="multiplayerPlayButton" > <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      <div className="multiplayerPlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
       </div>    
     <div className="greenRectangle"> {seconds} seconds </div>
     </div>
