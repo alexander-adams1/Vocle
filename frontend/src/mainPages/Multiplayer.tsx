@@ -1,10 +1,10 @@
 import React, { useState, useEffect, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import Question from './Questionssingleplayer';
-import Dropdown from './Dropdown';
+import Question from '../overlays/Questionssingleplayer';
+import Dropdown from '../gameComponents/Dropdown';
 import Home from './Home';
-import { MultiTimer } from './timer';
+import { MultiTimer } from '../timer/timer';
 
 export const TEXT_Submit_button = "Submit-button"
 

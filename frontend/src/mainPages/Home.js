@@ -1,10 +1,10 @@
 import React, { useState, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
-import Questionsingle from './Questionssingleplayer'
-import Questionmulti from './Questionsmultiplayer';
+import Questionsingle from '../overlays/Questionssingleplayer'
+import Questionmulti from '../overlays/Questionsmultiplayer';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Singleplayer from './Singleplayer';
-import LoginModal from './loginmodal';
+import LoginModal from '../overlays/loginmodal';
 
 class Home extends Component {
 

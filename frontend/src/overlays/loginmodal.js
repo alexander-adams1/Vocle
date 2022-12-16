@@ -7,7 +7,7 @@ import {
     Link,
   } from "react-router-dom";
 import {useState} from "react";
-import Home from "./Home";
+import Home from "../mainPages/Home";
 
 const LoginModal = () => 
 {
