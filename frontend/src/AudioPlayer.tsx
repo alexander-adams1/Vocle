@@ -30,8 +30,8 @@ export default function playAudio(audioURL : string, interval : number) {
         clearTimeout(timeoutID)
     }
     // Set the timeoutID to timeout after the interval amount in seconds passes 
-    // by. After the timeout interval passes pause the audio and reset the time 
-    // to the start of the audio.
+    // by. After the timeout interval passes pause the audio and reset the 
+    // timer of the audio.
     timeoutID = setTimeout(() => {
         audio.pause()
         audio.currentTime = 0
