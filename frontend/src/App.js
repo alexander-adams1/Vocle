@@ -4,6 +4,7 @@ import React, {useState,  SetStateAction, Component } from 'react'
 import Singleplayer from './mainPages/Singleplayer';
 import Multiplayer from './mainPages/Multiplayer';
 import playAudio from './audioImplementation/AudioPlayer';
+import GameOver from './GameOver';
 
 class App extends Component{
   render() {
@@ -16,6 +17,7 @@ class App extends Component{
               element={< Singleplayer />} />
             <Route path = "/multiplayer"
               element={< Multiplayer />} />
+            <Route path = "/gameover" element = {<GameOver />} />
           </Routes>
     )
   }

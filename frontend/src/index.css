@@ -1177,21 +1177,21 @@
     left: 0px;
     overflow: hidden;
   }
-  .song-label {
-    width: 320px;
-    height: 320px;
+  .album-cover {
+    width: 250px;
+    height: 250px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
     position: absolute;
     top: 102px;
-    left: 596px;
+    left: 624px;
     overflow: hidden;
   }
   .song-name {
     width: 403px;
-    color: url("../images/v172_10.png");
+    /* color: url("../images/v172_10.png"); */
     position: absolute;
     top: 491px;
     left: 554px;
@@ -1202,7 +1202,7 @@
   .return-home-class {
     width: 264px;
     height: 121px;
-    background: url("../images/v172_14.png");
+    /* background: url("../images/v172_14.png"); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -1348,7 +1348,7 @@
     position: absolute;
     top: 20px;
     left: 0px;
-    font-family: Noto Sans;
+    font-family: Avenir;
     font-weight: Medium;
     font-size: 30px;
     opacity: 1;

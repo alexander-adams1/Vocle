@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const GameOverScreen = () => {
+
+export default function GameOverScreen() {
     const [imageURL, setImageURL] = useState('')
     const [songTitle, setSongTitle] = useState('')
     const [artistName, setArtistName] = useState('')
@@ -46,8 +47,5 @@ const GameOverScreen = () => {
                     <div className="better-luck-class"><div className="v182_74"></div><span className="better-luck-label">You didn't get this Vocle. Better luck next time!</span></div>
         </div>
     )
-
     
 }
-
-export default GameOverScreen();
