@@ -6,7 +6,7 @@ function generateAccessToken() : Promise<string> {
         .then(res => res.json())
         .then(response => {
             if (response.Result === `Success, got an access token`) {
-            resolve(response.AccessToken)
+                resolve(response.AccessToken)
             }
             else {
                 resolve(`An error occured while trying to generate an access token`)
