@@ -1215,9 +1215,25 @@
   .song-name {
     width: 403px;
     /* color: url("../images/v172_10.png"); */
+    color: rgba(217,217,217,1);
     position: absolute;
-    top: 491px;
+    top: 400px;
     left: 554px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .artist-name {
+    width: 403px;
+    /* color: url("../images/v172_10.png"); */
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 450px;
+    left: 554px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
     font-size: 30px;
     opacity: 1;
     text-align: center;

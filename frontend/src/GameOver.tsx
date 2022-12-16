@@ -9,7 +9,10 @@ export default function GameOverScreen() {
 
     const navigate = useNavigate();
     const navigateHome = () => {
-        navigate('*', {state:{id:1,name:'default'}})
+        navigate('/', {state:{id:1,name:'default'}})
+    }
+    const navigateSingleplayer = () => {
+        navigate('/singleplayer', {state:{id:1,name:'default'}})
     }
 
     //need to set imageURL, songTitle, and artistName thru API calls to the backend.
@@ -33,11 +36,12 @@ export default function GameOverScreen() {
     return (
         <div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
             <img className="album-cover" id = "album-cover" src = "https://upload.wikimedia.org/wikipedia/en/c/c6/Die_Lit_by_Playboi_Carti.jpg"></img>
-            <span className="song-name">Shoota (feat. Lil Uzi Vert) Playboi Carti</span>
-            <div className="return-home-class">
-                <div className="return-home-button"></div>
+            <p className="song-name">Shoota (feat. Lil Uzi Vert)</p>
+            <p className="artist-name">Playboi Carti</p>
+            <div className="return-home-class" onClick={navigateHome}>
+                <div className="return-home-button" ></div>
                 <span className="home-button-label" aria-label="home button">Home</span></div>
-                <div className="play-again-class" aria-label="play again button">
+                <div className="play-again-class" aria-label="play again button" onClick={navigateSingleplayer}>
                     <div className="play-again-button" id = "play again button"></div>
                     <span className="play-again-label" id = "play again label">Play Again</span></div>
                 <div className="share-button-class">
