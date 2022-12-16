@@ -1,5 +1,5 @@
 import {useState}  from 'react';
-import Singleplayer from './Singleplayer';
+import Singleplayer from '../mainPages/Singleplayer';
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,7 +8,7 @@ import {
     Link,
   } from "react-router-dom";
 import { render } from '@testing-library/react';
-import Home from './Home';
+import Home from '../mainPages/Home';
 import Inputplaylistsingle from './inputplaylistsingle';
 
 // Dictates the functionality for the modal that pops up when single player is clicked

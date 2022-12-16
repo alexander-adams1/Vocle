@@ -1,9 +1,9 @@
 import React, { useState, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Question from './Questionssingleplayer';
+import Question from '../overlays/Questionssingleplayer';
 import Dropdown from './Dropdown';
-import Home from './Home';
+import Home from '../mainPages/Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';

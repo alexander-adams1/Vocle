@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { use1Second } from "./useSeconds";
-import playAudio from './AudioPlayer';
+import playAudio from '../audioImplementation/AudioPlayer';
 
 export const SingleTimer = (
     {

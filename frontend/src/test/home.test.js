@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import * as home from './Home.js';
-import Multiplayer, {TEXT_Submit_button} from './Multiplayer';
-import Singleplayer, {TEXT_Submit_button_singleplayer} from './Singleplayer';
+import * as home from '../mainPages/Home.js';
+import Multiplayer, {TEXT_Submit_button} from '../mainPages/Multiplayer';
+import Singleplayer, {TEXT_Submit_button_singleplayer} from '../mainPages/Singleplayer';
 
 // defaultHTML = `<div className="v1_3">
 // <div className="v122_910">

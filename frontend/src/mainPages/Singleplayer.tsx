@@ -1,17 +1,17 @@
 import React, { useState, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Question from './Questionssingleplayer';
-import Dropdown from './Dropdown';
+import Question from '../overlays/Questionssingleplayer';
+import Dropdown from '../gameComponents/Dropdown';
 import Home from './Home';
 import { render } from '@testing-library/react';
-import { ListComponent } from './listComponent';
-import { SingleTimer } from './timer';
-import GoHome from './navigateHome';
+import { ListComponent } from '../gameComponents/listComponent';
+import { SingleTimer } from '../timer/timer';
+import GoHome from '../navigateHome';
 
-import Addsong from './addGuess';
+import Addsong from '../gameComponents/addGuess';
 
-import playAudio from './AudioPlayer';
+import playAudio from '../audioImplementation/AudioPlayer';
 
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
