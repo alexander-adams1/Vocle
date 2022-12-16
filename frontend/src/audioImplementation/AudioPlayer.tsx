@@ -1,5 +1,4 @@
 import { time } from 'console';
-import SpotifyPlayer from 'react-spotify-web-playback';
 
 // Initializing the audio and timeoutID variables so that we can define them in 
 // playAudio function which is called onClick for the play button

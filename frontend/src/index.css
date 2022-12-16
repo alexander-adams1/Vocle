@@ -331,6 +331,7 @@
     font-size: 40px;
     opacity: 1;
     text-align: center;
+    outline: none;
   }
   .v10_57 {
     width: 777px;
@@ -453,10 +454,13 @@
     top: 0px;
     left: 0px;
     border-radius: 50%;
+    outline: none;
+    border-width: 0px;
   }
   .v54_100 {
     width: 70px;
     height: 70px;
+    outline: none;
     background: url("singleplayerImages/v54_100.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -466,6 +470,7 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
+    border-width: 0px;
   }
   .bottom_of_page {
     width: 777px;
@@ -1068,6 +1073,7 @@
       left: 225px;
       overflow: hidden;
       z-index:0;
+      outline: none;
   }
 
   .singletimerclass{
@@ -1077,6 +1083,7 @@
     left: 507px;
     position: absolute;
     z-index : 999;
+    outline: none;
   }
 
   .multitimerclass{
@@ -1099,6 +1106,7 @@
     font-family: Proxima Nova;
     font-weight: Regular;
     font-size: 20px;
+    outline: none;
   }
 
   .addGuess {

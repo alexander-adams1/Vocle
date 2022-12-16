@@ -7,6 +7,7 @@ import Home from '../mainPages/Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';
+import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
@@ -34,6 +35,7 @@ function Addsong() {
       if (newSong !== 'Know the song? Search for the artist/title') {
         if (service.length < 6) {
           setService([...service, { song: newSong }]);
+          console.log(generateTrack("https://open.spotify.com/playlist/37i9dQZF1DX0kbJZpiYdZl", generateAccessToken()));
         } else {
           service.splice(0, service.length);
           // TODO: Add method for bringing up the modal and ending the round
