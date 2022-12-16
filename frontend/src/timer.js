@@ -31,7 +31,7 @@ export const Timer = (
   use1Second(tick);
   return (
     <div className="timerclass">
-      <div className="multiplayerPlayButton" > <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      <div className="multiplayerPlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
       </div>    
     <div className="greenRectangle"> {seconds} seconds </div>
     </div>
