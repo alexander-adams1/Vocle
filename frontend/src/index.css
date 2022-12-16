@@ -1166,3 +1166,191 @@
     justify-content: center;
     font-family: Avenir;
   }
+
+  .game-over-screen {
+    width: 100%;
+    height: 982px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .song-label {
+    width: 320px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 102px;
+    left: 596px;
+    overflow: hidden;
+  }
+  .song-name {
+    width: 403px;
+    color: url("../images/v172_10.png");
+    position: absolute;
+    top: 491px;
+    left: 554px;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .return-home-class {
+    width: 264px;
+    height: 121px;
+    background: url("../images/v172_14.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 144px;
+    overflow: hidden;
+  }
+  .return-home-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .home-button-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .play-again-class {
+    width: 264px;
+    height: 121px;
+    /* background: url("../images/v173_15.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 1104px;
+    overflow: hidden;
+  }
+  .play-again-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .play-again-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .share-button-class {
+    width: 264px;
+    height: 121px;
+    /* background: url("../images/v173_18.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 624px;
+    overflow: hidden;
+  }
+  .share-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .share-button-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .better-luck-class {
+    width: 402px;
+    height: 135px;
+    /* background: url("../images/v182_75.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 606px;
+    left: 554px;
+    overflow: hidden;
+  }
+  .v182_74 {
+    width: 402px;
+    height: 135px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .better-luck-label {
+    width: 402px;
+    color: rgba(195,201,197,1);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    font-family: Noto Sans;
+    font-weight: Medium;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
