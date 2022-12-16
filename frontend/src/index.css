@@ -1157,7 +1157,7 @@
     text-align: center;
   }
   
-  .output_el {
+  .output_el-0 {
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
     margin: 5px;
@@ -1165,6 +1165,29 @@
     min-width: 300px;
     justify-content: center;
     font-family: Avenir;
+    color: red;
+  }
+
+  .output_el-1 {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    justify-content: center;
+    font-family: Avenir;
+    color: rgb(62, 194, 106);
+  }
+
+  .output_el-2 {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    justify-content: center;
+    font-family: Avenir;
+    color: white;
   }
 
   .game-over-screen {

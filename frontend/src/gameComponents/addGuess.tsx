@@ -17,7 +17,7 @@ const correctSong = "How Long - Charlie Puth"
 // Adds the song guess to the screen
 function Addsong() {
   // Initializes an empty array to keep track of the songs
-  var [service, setService] = useState<{ song: string }[]>([]);
+  var [service, setService] = useState<{ song: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const handleServiceAdd = () => {
@@ -42,13 +42,14 @@ function Addsong() {
           if (newSong === correctSong) {
             setGameOver(true); // TODO: Set to false in reset method
             setWin(true); // TODO: Set to false in reset method
-            setService([...service, { song: newSong }]);
+            setService([...service, { song: newSong, isCorrect: 1 }]);
             // TODO: Add method for bringing up the modal and ending the round
-          } else if (service.length < 6) {
-            setService([...service, { song: newSong }]);
+          } else if (service.length < 5) {
+            setService([...service, { song: newSong, isCorrect: 0 }]);
             // generateAccessToken().then(response => console.log(response))
           } else {
             // TODO: add this code into restart game --> service.splice(0, service.length);
+            setService([...service, { song: newSong, isCorrect: 0 }]);
             setGameOver(true); // TODO: Set to false in reset method
             // TODO: Add method for bringing up the modal and ending the round
           }
@@ -62,11 +63,12 @@ function Addsong() {
     console.log("called")
     if (!gameOver) {
       // Adds to the list of guesses if it's under 6 (the amount that's in the single player game)
-      if (service.length < 6) {
-        setService([...service, { song: 'Guess skipped' }]);
+      if (service.length < 5) {
+        setService([...service, { song: 'Guess skipped', isCorrect: 2 }]);
       } else {
         // Otherwise clears the list
         // TODO: add this code into restart game --> service.splice(0, service.length);
+        setService([...service, { song: 'Guess skipped', isCorrect: 2 }]);
         setGameOver(true); // TODO: Set to false in reset method
         // TODO: Add method for bringing up the modal and ending the round
       }
@@ -90,7 +92,7 @@ function Addsong() {
       <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" >
-            <li className="output_el" aria-label={item.song} key={index}>{item.song}</li>
+            <li className={"output_el-" + item.isCorrect} aria-label={item.song} key={index}>{item.song}</li>
           </ul>
         ))}
       </div>
