@@ -8,7 +8,7 @@ import { Timer } from './timer';
 
 export const TEXT_Submit_button = "Submit-button"
 
-class Multiplayer extends Component{
+class Multiplayer extends Component {
     
     render() {
     function submitSong() 

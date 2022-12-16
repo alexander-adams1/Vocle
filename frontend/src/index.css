@@ -1110,3 +1110,65 @@
     overflow: hidden;
   }
 
+  .better-luck-label {
+    width: 402px;
+    color: rgba(195,201,197,1);
+    position: absolute;
+    top: 639px;
+    left: 555px;
+    font-family: Noto Sans;
+    font-weight: Medium;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .game-over-label {
+    width: 402px;
+    color: rgba(195,201,197,1);
+    position: absolute;
+    top: 639px;
+    left: 555px;
+    font-family: Noto Sans;
+    font-weight: Medium;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .song-title {
+    width: 403px;
+    color: white;
+    position: absolute;
+    top: 491px;
+    left: 554px;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .artist-name {
+    width: 403px;
+    color: green;
+    position: absolute;
+    top: 491px;
+    left: 554px;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .play-again-button {
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 800px;
+    left: 1100px;
+    overflow: hidden;
+    z-index:0;
+  }
+  
