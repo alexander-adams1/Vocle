@@ -68,25 +68,23 @@ public class GenerateTrackHandler implements Route {
       response.append(currentLine).append("\n");
       currentLine = Lines.readLine();
     }
-    System.out.println(response);
     JSONObject TrackDataJSON = new JSONObject(response.toString());
-    this.trackID = response.toString();
     int track_number = getRandomInteger(0, TrackDataJSON.getInt("total"));
     this.responseMap.put("Result", "Success");
     String trackSongName = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("name");
-    JSONObject trackJSON = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONArray("artists").get(0).toString());
-    String trackArtistName = trackJSON.getString("name");
+    String trackArtistName = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONArray("artists").get(0).toString()).getString("name");
     this.trackID = (trackSongName + "-" + trackArtistName);
     String trackURL = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("preview_url");
+    String albumURL = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONObject("album").getJSONArray("images").get(0).toString()).getString("url");
     ArrayList<String> trackNameAndArtistList = new ArrayList<>();
     for (int i = 0; i < TrackDataJSON.getInt("total"); i++) {
       String trackName = TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getString("name");
-      JSONObject ArtistsDataJSON = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getJSONArray("artists").get(0).toString());
-      String artistName = ArtistsDataJSON.getString("name");
+      String artistName = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getJSONArray("artists").get(0).toString()).getString("name");
       trackNameAndArtistList.add(trackName + " - " + artistName);
     }
     this.responseMap.put("Track and Artists List", trackNameAndArtistList.toString());
     this.responseMap.put("TrackURL", trackURL);
+    this.responseMap.put("AlbumURL", albumURL);
   }
 
   private int getRandomInteger(int min, int max) {
