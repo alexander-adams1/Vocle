@@ -72,7 +72,7 @@ class Singleplayer extends Component{
                         <div className="v54_92" >
                             <button className="v54_91" role="Submit"  aria-label={TEXT_Submit_button_singleplayer} onClick={submitSong}><span className="v54_90" >SUBMIT</span>
                             </button></div>
-                            <div className="v54_93"><button className="v54_94" onClick={playAudio}>
+                            <div className="v54_93"><button className="v54_94" onClick={() => playAudio(``)}>
                                 <span className="v54_95" >SKIP</span>
                             </button></div><div className="v54_108"><div className="v54_101"></div><div className="v54_100"></div></div>
                             <div className="v54_112" ><Dropdown />
