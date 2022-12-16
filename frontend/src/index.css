@@ -1055,7 +1055,7 @@
     z-index:0;
   }
 
-  .multiplayerPlayButton {
+  .PlayButton {
       width: 70px;
       height: 70px;
       background-repeat: no-repeat;
@@ -1069,7 +1069,16 @@
       z-index:0;
   }
 
-  .timerclass{
+  .singletimerclass{
+    height: 200px;
+    width: 100px;
+    top: 540px;
+    left: 507px;
+    position: absolute;
+    z-index : 999;
+  }
+
+  .multitimerclass{
     height: 200px;
     width: 100px;
     top: 100px;
