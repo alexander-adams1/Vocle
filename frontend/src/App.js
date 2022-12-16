@@ -3,6 +3,7 @@ import Home from './Home';
 import React, {useState,  SetStateAction, Component } from 'react'
 import Singleplayer from './Singleplayer';
 import Multiplayer from './Multiplayer';
+import playAudio from './AudioPlayer';
 
 class App extends Component{
   render() {

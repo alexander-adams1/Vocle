@@ -13,7 +13,7 @@ function Addsong(){
         console.log("song called")
         let newSong = '';
         console.log(newSong)
-        const text: Element | null = document.getElementById('greatness')
+        const text: Element | null = document.getElementById('dropdown_class')
         if(text == null) {
             console.log("No text in the text box")
 
@@ -36,23 +36,7 @@ function Addsong(){
         setService([...service, {song: 'Guess skipped'}]);
       };
 
-      const submitSong = () =>
-    {   
-        console.log('this is being called')
-        const text: Element | null = document.getElementById('greatness')
-        if(text == null) {
-            console.log("No text in the text box")
-            return '';
-        } else if (!(text instanceof HTMLDivElement)) {
-            console.log(`Found element ${text}, but it wasn't an input`)
-            return '';
-        } else {
-            console.log("submit called")
-            console.log(text.textContent)
-            //this.displayAnswerSingle
-            return text.textContent;
-        }
-    }
+
         return(
            <> 
         {service.map((singleService, index) => (
@@ -65,6 +49,16 @@ function Addsong(){
                        <span className="v54_95">SKIP</span>
                    </button></div>
                    </div></div>))}
+
+                   <div className="output">
+        <h2>Output</h2>
+        {service &&
+          service.map((singleService, index) => (
+            <ul key={index}>
+              {singleService.song && <li>{singleService.song}</li>}
+            </ul>
+          ))}
+      </div>
                    
             </>
             

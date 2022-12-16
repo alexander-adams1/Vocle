@@ -13,9 +13,9 @@ import Home from './Home';
 const Inputplaylistmulti = () =>
 {
     const navigate = useNavigate();
-    function nice() 
+    function getText() 
     {
-        const text: Element | null = document.getElementById('nice')
+        const text: Element | null = document.getElementById('textBox')
         if(text == null) {
             console.log("No text in the text box")
         } else if (!(text instanceof HTMLInputElement)) {
@@ -30,8 +30,8 @@ const Inputplaylistmulti = () =>
     return(
         <div className="textBoxUserPlaylist">
             <span className="instructionsText"> Submit the URL of your individual playlist</span>
-                <input className="textBox" id="nice" type="text" placeholder="URL Link" ></input>
-            <button className="submitUserPlaylist" id="button" onClick={nice}> Submit</button>
+                <input className="textBox" id="textBox" type="text" placeholder="URL Link" ></input>
+            <button className="submitUserPlaylist" id="button" onClick={getText}> Submit</button>
             <p className="output" id="output1"></p>
         </div>
 

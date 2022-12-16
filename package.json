@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "react-sound": "^1.2.0"
+    "react-sound": "^1.2.0",
+    "react-spotify-web-playback": "^0.10.0"
   },
   "devDependencies": {
     "@types/react-sound": "^1.2.3"
