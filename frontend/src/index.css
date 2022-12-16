@@ -373,7 +373,6 @@
     top: 750px;
     left: 1200px;
     overflow: hidden;
-    z-index: 10;
   }
   .v54_91 {
     width: 188px;
@@ -1110,3 +1109,20 @@
     overflow: hidden;
   }
 
+  .services {
+    justify-content: space-between;
+    top: 750px;
+    left: 300px;
+    z-index: 10
+    
+  }
+  .first-division {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 0.5rem 0;
+    width: 100%;
+  }
+
+  .addSong {
+
+  }

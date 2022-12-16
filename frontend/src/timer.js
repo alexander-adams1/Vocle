@@ -15,16 +15,13 @@ export const Timer = (
   );
   const start = () => setRunning(true);
   const pause = () => setRunning(false);
-  const reset = () => setSeconds(0);
-  const stop = () => {
-    pause();
-    reset();
-  };
+
   console.log('timer')
   use1Second(tick);
   return (
     <div className="timerclass">
-      <div className="multiplayerPlayButton" > <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      <div className="multiplayerPlayButton" > <div onClick={running ? pause : start}> 
+      <div className="v54_101"></div><button className="v54_100"></button></div> 
       </div>    
     <div className="greenRectangle"> {seconds} seconds </div>
     </div>
