@@ -22,6 +22,7 @@ export default function playAudio(audioURL : string, interval : number) {
     // the timeout 
     else {
         audio.currentTime = 0
+        audio.pause()
         clearTimeout(timeoutID)
     }
     // Set the timeoutID to timeout after the interval amount in seconds passes 
