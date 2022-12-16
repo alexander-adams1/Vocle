@@ -1120,10 +1120,10 @@
 
   .services {
     justify-content: space-between;
-    top: 750px;
-    left: 300px;
-    z-index: 10
-    
+    top: 300px;
+    left: 0px;
+    z-index: 10;
+    /* position: absolute; */
   }
   .first-division {
     display: flex;
@@ -1133,6 +1133,24 @@
   }
 
   .output {
-    margin-left: 3rem;
+    margin: auto;
+    width: 50%;
     flex: 1;
+    top: 200px;
+    left: 390px;
+    position: absolute;
+  }
+
+  .output_list {
+    color: #fff;
+    z-index: 10;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .output_el {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
   }
