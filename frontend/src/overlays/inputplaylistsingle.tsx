@@ -1,5 +1,5 @@
 import {useState}  from 'react';
-import Singleplayer from './Singleplayer';
+import Singleplayer from '../mainPages/Singleplayer';
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,14 +8,14 @@ import {
     Link,
   } from "react-router-dom";
 import { render } from '@testing-library/react';
-import Home from './Home';
+import Home from '../mainPages/Home';
 
-const Inputplaylistmulti = () =>
+const Inputplaylistsingle = () =>
 {
     const navigate = useNavigate();
-    function getText() 
+    function nice() 
     {
-        const text: Element | null = document.getElementById('textBox')
+        const text: Element | null = document.getElementById('nice')
         if(text == null) {
             console.log("No text in the text box")
         } else if (!(text instanceof HTMLInputElement)) {
@@ -23,15 +23,15 @@ const Inputplaylistmulti = () =>
         } else {
             console.log(text.value)
         }
-            navigate('/multiplayer')
+            navigate('/singleplayer')
     }
 
     console.log("its being called")
     return(
         <div className="textBoxUserPlaylist">
             <span className="instructionsText"> Submit the URL of your individual playlist</span>
-                <input className="textBox" id="textBox" type="text" placeholder="URL Link" ></input>
-            <button className="submitUserPlaylist" id="button" onClick={getText}> Submit</button>
+                <input className="textBox" id="nice" type="text" placeholder="URL Link" ></input>
+            <button className="submitUserPlaylist" id="button" onClick={nice}> Submit</button>
             <p className="output" id="output1"></p>
         </div>
 
@@ -40,4 +40,4 @@ const Inputplaylistmulti = () =>
     
 };
 
-export default Inputplaylistmulti;
+export default Inputplaylistsingle;

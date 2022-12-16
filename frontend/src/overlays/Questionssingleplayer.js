@@ -1,5 +1,5 @@
 import {useState}  from 'react';
-import Singleplayer from './Singleplayer';
+import Singleplayer from '../mainPages/Singleplayer';
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,13 +8,15 @@ import {
     Link,
   } from "react-router-dom";
 import { render } from '@testing-library/react';
-import Home from './Home';
+import Home from '../mainPages/Home';
 import Inputplaylistsingle from './inputplaylistsingle';
 
+// Dictates the functionality for the modal that pops up when single player is clicked
 const Questionsingle = () => 
 {
     const navigate = useNavigate();
 
+    // Dictates functionality for routing to the singleplayer page (which gets called in onClick below)
     const navigatetoSingleplayer = () => 
     {
         navigate('/singleplayer', {state:{id:1,name:'default'}})
@@ -24,11 +26,12 @@ const Questionsingle = () =>
     let customPlaylist = null;
     let modals = null;
 
+    // Gets called when default playlist option is selected
     function changeCustom()
     {
         setCustom(true)
     }
-
+    // Prompts the user to input their default playlist
     if (custom) {
         console.log("im being called");
         // TODO: need to have the input box to get the spotify playlist URL to load in. hide the other div elements

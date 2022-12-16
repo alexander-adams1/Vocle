@@ -47,8 +47,8 @@
     top: 10px;
     left: 10px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Proxima Nova;
-    font-weight: Regular;
+    font-family: Avenir;
+    font-weight: Medium;
     font-size: 48px;
     opacity: 1;
     text-align: center;
@@ -126,8 +126,8 @@
     position: absolute;
     top: 19px;
     left: 613px;
-    font-family: Proxima Nova;
-    font-weight: Regular;
+    font-family: Avenir;
+    font-weight: Medium;
     font-size: 80px;
     opacity: 1;
     text-align: center;
@@ -182,8 +182,8 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    font-family: Proxima Nova;
-    font-weight: Regular;
+    font-family: Avenir;
+    font-weight: Medium;
     font-size: 48px;
     opacity: 1;
     text-align: left;
@@ -236,7 +236,7 @@
     position: absolute;
     top: 11px;
     left: 11px;
-    font-family: Inter;
+    font-family: Avenir;
     font-weight: Semi Bold;
     font-size: 25px;
     opacity: 1;
@@ -272,7 +272,7 @@
     position: absolute;
     top: 11px;
     left: 11px;
-    font-family: Inter;
+    font-family: Avenir;
     font-weight: Semi Bold;
     font-size: 25px;
     opacity: 1;
@@ -331,6 +331,7 @@
     font-size: 40px;
     opacity: 1;
     text-align: center;
+    outline: none;
   }
   .v10_57 {
     width: 777px;
@@ -453,10 +454,13 @@
     top: 0px;
     left: 0px;
     border-radius: 50%;
+    outline: none;
+    border-width: 0px;
   }
   .v54_100 {
     width: 70px;
     height: 70px;
+    outline: none;
     background: url("singleplayerImages/v54_100.png");
     background-repeat: no-repeat;
     background-position: center center;
@@ -466,6 +470,7 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
+    border-width: 0px;
   }
   .bottom_of_page {
     width: 777px;
@@ -577,8 +582,8 @@
     position: absolute;
     top: 18px;
     left: 635px;
-    font-family: Proxima Nova;
-    font-weight: Regular;
+    font-family: Avenir;
+    font-weight: Medium;
     font-size: 80px;
     opacity: 1;
     text-align: center;
@@ -761,6 +766,7 @@
     background: blue;
     position: absolute;
     z-index: 99999;
+    font-family: Avenir;
   }
 
   .multiplayer {
@@ -1055,7 +1061,7 @@
     z-index:0;
   }
 
-  .multiplayerPlayButton {
+  .PlayButton {
       width: 70px;
       height: 70px;
       background-repeat: no-repeat;
@@ -1067,9 +1073,20 @@
       left: 225px;
       overflow: hidden;
       z-index:0;
+      outline: none;
   }
 
-  .timerclass{
+  .singletimerclass{
+    height: 200px;
+    width: 100px;
+    top: 540px;
+    left: 507px;
+    position: absolute;
+    z-index : 999;
+    outline: none;
+  }
+
+  .multitimerclass{
     height: 200px;
     width: 100px;
     top: 100px;
@@ -1089,6 +1106,7 @@
     font-family: Proxima Nova;
     font-weight: Regular;
     font-size: 20px;
+    outline: none;
   }
 
   .addGuess {
@@ -1111,10 +1129,10 @@
   
   .services {
     justify-content: space-between;
-    top: 750px;
-    left: 300px;
-    z-index: 10
-    
+    top: 300px;
+    left: 0px;
+    z-index: 10;
+    /* position: absolute; */
   }
   .first-division {
     display: flex;
@@ -1124,6 +1142,27 @@
   }
 
   .output {
-    margin-left: 3rem;
+    margin: auto;
+    width: 50%;
     flex: 1;
+    top: 200px;
+    left: 390px;
+    position: absolute;
+  }
+
+  .output_list {
+    color: #fff;
+    z-index: 10;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .output_el {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    justify-content: center;
+    font-family: Avenir;
   }

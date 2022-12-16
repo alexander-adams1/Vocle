@@ -1,5 +1,5 @@
 import {useState}  from 'react';
-import Singleplayer from './Singleplayer';
+import Singleplayer from '../mainPages/Singleplayer';
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,9 +8,9 @@ import {
     Link,
   } from "react-router-dom";
 import { render } from '@testing-library/react';
-import Home from './Home';
+import Home from '../mainPages/Home';
 import Inputplaylistmulti from './inputplaylistmulti';
-import Multiplayer from './Multiplayer';
+import Multiplayer from '../mainPages/Multiplayer';
 
 const Questionmulti = () => 
 {

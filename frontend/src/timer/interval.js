@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const interval = (delay = 0) => /** @param {() => void} callback */ (
+export const interval = (delay = 0) => (
   callback
 ) =>
   useEffect(() => {
