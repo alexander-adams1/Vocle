@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import * as home from '../mainPages/Home.js';
 import Multiplayer, {TEXT_Submit_button} from '../mainPages/Multiplayer';
-import Singleplayer, {TEXT_Submit_button_singleplayer} from '../mainPages/Singleplayer';
+import Addsong, {TEXT_Submit_button_singleplayer} from '../gameComponents/addGuess'
+
 
 // defaultHTML = `<div className="v1_3">
 // <div className="v122_910">
@@ -33,8 +34,8 @@ test('render multiplayer', () => {
   const inputButton = screen.getAllByRole("Submit", {name: TEXT_Submit_button})
 });
 
-test('render singleplayer', () => {
-  render(<Singleplayer />)
+test('render submit singleplayer', () => {
+  render(<Addsong />)
   const inputButton = screen.getAllByRole("Submit", {name: TEXT_Submit_button_singleplayer})
 });
 

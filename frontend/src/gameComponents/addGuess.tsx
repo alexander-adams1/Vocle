@@ -8,6 +8,8 @@ import { render } from '@testing-library/react';
 import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';
 
+export const TEXT_Submit_button_singleplayer = "Submit-button"
+
 // Adds the song guess to the screen
 function Addsong() {
   // Initializes an empty array to keep track of the songs
@@ -58,7 +60,7 @@ function Addsong() {
         <div className="services">
           <div className="first-division">
             <div className="v54_92">
-              <button className="v54_91" role="Submit" onClick={handleServiceAdd} ><span className="v54_90">SUBMIT</span>
+              <button className="v54_91" role="Submit" aria-label={TEXT_Submit_button_singleplayer} onClick={handleServiceAdd} ><span className="v54_90">SUBMIT</span>
               </button>
             </div>
             <div className="v54_93"><button className="v54_94" onClick={handleNullSongAdd}>

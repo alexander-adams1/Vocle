@@ -14,7 +14,7 @@ import Addsong from '../gameComponents/addGuess';
 import playAudio from '../audioImplementation/AudioPlayer';
 
 
-export const TEXT_Submit_button_singleplayer = "Submit-button"
+
 class Singleplayer extends Component {
     state = {
         displayAnswer: false

@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
+import Home from './mainPages/Home';
 import React, {useState,  SetStateAction, Component } from 'react'
-import Singleplayer from './Singleplayer';
-import Multiplayer from './Multiplayer';
-import playAudio from '../audioImplementation/AudioPlayer';
+import Singleplayer from './mainPages/Singleplayer';
+import Multiplayer from './mainPages/Multiplayer';
+import playAudio from './audioImplementation/AudioPlayer';
 
 class App extends Component{
   render() {
