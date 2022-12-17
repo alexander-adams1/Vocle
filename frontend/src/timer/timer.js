@@ -1,8 +1,9 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import playAudio from '../audioImplementation/AudioPlayer';
+import { interval } from "./interval";
 
-const singleMusicLength = 4
+const singleMusicLength = 7
 const multiMusicLength = 15
 const songURL = 'https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d'
 

@@ -20,6 +20,8 @@ function Addsong() {
   var [service, setService] = useState<{ song: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
+  const [interval, setInterval] = useState([2, 4, 8, 12, 20, 30]);
+
   const handleServiceAdd = () => {
     console.log("song called")
     // Resets newSong
@@ -46,6 +48,8 @@ function Addsong() {
             // TODO: Add method for bringing up the modal and ending the round
           } else if (service.length < 5) {
             setService([...service, { song: newSong, isCorrect: 0 }]);
+            const newNumbers = interval.slice(1);
+            setInterval(newNumbers);
             // generateAccessToken().then(response => console.log(response))
           } else {
             // TODO: add this code into restart game --> service.splice(0, service.length);
@@ -60,11 +64,12 @@ function Addsong() {
 
   };
   const handleNullSongAdd = () => {
-    console.log("called")
     if (!gameOver) {
       // Adds to the list of guesses if it's under 6 (the amount that's in the single player game)
       if (service.length < 5) {
         setService([...service, { song: 'Guess skipped', isCorrect: 2 }]);
+        const newNumbers = interval.slice(1);
+        setInterval(newNumbers);
       } else {
         // Otherwise clears the list
         // TODO: add this code into restart game --> service.splice(0, service.length);
@@ -79,7 +84,6 @@ function Addsong() {
     <>
       <div className="services">
         <div className="first-division">
-
           <div className="v54_92">
             <button className="v54_91" onClick={handleServiceAdd} ><span className="v54_90" role="submit">SUBMIT</span>
             </button>
