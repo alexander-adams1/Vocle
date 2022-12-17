@@ -127,7 +127,7 @@
     top: 19px;
     left: 613px;
     font-family: Avenir;
-    font-weight: Medium;
+    font-weight: bold;
     font-size: 80px;
     opacity: 1;
     text-align: center;
@@ -583,7 +583,7 @@
     top: 18px;
     left: 635px;
     font-family: Avenir;
-    font-weight: Medium;
+    font-weight: bold;
     font-size: 80px;
     opacity: 1;
     text-align: center;
@@ -1095,18 +1095,36 @@
     z-index : 999;
   }
 
-  .greenRectangle {
+  .singlegreenRectangle {
     height: 30px;
-    width: 100px;
-    color: green;
+    width: 500px;
+    color: rgba(59,183,101,1);
     position: absolute;
-    top: 150px;
-    left: 220px;
+    top: 155px;
+    left: 35px;
     z-index: 1000;
-    font-family: Proxima Nova;
+    font-family: Avenir;
     font-weight: Regular;
-    font-size: 20px;
+    font-size: 40px;
     outline: none;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .multigreenRectangle {
+    height: 30px;
+    width: 500px;
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 145px;
+    left: 35px;
+    z-index: 1000;
+    font-family: Avenir;
+    font-weight: Regular;
+    font-size: 40px;
+    outline: none;
+    justify-content: center;
+    margin: 5px;
   }
 
   .addGuess {
@@ -1126,7 +1144,7 @@
     font-size: 80px;
     overflow: hidden;
   }
-
+  
   .services {
     justify-content: space-between;
     top: 300px;
@@ -1157,7 +1175,7 @@
     text-align: center;
   }
   
-  .output_el {
+  .output_el-0 {
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
     margin: 5px;
@@ -1165,4 +1183,231 @@
     min-width: 300px;
     justify-content: center;
     font-family: Avenir;
+    color: red;
+  }
+
+  .output_el-1 {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    justify-content: center;
+    font-family: Avenir;
+    color: rgb(62, 194, 106);
+  }
+
+  .output_el-2 {
+    display: inline-block;
+    border: 1px solid rgba(59,183,101,1);
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    justify-content: center;
+    font-family: Avenir;
+    color: white;
+  }
+
+  .game-over-screen {
+    width: 100%;
+    height: 982px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .album-cover {
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 102px;
+    left: 624px;
+    overflow: hidden;
+  }
+  .song-name {
+    width: 403px;
+    /* color: url("../images/v172_10.png"); */
+    color: rgba(217,217,217,1);
+    position: absolute;
+    top: 400px;
+    left: 554px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .artist-name {
+    width: 403px;
+    /* color: url("../images/v172_10.png"); */
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 450px;
+    left: 554px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .return-home-class {
+    width: 264px;
+    height: 121px;
+    /* background: url("../images/v172_14.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 144px;
+    overflow: hidden;
+  }
+  .return-home-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .home-button-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .play-again-class {
+    width: 264px;
+    height: 121px;
+    /* background: url("../images/v173_15.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 1104px;
+    overflow: hidden;
+  }
+  .play-again-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .play-again-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .share-button-class {
+    width: 264px;
+    height: 121px;
+    /* background: url("../images/v173_18.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 801px;
+    left: 624px;
+    overflow: hidden;
+  }
+  .share-button {
+    width: 264px;
+    height: 121px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+  }
+  .share-button-label {
+    width: 189px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 29px;
+    left: 37px;
+    font-family: Avenir;
+    font-weight: Heavy;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .better-luck-class {
+    width: 402px;
+    height: 135px;
+    /* background: url("../images/v182_75.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 606px;
+    left: 554px;
+    overflow: hidden;
+  }
+  .v182_74 {
+    width: 402px;
+    height: 135px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .better-luck-label {
+    width: 402px;
+    color: rgba(195,201,197,1);
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
   }

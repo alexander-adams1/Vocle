@@ -58,7 +58,6 @@ const Questionmulti = () =>
             </button>
             </div>
         </div>
-            
     )
     }
     
