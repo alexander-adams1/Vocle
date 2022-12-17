@@ -18,7 +18,8 @@ async function generateAccessToken() : Promise<string> {
     })
 }
 
-async function generateTrack(playlistURL : string) : Promise<string> {
+async function generateTrack(playlistURL : string) : Promise<Map<string, string>> {
+    var dataArray = new Map<string, string>();
     const accessToken : string = await generateAccessToken()
     console.log(accessToken)
     const playlistID = playlistURL.split('/').slice(-1)[0]
@@ -26,18 +27,26 @@ async function generateTrack(playlistURL : string) : Promise<string> {
         try {
             const res = await fetch(`http://localhost:3232/GenerateTrack?accessToken=${accessToken}&playlistID=${playlistID}`)
             const response = await res.json()
-            if (response.result === `Success`) {
-                resolve(response)
+            if (response.Result === `Success`) {
+                dataArray.set(`Response`, response.Result)
+                dataArray.set(`AlbumURL`, response.AlbumURL)
+                dataArray.set(`Track name`, response.Track)
+                dataArray.set(`TrackURL`, response.TrackURL)
+                dataArray.set(`Track and Artists List`, response.TracksandArtistsList)
+                resolve(dataArray)
             }
-            else if (response.result === `Error`) {
-                resolve(response.Track)
+            else if (response.Result === `Error`) {
+                dataArray.set(`Response`, response.Result)
+                resolve(dataArray)
             }
             else {
-                resolve(`An error occured while trying to generate a random song`)
+                dataArray.set(`Response`, response.Result)
+                resolve(dataArray)
             }
         }
         catch (error) {
-            resolve(`Could not connect to API server`)
+            dataArray.set(`Response`, `Invalid playlist`)
+            resolve(dataArray)
         }
     })
 }
