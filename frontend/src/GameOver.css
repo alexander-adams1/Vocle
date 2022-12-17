@@ -1,0 +1,231 @@
+.game-over-screen {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .album-cover {
+    width: 20vw;
+    height: 20vw;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 10vh;
+    left: 40vw;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .song-name {
+    width: 25vw;
+    /* color: url("../images/v172_10.png"); */
+    color: rgba(217,217,217,1);
+    position: absolute;
+    top: 50vh;
+    left: 37.5vw;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }
+  .artist-name {
+    width: 20vw;
+    /* color: url("../images/v172_10.png"); */
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 56vh;
+    left: 40vw;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }
+  .return-home-class {
+    width: 20vw;
+    height: 15vh;
+    /* background: url("../images/v172_14.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 81.75vh;
+    left: 144px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .return-home-button {
+    width: 18vw;
+    height: 12vh;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: fixed;
+    top: 81.75vh;
+    left: 8.5vw;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .home-button-label {
+    width: 15px;
+    color: rgba(0,0,0,1);
+    position: fixed;
+    top: 85vh;
+    left: 14.5vw;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }
+  .home-button-label:hover{
+    color: rgba(59,183,101,1)
+  }
+  .play-again-class {
+    width: 20vw;
+    height: 18vh;
+    /* background: url("../images/v173_15.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: fixed;
+    top: 80vh;
+    left: 75vw;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .play-again-button {
+    width: 18vw;
+    height: 12vh;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: fixed;
+    top: 81.75vh;
+    left: 75vw;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .play-again-label {
+    width: 15vw;
+    color: rgba(0,0,0,1);
+    position: fixed;
+    top: 85vh;
+    left: 76.75vw;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }
+  .play-again-label:hover{
+    color: rgba(59,183,101,1)
+  }
+
+  .share-button-class {
+    width: 20vw;
+    height: 18vh;
+    /* background: url("../images/v173_18.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: fixed;
+    top: 81.75vh;
+    left: 624px;
+    overflow: hidden;
+    z-index: 9999999;
+  }
+  
+  .share-button {
+    width: 18vw;
+    height: 12vh;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: fixed;
+    top: 81.75vh;
+    left: 41vw;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  
+  .share-button-label {
+    width: 15vw;
+    color: rgba(0,0,0,1);
+    position: fixed;
+    top: 85vh;
+    left: 42.5vw;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }
+  .share-button-label:hover{
+    color: rgba(59,183,101,1)
+  }
+  .better-luck-class {
+    width: 402px;
+    height: 135px;
+    /* background: url("../images/v182_75.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 606px;
+    left: 554px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .v182_74 {
+    width: 402px;
+    height: 135px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    z-index: 999999;
+  }
+  .better-luck-label {
+    width: 20vw;
+    color: rgba(195,201,197,1);
+    position: fixed;
+    top: 68vh;
+    left: 40vw;
+    font-family: Avenir;
+    font-weight: Medium;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+    z-index: 999999;
+  }

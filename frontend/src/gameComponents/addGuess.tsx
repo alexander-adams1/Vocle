@@ -9,6 +9,7 @@ import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import GameOverScreen from '../GameOver';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
@@ -98,7 +99,9 @@ function Addsong() {
           </ul>
         ))}
       </div>
-
+      <div className="open-game-over">
+        {gameOver && <GameOverScreen isGameOver={gameOver}/>}
+      </div>
     </>
 
   )
