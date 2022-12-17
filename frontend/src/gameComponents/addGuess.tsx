@@ -99,7 +99,7 @@ function Addsong() {
         ))}
       </div>
       <div className="open-game-over">
-        {gameOver && <GameOverScreen isGameOver={gameOver}/>}
+        {gameOver && <GameOverScreen win={win}/>}
       </div>
       <div><SingleTimer singleInterval={interval}/></div>
     </>

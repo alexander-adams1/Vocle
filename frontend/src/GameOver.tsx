@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import "./GameOver.css";
 
-export default function GameOverScreen({isGameOver}: {isGameOver: boolean}) {
-    const [imageURL, setImageURL] = useState('')
-    const [songTitle, setSongTitle] = useState('')
-    const [artistName, setArtistName] = useState('')
+export default function GameOverScreen({win}: {win: boolean}) {
+    const [imageURL, setImageURL] = useState("https://upload.wikimedia.org/wikipedia/en/c/c6/Die_Lit_by_Playboi_Carti.jpg")
+    const [songTitle, setSongTitle] = useState('Shoota (feat. Lil Uzi Vert)')
+    const [artistName, setArtistName] = useState('Playboi Carti')
 
     const navigate = useNavigate();
     const navigateHome = () => {
@@ -17,15 +17,14 @@ export default function GameOverScreen({isGameOver}: {isGameOver: boolean}) {
     }
 
     //need to set imageURL, songTitle, and artistName thru API calls to the backend.
-
     
     return (
         <div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
             {/* album cover will be retrieved from API call */}
-            <img className="album-cover" id = "album-cover" src = "https://upload.wikimedia.org/wikipedia/en/c/c6/Die_Lit_by_Playboi_Carti.jpg"></img>
+            <img className="album-cover" id = "album-cover" src = {imageURL}></img>
             {/* song name and artist will be retrieved from API call */}
-            <p className="song-name">Shoota (feat. Lil Uzi Vert)</p>
-            <p className="artist-name">Playboi Carti</p>
+            <p className="song-name">{songTitle}</p>
+            <p className="artist-name">{artistName}</p>
             <div className="return-home-class" onClick={navigateHome}>
                 <div className="return-home-button" ></div>
                 <span className="home-button-label" aria-label="home button">Home</span></div>
@@ -36,9 +35,9 @@ export default function GameOverScreen({isGameOver}: {isGameOver: boolean}) {
                         <div className="share-button"></div>
                         <span className="share-button-label">Share</span>
                         </div> */}
-                    <div className="better-luck-class"><div className="v182_74"></div><span className="better-luck-label">You didn't get this Vocle. Better luck next time!</span></div>
+                    {!win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You didn't get this Vocle. Better luck next time!</span></div>}
+                    {win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You win!</span></div>}
         </div>
     )
-    
     
 }

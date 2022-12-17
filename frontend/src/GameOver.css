@@ -94,6 +94,7 @@
     z-index: 999999;
   }
   .home-button-label:hover{
+    cursor: pointer;
     color: rgba(59,183,101,1)
   }
   .play-again-class {
@@ -140,6 +141,7 @@
     z-index: 999999;
   }
   .play-again-label:hover{
+    cursor: pointer;
     color: rgba(59,183,101,1)
   }
 
@@ -191,7 +193,7 @@
   .share-button-label:hover{
     color: rgba(59,183,101,1)
   }
-  .better-luck-class {
+  .end-game-class {
     width: 402px;
     height: 135px;
     /* background: url("../images/v182_75.png"); */
@@ -216,7 +218,7 @@
     overflow: hidden;
     z-index: 999999;
   }
-  .better-luck-label {
+  .end-game-label {
     width: 20vw;
     color: rgba(195,201,197,1);
     position: fixed;
