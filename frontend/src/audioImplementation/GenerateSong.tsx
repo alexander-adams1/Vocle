@@ -30,7 +30,7 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, string>
             if (response.Result === `Success`) {
                 dataArray.set(`Response`, response.Result)
                 dataArray.set(`AlbumURL`, response.AlbumURL)
-                dataArray.set(`Track name`, response.Track)
+                dataArray.set(`Track Name`, response.Track)
                 dataArray.set(`TrackURL`, response.TrackURL)
                 dataArray.set(`Track and Artists List`, response.TracksandArtistsList)
                 resolve(dataArray)

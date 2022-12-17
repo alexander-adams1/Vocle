@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { resultMap } from './overlays/inputplaylistsingle';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {

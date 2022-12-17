@@ -11,10 +11,11 @@ import { generateTrack, generateAccessToken } from '../audioImplementation/Gener
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import GameOverScreen from '../GameOver';
 import { SingleTimer } from '../timer/timer';
+import { resultMap } from '../overlays/inputplaylistsingle';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
-const correctSong = "How Long - Charlie Puth"
+const correctSong = resultMap.get(`Track Name`)
 
 // Adds the song guess to the screen
 function Addsong() {
