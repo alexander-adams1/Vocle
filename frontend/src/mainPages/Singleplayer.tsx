@@ -76,7 +76,7 @@ class Singleplayer extends Component {
                     {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                     {/* <div className="v54_111"></div> */}
                 </div>
-                <div className="v71_15"><span className="v71_13">Time Elapsed: 2 Seconds</span></div><div><GoHome /> </div></div>
+                <div><GoHome /> </div></div>
         )
     }
 }

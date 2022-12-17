@@ -1095,18 +1095,36 @@
     z-index : 999;
   }
 
-  .greenRectangle {
+  .singlegreenRectangle {
     height: 30px;
-    width: 100px;
-    color: green;
+    width: 500px;
+    color: rgba(59,183,101,1);
     position: absolute;
-    top: 150px;
-    left: 220px;
+    top: 155px;
+    left: 35px;
     z-index: 1000;
-    font-family: Proxima Nova;
+    font-family: Avenir;
     font-weight: Regular;
-    font-size: 20px;
+    font-size: 40px;
     outline: none;
+    justify-content: center;
+    margin: 5px;
+  }
+
+  .multigreenRectangle {
+    height: 30px;
+    width: 500px;
+    color: rgba(59,183,101,1);
+    position: absolute;
+    top: 145px;
+    left: 35px;
+    z-index: 1000;
+    font-family: Avenir;
+    font-weight: Regular;
+    font-size: 40px;
+    outline: none;
+    justify-content: center;
+    margin: 5px;
   }
 
   .addGuess {
