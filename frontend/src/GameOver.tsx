@@ -4,9 +4,9 @@ import { resultMap } from './overlays/inputplaylistsingle';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
-    const [imageURL, setImageURL] = useState("https://upload.wikimedia.org/wikipedia/en/c/c6/Die_Lit_by_Playboi_Carti.jpg")
-    const [songTitle, setSongTitle] = useState('Shoota (feat. Lil Uzi Vert)')
-    const [artistName, setArtistName] = useState('Playboi Carti')
+    const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
+    const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
+    const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
 
     const navigate = useNavigate();
     const navigateHome = () => {

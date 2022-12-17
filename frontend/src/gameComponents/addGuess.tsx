@@ -15,7 +15,7 @@ import { resultMap } from '../overlays/inputplaylistsingle';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
-const correctSong = resultMap.get(`Track Name`)
+const correctSong = resultMap.get(`Track Answer`)
 
 // Adds the song guess to the screen
 function Addsong() {

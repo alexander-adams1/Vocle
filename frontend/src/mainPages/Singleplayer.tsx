@@ -13,8 +13,6 @@ import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addG
 
 import playAudio from '../audioImplementation/AudioPlayer';
 
-
-
 class Singleplayer extends Component {
     state = {
         displayAnswer: false
