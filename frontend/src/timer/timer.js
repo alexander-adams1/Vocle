@@ -1,16 +1,16 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import playAudio from '../audioImplementation/AudioPlayer';
-import { interval } from "./interval";
 
-const singleMusicLength = 7
 const multiMusicLength = 15
 const songURL = 'https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d'
 
-export const SingleTimer = () => {
+export const SingleTimer = (singleInterval) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [running, setRunning] = useState(false);
+
+  const [interval, setInterval] = useState([1, 2, 4, 8, 15, 30]);
 
   const start = () => {
     audioRef.current.currentTime = 0;
@@ -26,14 +26,14 @@ export const SingleTimer = () => {
     setCurrentTime(audioRef.current.currentTime);
   };
   useEffect(() => {
-    if (currentTime > singleMusicLength && running) {
+    if ((currentTime > interval[Object.values(singleInterval)[0]] && running) || currentTime >= audioRef.current.duration) {
       pause();
     }
   }, [currentTime]);
   return (
     <div className="singletimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
-      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      <div className="PlayButton" aria-label="click to toggle play"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className={"button_image-" + running}></button></div> 
       </div>    
     <div className="singlegreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
     </div>

@@ -457,11 +457,26 @@
     outline: none;
     border-width: 0px;
   }
-  .v54_100 {
+  .button_image-false {
     width: 70px;
     height: 70px;
     outline: none;
     background: url("singleplayerImages/v54_100.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    border-width: 0px;
+  }
+  .button_image-true {
+    width: 70px;
+    height: 70px;
+    outline: none;
+    background: url("singleplayerImages/Pause-Button-Transparent.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -788,7 +803,20 @@
     background-size: cover;
     opacity: 1;
     position: absolute;
-    top: 93vh;
+    top: 91vh;
+    left: 367px;
+    overflow: hidden;
+    z-index:10;
+  }
+  .dropdown_bar_multi {
+    width: 800px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 97vh;
     left: 367px;
     overflow: hidden;
     z-index:10;
@@ -1165,9 +1193,10 @@
     margin: auto;
     width: 50%;
     flex: 1;
-    top: 11vw;
-    left: 390px;
+    top: 10vw;
+    left: 363px;
     position: absolute;
+    align-items: center;
   }
 
   .output_list {
@@ -1180,34 +1209,46 @@
   .output_el-0 {
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
-    margin: 0.05vw;
-    padding: 100px;
-    min-width: 300px;
+    margin: 1px;
+    padding: 10px;
+    width: 700px;
     justify-content: center;
     font-family: Avenir;
     color: red;
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .output_el-1 {
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
-    margin: 0.05vw;
+    margin: 1px;
     padding: 10px;
-    min-width: 300px;
+    width: 700px;
     justify-content: center;
     font-family: Avenir;
     color: rgb(62, 194, 106);
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .output_el-2 {
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
-    margin: 0.05vw;
+    margin: 1px;
     padding: 10px;
-    min-width: 300px;
+    width: 700px;
     justify-content: center;
     font-family: Avenir;
     color: white;
+    font-size: 17px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   

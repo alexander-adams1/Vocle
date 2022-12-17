@@ -61,9 +61,9 @@ class Singleplayer extends Component {
 
         return (
             <div className="v10_9" aria-label={TEXT_Submit_button_singleplayer}>
-                <SingleTimer />
+                
 
-                {/* </div><div className="v10_56"></div>
+                {/* <div className="v10_56"></div>
                         <div className="v54_89"></div>
                         <span className="v54_106" >All I Want For Christmas </span>
                         <div className="v10_57"></div><div className="v10_58"></div>

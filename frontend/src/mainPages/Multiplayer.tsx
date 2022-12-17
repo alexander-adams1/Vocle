@@ -32,7 +32,7 @@ class Multiplayer extends Component {
         return (
             <div className="multiplayer" aria-label="This is the page for multiplayer Vocle">
                 <MultiTimer />
-                <div className="dropdown_bar" aria-label="Input your guess here">
+                <div className="dropdown_bar_multi" aria-label="Input your guess here">
                     <Dropdown />
                     <div className="bottom_of_page" >
                     </div></div>

@@ -10,6 +10,7 @@ import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import GameOverScreen from '../GameOver';
+import { SingleTimer } from '../timer/timer';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
@@ -21,7 +22,7 @@ function Addsong() {
   var [service, setService] = useState<{ song: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
-  const [interval, setInterval] = useState([2, 4, 8, 12, 20, 30]);
+  const [interval, setInterval] = useState(0);
 
   const handleServiceAdd = () => {
     console.log("song called")
@@ -49,8 +50,7 @@ function Addsong() {
             // TODO: Add method for bringing up the modal and ending the round
           } else if (service.length < 5) {
             setService([...service, { song: newSong, isCorrect: 0 }]);
-            const newNumbers = interval.slice(1);
-            setInterval(newNumbers);
+            setInterval(interval + 1);
             // generateAccessToken().then(response => console.log(response))
           } else {
             // TODO: add this code into restart game --> service.splice(0, service.length);
@@ -67,8 +67,7 @@ function Addsong() {
       // Adds to the list of guesses if it's under 6 (the amount that's in the single player game)
       if (service.length < 5) {
         setService([...service, { song: 'Guess skipped', isCorrect: 2 }]);
-        const newNumbers = interval.slice(1);
-        setInterval(newNumbers);
+        setInterval(interval + 1);
       } else {
         // Otherwise clears the list
         // TODO: add this code into restart game --> service.splice(0, service.length);
@@ -102,6 +101,7 @@ function Addsong() {
       <div className="open-game-over">
         {gameOver && <GameOverScreen isGameOver={gameOver}/>}
       </div>
+      <div><SingleTimer singleInterval={interval}/></div>
     </>
 
   )
