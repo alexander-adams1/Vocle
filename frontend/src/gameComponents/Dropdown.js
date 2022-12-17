@@ -6,7 +6,7 @@ const Dropdown = () => {
     const mockOptions = [
         {value: "22 - Taylor Swift", label: "22 - Taylor Swift"}, 
         {value: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton", label: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton"},
-        {value: "Antidode - Travis Scott", label: "Antidote - Travis Scott"},
+        {value: "Antidote - Travis Scott", label: "Antidote - Travis Scott"},
         {value: "How Long - Charlie Puth", label: "How Long - Charlie Puth"}
     ]
      
