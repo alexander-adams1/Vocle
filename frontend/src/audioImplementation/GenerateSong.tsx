@@ -19,7 +19,7 @@ async function generateAccessToken() : Promise<string> {
 }
 
 async function generateTrack(playlistURL : string) : Promise<Map<string, string>> {
-    var dataArray = new Map<string, string>();
+    var dataMap = new Map<string, string>();
     const accessToken : string = await generateAccessToken()
     console.log(accessToken)
     const playlistID = playlistURL.split('/').slice(-1)[0]
@@ -28,25 +28,27 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, string>
             const res = await fetch(`http://localhost:3232/GenerateTrack?accessToken=${accessToken}&playlistID=${playlistID}`)
             const response = await res.json()
             if (response.Result === `Success`) {
-                dataArray.set(`Response`, response.Result)
-                dataArray.set(`AlbumURL`, response.AlbumURL)
-                dataArray.set(`Track name`, response.Track)
-                dataArray.set(`TrackURL`, response.TrackURL)
-                dataArray.set(`Track and Artists List`, response.TracksandArtistsList)
-                resolve(dataArray)
+                dataMap.set(`Response`, response.Result)
+                dataMap.set(`AlbumURL`, response.AlbumURL)
+                dataMap.set(`Track Answer`, response.Track)
+                dataMap.set(`TrackURL`, response.TrackURL)
+                dataMap.set(`Track and Artists List`, response.TracksandArtistsList)
+                dataMap.set(`TrackName`, response.TrackName)
+                dataMap.set(`ArtistName`, response.ArtistName)
+                resolve(dataMap)
             }
             else if (response.Result === `Error`) {
-                dataArray.set(`Response`, response.Result)
-                resolve(dataArray)
+                dataMap.set(`Response`, response.Result)
+                resolve(dataMap)
             }
             else {
-                dataArray.set(`Response`, response.Result)
-                resolve(dataArray)
+                dataMap.set(`Response`, response.Result)
+                resolve(dataMap)
             }
         }
         catch (error) {
-            dataArray.set(`Response`, `Invalid playlist`)
-            resolve(dataArray)
+            dataMap.set(`Response`, `Invalid playlist`)
+            resolve(dataMap)
         }
     })
 }

@@ -85,6 +85,8 @@ public class GenerateTrackHandler implements Route {
     this.responseMap.put("TracksandArtistsList", trackNameAndArtistList.toString());
     this.responseMap.put("TrackURL", trackURL);
     this.responseMap.put("AlbumURL", albumURL);
+    this.responseMap.put("TrackName", trackSongName);
+    this.responseMap.put("ArtistName", trackArtistName);
   }
 
   private int getRandomInteger(int min, int max) {
