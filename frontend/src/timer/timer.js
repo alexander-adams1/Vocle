@@ -1,78 +1,109 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import playAudio from '../audioImplementation/AudioPlayer';
+import { interval } from "./interval";
 
-export const SingleTimer = (
-    {
-    
-  seconds: initialSeconds = 0,
-  running: initiallyRunning = false
-} = {}) => {
-  const [seconds, setSeconds] = useState(initialSeconds);
-  const [running, setRunning] = useState(initiallyRunning);
-  const tick = useCallback(
-    () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
-    [running]
-  );
+const singleMusicLength = 7
+const multiMusicLength = 15
+const songURL = 'https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d'
+
+export const SingleTimer = () => {
+  const audioRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [running, setRunning] = useState(false);
+
   const start = () => {
+    audioRef.current.currentTime = 0;
     setRunning(true);
-    playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
+    audioRef.current.play()
   }
   const pause = () => {
     setRunning(false);
-    playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
+    audioRef.current.pause();
   }
-  const reset = () => setSeconds(0);
-  const stop = () => {
-    pause();
-    reset();
+
+  const updateCurrentTime = () => {
+    setCurrentTime(audioRef.current.currentTime);
   };
-  console.log('timer')
-  use1Second(tick);
+  useEffect(() => {
+    if (currentTime > singleMusicLength && running) {
+      pause();
+    }
+  }, [currentTime]);
   return (
     <div className="singletimerclass">
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
       </div>    
-    <div className="greenRectangle"> {seconds} seconds </div>
+    <div className="singlegreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
     </div>
   )
 };
 
-export const MultiTimer = (
-  {
-  
-seconds: initialSeconds = 0,
-running: initiallyRunning = false
-} = {}) => {
-const [seconds, setSeconds] = useState(initialSeconds);
-const [running, setRunning] = useState(initiallyRunning);
-const tick = useCallback(
-  () => (running ? setSeconds((seconds) => seconds + 1) : undefined),
-  [running]
-);
-const start = () => {
-  setRunning(true);
-  playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
-}
-const pause = () => {
-  setRunning(false);
-  playAudio(`https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d`, 4)
-}
-const reset = () => setSeconds(0);
-const stop = () => {
-  pause();
-  reset();
+export const MultiTimer = () => {
+  const audioRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [running, setRunning] = useState(false);
+  const [songOver, setSongOver] = useState(false);
+
+  const start = () => {
+    if (!songOver) {
+      setRunning(true);
+      audioRef.current.play()
+    }
+  }
+  const pause = () => {
+    setRunning(false);
+    audioRef.current.pause();
+  }
+
+  const updateCurrentTime = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
+
+  useEffect(() => {
+    if (currentTime > multiMusicLength && running) {
+      pause();
+      setSongOver(true);
+    }
+  }, [currentTime]);
+
+  if (running || songOver){
+    return (
+      <div className="multitimerclass">
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />  
+    <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
+    </div>
+    )
+    } else {
+      return (
+        <div className="multitimerclass">
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
+      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      </div>    
+    <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
+    </div>
+      )
+    }
 };
-console.log('timer')
-use1Second(tick);
-return (
-  <div className="multitimerclass">
-    <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
-    </div>    
-  <div className="greenRectangle"> {seconds} seconds </div>
-  </div>
-)
-};
+
+// CHANGE RETURN STATEMENT TO THIS WHEN FIGURE OUT HOW TO PAUSE AUDIO:
+
+// if (running){
+//   return (
+//     <div className="multitimerclass">
+//     <div className="multigreenRectangle"> Time Elapsed: {seconds} seconds </div>
+//     </div>
+//   )
+//   } else {
+//     return (
+//       <div className="multitimerclass">
+//         <div className="PlayButton" aria-label="click to play the song"> <div onClick={start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+//         </div>    
+//       <div className="multigreenRectangle"> Time Elapsed: {seconds} seconds </div>
+//       </div>
+//     )
+//   }
 
 // const Timer = () => {
 //         const [counter, setCounter] = useState(0);
