@@ -1,9 +1,10 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import playAudio from '../audioImplementation/AudioPlayer';
+import { resultMap } from "../overlays/inputplaylistsingle";
 
 const multiMusicLength = 15
-const songURL = 'https://p.scdn.co/mp3-preview/2e3c2595984f1beef0c621672469359157e98d3c?cid=fbf528e0063e4820b4fd570f750f297d'
+const songURL = resultMap.get(`TrackURL`)
 
 export const SingleTimer = (singleInterval) => {
   const audioRef = useRef(null);
@@ -79,7 +80,7 @@ export const MultiTimer = () => {
       return (
         <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
-      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
+      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
     </div>

@@ -780,6 +780,7 @@
   .dropdown_class {
     background: blue;
     position: absolute;
+    top: 75px;
     z-index: 99999;
     font-family: Avenir;
   }
@@ -809,8 +810,8 @@
     z-index:10;
   }
   .dropdown_bar_multi {
-    width: 800px;
-    height: 400px;
+    width: 780px;
+    height: 600px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -1193,10 +1194,13 @@
     margin: auto;
     width: 50%;
     flex: 1;
-    top: 10vw;
-    left: 363px;
+    top: 350px;;
+    left: 425px;
     position: absolute;
     align-items: center;
+    font-family: Proxima Nova;
+    font-weight: Regular;
+    font-size: 20px;
   }
 
   .output_list {

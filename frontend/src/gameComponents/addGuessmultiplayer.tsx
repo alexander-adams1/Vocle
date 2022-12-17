@@ -79,9 +79,11 @@ function AddSongMultiplayer() {
         if (typeof text.textContent === 'string') {
           newSong = text.textContent
         }
+        console.log(key)
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
           if (service.length < 6) {
+            
             setService([...service, { song: newSong, key }]);
             console.log(newSong, key)
             console.log(array.get(key))
@@ -106,7 +108,7 @@ return(
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
-            <li className="output_el"  aria-label={item.song} key={index}>{[item.song, item.key]}</li>
+            <li className="output_el"  aria-label={item.song} key={index}>{array.get(item.key) + ": " + item.song}</li>
           </ul>
         ))}
       </div>
