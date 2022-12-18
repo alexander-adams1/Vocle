@@ -9,12 +9,15 @@ import { ListComponent } from './listComponent';
 import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { keyboardKey } from '@testing-library/user-event';
+import GameOverScreen from '../GameOver';
 
 export const TEXT_Submit_button = "Submit-button"
 
+const correctSong: string = "22 - Taylor Swift"
 
 function AddSongMultiplayer() {
-    var [service, setService] = useState<{song: string, key: string }[]>([]);
+    var [service, setService] = useState<{song: string, key: string, isCorrect: number }[]>([]);
+    const [gameOver, setGameOver] = useState(false);
     let key = 'none'
    
     let array = new Map<string, string>()
@@ -22,12 +25,6 @@ function AddSongMultiplayer() {
     array.set('q', 'User1(q)')
     array.set('z', 'User3(z)')
     array.set('m', 'User4(m)')
-    // {
-    //   'p': 'User2(p)',
-    //   'q': 'User1(q)',
-    //   'z': 'User3(z)',
-    //   'm': 'User4(m)'
-    // }
 
     useEffect(() => {
       const handleKeyPress: EventListener = (event: KeyboardEventInit) => {
@@ -68,8 +65,9 @@ function AddSongMultiplayer() {
       // Resets newSong
       let newSong = '';
       // Gets the text from the dropdown
+      if(!gameOver) {
       const text: Element | null = document.getElementById('dropdown_class')
-      if (text == null) {
+      if (text === null) {
         console.log("No text in the text box")
   
       } else if (!(text instanceof HTMLDivElement)) {
@@ -82,22 +80,33 @@ function AddSongMultiplayer() {
         console.log(key)
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
-          if (service.length < 6) {
-            
-            setService([...service, { song: newSong, key }]);
+          
+          console.log(correctSong)
+          if(newSong === correctSong)
+          {
+            setGameOver(true);
+            setService([...service, {song: newSong, key, isCorrect: 1}])
+            key = 'none'
+          }
+          if (service.length < 3) {
+            setService([...service, { song: newSong, key, isCorrect: 1}]);
             console.log(newSong, key)
             console.log(array.get(key))
             array.delete(key)
             console.log(array.get(key))
             key = 'none'
           } else {
-            service.splice(0, service.length);
+            setService([...service, {song: newSong, key, isCorrect: 1}])
+            setGameOver(true);
+            console.log('called')
+            key = 'none'
             // TODO: Add method for bringing up the modal and ending the round
           }
         }
+      
       }
-  
-    };
+    }
+  };
 
   
 return(
@@ -108,10 +117,13 @@ return(
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
-            <li className="output_el"  aria-label={item.song} key={index}>{array.get(item.key) + ": " + item.song}</li>
+            <li className={"output_el-" + item.isCorrect}  aria-label={item.song} key={index}>{array.get(item.key) + ": " + item.song}</li>
           </ul>
         ))}
       </div>
+      {/* <div className="open-game-over">
+        {gameOver && <GameOverScreen win={win}/>}
+      </div> */}
       </> )
 }
 
