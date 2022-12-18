@@ -25,8 +25,6 @@ function Singleplayer() {
     //     })
     // }
 
-    var resultMapSinglePlayer = new Map<string, any>(); 
-
     // render() {
         
         const submitSong = () => {
