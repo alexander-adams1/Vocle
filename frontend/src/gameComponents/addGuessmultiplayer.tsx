@@ -18,10 +18,6 @@ function AddSongMultiplayer() {
     var [service, setService] = useState<{song: string, keyStroke: string, isCorrect: number }[]>([]);
     const [gameOver, setGameOver] = useState(false);
     const [win, setWin] = useState(false);
-    const [p, setp] = useState(false)
-    const [q, setq] = useState(false)
-    const [z, setz] = useState(false)
-    const [m, setm] = useState(false)
     const [key, setKey] = useState('none')
    
     let array = new Map<string, string>()
