@@ -23,7 +23,7 @@ public class GenerateTrackHandler implements Route {
   private String accessToken;
   private String playlistID;
   private String trackID;
-  private HashMap<String, String> responseMap;
+  private HashMap<String, Object> responseMap;
   public GenerateTrackHandler() {
     this.accessToken = "";
     this.playlistID = "";
@@ -82,7 +82,7 @@ public class GenerateTrackHandler implements Route {
       String artistName = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(i).getJSONObject("track").getJSONArray("artists").get(0).toString()).getString("name");
       trackNameAndArtistList.add(trackName + " - " + artistName);
     }
-    this.responseMap.put("TracksandArtistsList", trackNameAndArtistList.toString());
+    this.responseMap.put("TracksandArtistsList", trackNameAndArtistList);
     this.responseMap.put("TrackURL", trackURL);
     this.responseMap.put("AlbumURL", albumURL);
     this.responseMap.put("TrackName", trackSongName);

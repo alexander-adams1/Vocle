@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Map;
 
 /** Defines the serialize method; converting a Map to a JSON */
-public record GenericResponse(Map<String, String> results) {
+public record GenericResponse(Map<String, Object> results) {
 
   /**
    * Serializes the Map object passed to the record
@@ -16,10 +16,10 @@ public record GenericResponse(Map<String, String> results) {
    */
   public String serialize() {
     // responseMap is set to a defensive copy of the map passed
-    Map<String, String> responseMap = Collections.unmodifiableMap(this.results);
+    Map<String, Object> responseMap = Collections.unmodifiableMap(this.results);
     Moshi moshi = new Builder().build();
-    Type mapType = Types.newParameterizedType(Map.class, String.class, String.class);
-    JsonAdapter<Map<String, String>> jsonAdapter = moshi.adapter(mapType);
+    Type mapType = Types.newParameterizedType(Map.class, String.class, Object.class);
+    JsonAdapter<Map<String, Object>> jsonAdapter = moshi.adapter(mapType);
     return jsonAdapter.toJson(responseMap);
   }
 }

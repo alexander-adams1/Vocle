@@ -18,8 +18,8 @@ async function generateAccessToken() : Promise<string> {
     })
 }
 
-async function generateTrack(playlistURL : string) : Promise<Map<string, string>> {
-    var dataMap = new Map<string, string>();
+async function generateTrack(playlistURL : string) : Promise<Map<string, any>> {
+    var dataMap = new Map<string, any>();
     const accessToken : string = await generateAccessToken()
     console.log(accessToken)
     const playlistID = playlistURL.split('/').slice(-1)[0]
@@ -27,12 +27,14 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, string>
         try {
             const res = await fetch(`http://localhost:3232/GenerateTrack?accessToken=${accessToken}&playlistID=${playlistID}`)
             const response = await res.json()
+            console.log(response)
             if (response.Result === `Success`) {
                 dataMap.set(`Response`, response.Result)
                 dataMap.set(`AlbumURL`, response.AlbumURL)
                 dataMap.set(`Track Answer`, response.Track)
                 dataMap.set(`TrackURL`, response.TrackURL)
-                dataMap.set(`Track and Artists List`, response.TracksandArtistsList)
+                var songOptions : Array<string> = response.TracksandArtistsList
+                dataMap.set(`Tracks and Artists List`, songOptions)
                 dataMap.set(`TrackName`, response.TrackName)
                 dataMap.set(`ArtistName`, response.ArtistName)
                 resolve(dataMap)

@@ -11,7 +11,7 @@ import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import { generateTrack } from '../audioImplementation/GenerateSong';
 
-export var resultMap : Map<string, string> = new Map<string, string>();
+export var resultMap : Map<string, any> = new Map<string, any>();
 
 const Inputplaylistsingle = () =>
 {
@@ -28,6 +28,7 @@ const Inputplaylistsingle = () =>
         } else {
             console.log(text.value)
             resultMap  = await generateTrack(text.value)
+            console.log(resultMap.get(`Response`))
             if (resultMap.get(`Response`) === `Success`) {
                 setInvalid(false)
                 navigate('/singleplayer')

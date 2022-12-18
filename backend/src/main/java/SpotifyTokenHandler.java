@@ -30,7 +30,7 @@ public class SpotifyTokenHandler implements Route {
   @Override
   public Object handle(Request request, Response response)
       throws Exception {
-    HashMap<String, String> responseMap = new HashMap<>();
+    HashMap<String, Object> responseMap = new HashMap<>();
     QueryParamsMap QueryMapParameters = request.queryMap();
     if (!request.queryParams().equals(new HashSet<>(
         List.of()))) {

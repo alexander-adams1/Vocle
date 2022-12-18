@@ -4,6 +4,7 @@ import playAudio from '../audioImplementation/AudioPlayer';
 import { resultMap } from "../overlays/inputplaylistsingle";
 
 const multiMusicLength = 15
+console.log(resultMap.get(`TrackURL`))
 const songURL = resultMap.get(`TrackURL`)
 
 export const SingleTimer = (singleInterval) => {
@@ -14,6 +15,8 @@ export const SingleTimer = (singleInterval) => {
   const [interval, setInterval] = useState([1, 2, 4, 8, 15, 30]);
 
   const start = () => {
+    console.log(songURL)
+    console.log(resultMap.get(`TrackURL`))
     audioRef.current.currentTime = 0;
     setRunning(true);
     audioRef.current.play()
