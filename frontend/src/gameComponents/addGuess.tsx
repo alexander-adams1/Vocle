@@ -92,7 +92,7 @@ function Addsong() {
           </button></div>
         </div></div>
 
-      <div className="output" role="output" aria-label="guess added">
+      <div className="output1" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" >
             <li className={"output_el-" + item.isCorrect} aria-label={item.song} key={index}>{item.song}</li>
