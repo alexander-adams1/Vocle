@@ -1255,4 +1255,14 @@
     text-overflow: ellipsis;
   }
 
+  .output_multi-0 {
+    color: red;
+    font-size: 17px;
+  }
+
+  .output_multi-1 {
+    color: rgba(59,183,101,1);
+    
+  }
+
   
