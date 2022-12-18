@@ -11,8 +11,6 @@ import GoHome from '../navigateHome';
 
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
 
-import playAudio from '../audioImplementation/AudioPlayer';
-
 function Singleplayer() {
     // state = {
     //     displayAnswer: false
