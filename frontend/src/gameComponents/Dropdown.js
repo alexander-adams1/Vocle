@@ -6,14 +6,14 @@ import { resultMap } from "../resultMap";
 
 
 const Dropdown = () => {
-    const mockOptions = []
+    const songOptions = []
 
     resultMap.get(`Tracks and Artists List`).forEach((item, index) => {
         console.log(item)
         const trackDictionary = {};
         trackDictionary.value = item
         trackDictionary.label = item
-        mockOptions.push(trackDictionary)
+        songOptions.push(trackDictionary)
     })
 
     // mocking data taken from backend API request.
@@ -27,7 +27,7 @@ const Dropdown = () => {
     // loads the options from the mock options list based on what's being typed in the bar
     const loadOptions = (searchValue, callback) => {
         setTimeout(() => {
-            const filteredOptions = mockOptions.filter((option) => 
+            const filteredOptions = songOptions.filter((option) => 
             option.label.toLowerCase().includes(searchValue.toLowerCase())
             );
             console.log("loadOptions", searchValue, filteredOptions);

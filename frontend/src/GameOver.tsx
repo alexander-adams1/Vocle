@@ -22,8 +22,9 @@ export default function GameOverScreen({win}: {win: boolean}) {
     }
 
     async function getNewSong() {
-        setResultMap(await generateTrack(resultMap.get(`PlaylistID`)));
         {window.location.reload();}
+        setResultMap(await generateTrack(resultMap.get(`PlaylistID`)));
+        console.log(resultMap)
         console.log('back to singleplayer')
         // setShowGameOver(false)
     }
