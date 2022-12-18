@@ -4,8 +4,6 @@ import playAudio from '../audioImplementation/AudioPlayer';
 import { resultMap } from "../overlays/inputplaylistsingle";
 
 const multiMusicLength = 15
-console.log(resultMap.get(`TrackURL`))
-const songURL = resultMap.get(`TrackURL`)
 
 export const SingleTimer = (singleInterval) => {
   const audioRef = useRef(null);
@@ -15,7 +13,6 @@ export const SingleTimer = (singleInterval) => {
   const [interval, setInterval] = useState([1, 2, 4, 8, 15, 30]);
 
   const start = () => {
-    console.log(songURL)
     console.log(resultMap.get(`TrackURL`))
     audioRef.current.currentTime = 0;
     setRunning(true);
@@ -36,7 +33,7 @@ export const SingleTimer = (singleInterval) => {
   }, [currentTime]);
   return (
     <div className="singletimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to toggle play"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className={"button_image-" + running}></button></div> 
       </div>    
     <div className="singlegreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
@@ -75,14 +72,14 @@ export const MultiTimer = () => {
   if (running || songOver){
     return (
       <div className="multitimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />  
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
     <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
     </div>
     )
     } else {
       return (
         <div className="multitimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={songURL} />
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>

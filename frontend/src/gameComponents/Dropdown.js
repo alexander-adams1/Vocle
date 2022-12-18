@@ -1,14 +1,21 @@
 import { useState } from "react";
 import AsyncSelect from "react-select/async";
 import { resultMap } from "../overlays/inputplaylistsingle";
+
+
+
 const Dropdown = () => {
+    const mockOptions = []
+
+    resultMap.get(`Tracks and Artists List`).forEach((item, index) => {
+        console.log(item)
+        const trackDictionary = {};
+        trackDictionary.value = item
+        trackDictionary.label = item
+        mockOptions.push(trackDictionary)
+    })
+    console.log(mockOptions)
     // mocking data taken from backend API request.
-    const mockOptions = [
-        {value: "22 - Taylor Swift", label: "22 - Taylor Swift"}, 
-        {value: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton", label: "Can't Hold Us (feat. Ray Dalton) - Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Ray Dalton"},
-        {value: "Antidote - Travis Scott", label: "Antidote - Travis Scott"},
-        {value: "How Long - Charlie Puth", label: "How Long - Charlie Puth"}
-    ]
      
     // dictates which option in the list is to be returned (based on which was selected)
     const handleChange = (selectedOption) => {

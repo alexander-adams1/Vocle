@@ -33,8 +33,7 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, any>> {
                 dataMap.set(`AlbumURL`, response.AlbumURL)
                 dataMap.set(`Track Answer`, response.Track)
                 dataMap.set(`TrackURL`, response.TrackURL)
-                var songOptions : Array<string> = response.TracksandArtistsList
-                dataMap.set(`Tracks and Artists List`, songOptions)
+                dataMap.set(`Tracks and Artists List`, response.TracksandArtistsList)
                 dataMap.set(`TrackName`, response.TrackName)
                 dataMap.set(`ArtistName`, response.ArtistName)
                 resolve(dataMap)
