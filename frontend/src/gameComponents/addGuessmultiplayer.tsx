@@ -10,7 +10,7 @@ import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { keyboardKey } from '@testing-library/user-event';
 import GameOverScreen from '../GameOver';
-import { resultMapSinglePlayer } from '../overlays/inputplaylistsingle';
+import { resultMapMultiPlayer } from '../overlays/inputplaylistmulti';
 
 export const TEXT_Submit_button = "Submit-button"
 
@@ -83,9 +83,9 @@ function AddSongMultiplayer() {
         if (newSong !== 'Know the song? Search for the artist/title') {
           if(key !== 'none')
           {
-          console.log(resultMapSinglePlayer.get(`Track Answer`))
+          console.log(resultMapMultiPlayer.get(`Track Answer`))
           console.log(newSong)
-          if(newSong === resultMapSinglePlayer.get(`Track Answer`))
+          if(newSong === resultMapMultiPlayer.get(`Track Answer`))
           {
             setGameOver(true);
             setWin(true)
@@ -104,7 +104,7 @@ function AddSongMultiplayer() {
             // TODO: Add method for bringing up the modal and ending the round
           }
         }
-      
+      }
       }
     }
   };
