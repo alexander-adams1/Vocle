@@ -13,6 +13,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
     const navigate = useNavigate();
     const navigateHome = () => {
         navigate('/', {state:{id:1,name:'default'}})
+        setResultMap(new Map<string, any>);
     }
 
     const navigateSingleplayer = () => {
@@ -21,10 +22,10 @@ export default function GameOverScreen({win}: {win: boolean}) {
     }
 
     async function getNewSong() {
+        setResultMap(await generateTrack(resultMap.get(`PlaylistID`)));
         {window.location.reload();}
         console.log('back to singleplayer')
         // setShowGameOver(false)
-        setResultMap(await generateTrack(resultMap.get(`PlaylistID`)))
     }
 
    
@@ -43,7 +44,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
             <div className="return-home-class" onClick={navigateHome}>
                 <div className="return-home-button" ></div>
                 <span className="home-button-label" aria-label="home button">Home</span></div>
-                <div className="play-again-class" aria-label="play again button" onClick={navigateSingleplayer}>
+                <div className="play-again-class" aria-label="play again button" onClick={getNewSong}>
                     <div className="play-again-button" id = "play again button"></div>
                     <span className="play-again-label" id = "play again label">Play Again</span></div>
                 {/* <div className="share-button-class">
