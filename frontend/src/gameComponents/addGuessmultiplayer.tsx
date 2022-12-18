@@ -15,13 +15,13 @@ import { resultMapMultiPlayer } from '../overlays/inputplaylistmulti';
 export const TEXT_Submit_button = "Submit-button"
 
 function AddSongMultiplayer() {
-    var [service, setService] = useState<{song: string, key: string, isCorrect: number }[]>([]);
+    var [service, setService] = useState<{song: string, keyStroke: string, isCorrect: number }[]>([]);
     const [gameOver, setGameOver] = useState(false);
     const [win, setWin] = useState(false);
-    const [p, setp] = useState(true)
-    const [q, setq] = useState(true)
-    const [z, setz] = useState(true)
-    const [m, setm] = useState(true)
+    const [p, setp] = useState(false)
+    const [q, setq] = useState(false)
+    const [z, setz] = useState(false)
+    const [m, setm] = useState(false)
     const [key, setKey] = useState('none')
    
     let array = new Map<string, string>()
@@ -93,15 +93,15 @@ function AddSongMultiplayer() {
           {
             setGameOver(true);
             setWin(true)
-            setService([...service, { song: newSong, key, isCorrect: 1}]);
+            setService([...service, { song: newSong, keyStroke: key, isCorrect: 1}]);
             setKey('none')
           }
           else if (service.length < 3) {
-            setService([...service, { song: newSong, key, isCorrect: 0}]);
+            setService([...service, { song: newSong, keyStroke: key, isCorrect: 0}]);
             console.log(newSong, key)
             setKey('none')
           } else {
-            setService([...service, { song: newSong, key, isCorrect: 0}]);
+            setService([...service, { song: newSong, keyStroke: key, isCorrect: 0}]);
             setGameOver(true);
             console.log('called')
             setKey('none')
@@ -122,7 +122,7 @@ return(
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
-            <li className={"output_multi-" + item.isCorrect}  aria-label={item.song} key={index}>{array.get(item.key) + ": " + item.song}</li>
+            <li className={"output_multi-" + item.isCorrect}  aria-label={item.song} key={index}>{array.get(item.keyStroke) + ": " + item.song}</li>
           </ul>
         ))}
       </div>
