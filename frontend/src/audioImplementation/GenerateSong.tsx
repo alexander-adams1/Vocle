@@ -22,7 +22,8 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, any>> {
     var dataMap = new Map<string, any>();
     const accessToken : string = await generateAccessToken()
     console.log(accessToken)
-    const playlistID = playlistURL.split('/').slice(-1)[0]
+    const parsePlaylistID = playlistURL.split('?')[0]
+    const playlistID = parsePlaylistID.split('/').slice(-1)[0]
     return new Promise(async(resolve) => {
         try {
             const res = await fetch(`http://localhost:3232/GenerateTrack?accessToken=${accessToken}&playlistID=${playlistID}`)
