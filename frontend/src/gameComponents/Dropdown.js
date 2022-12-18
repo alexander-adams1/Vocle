@@ -2,30 +2,20 @@ import { useState } from "react";
 import AsyncSelect from "react-select/async";
 import { resultMapSinglePlayer } from "../overlays/inputplaylistsingle";
 import { resultMapMultiPlayer } from "../overlays/inputplaylistmulti";
+import { resultMap } from "../resultMap";
 
 
 const Dropdown = () => {
     const mockOptions = []
 
-    if (resultMapSinglePlayer.get(`Tracks and Artists List`) !== undefined) {
-        resultMapSinglePlayer.get(`Tracks and Artists List`).forEach((item, index) => {
-            console.log(item)
-            const trackDictionary = {};
-            trackDictionary.value = item
-            trackDictionary.label = item
-            mockOptions.push(trackDictionary)
-        })
-    }
+    resultMap.get(`Tracks and Artists List`).forEach((item, index) => {
+        console.log(item)
+        const trackDictionary = {};
+        trackDictionary.value = item
+        trackDictionary.label = item
+        mockOptions.push(trackDictionary)
+    })
 
-    else if (resultMapMultiPlayer.get(`Tracks and Artists List`) !== undefined) {
-        resultMapMultiPlayer.get(`Tracks and Artists List`).forEach((item, index) => {
-            console.log(item)
-            const trackDictionary = {};
-            trackDictionary.value = item
-            trackDictionary.label = item
-            mockOptions.push(trackDictionary)
-        })
-    }
     // mocking data taken from backend API request.
      
     // dictates which option in the list is to be returned (based on which was selected)

@@ -10,6 +10,8 @@ import {
 import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import Inputplaylistsingle from './inputplaylistsingle';
+import { setResultMap } from '../resultMap';
+import { generateTrack } from '../audioImplementation/GenerateSong';
 
 // Dictates the functionality for the modal that pops up when single player is clicked
 const Questionsingle = () => 
@@ -17,8 +19,9 @@ const Questionsingle = () =>
     const navigate = useNavigate();
 
     // Dictates functionality for routing to the singleplayer page (which gets called in onClick below)
-    const navigatetoSingleplayer = () => 
+    const navigatetoSingleplayer = async () => 
     {
+        setResultMap(await generateTrack(`https://open.spotify.com/playlist/37i9dQZEVXbLRQDuF5jeBp`))
         navigate('/singleplayer', {state:{id:1,name:'default'}})
     }
 

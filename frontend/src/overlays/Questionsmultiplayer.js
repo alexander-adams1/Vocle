@@ -11,13 +11,16 @@ import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import Inputplaylistmulti from './inputplaylistmulti';
 import Multiplayer from '../mainPages/Multiplayer';
+import { resultMap, setResultMap } from '../resultMap';
+import { generateTrack } from '../audioImplementation/GenerateSong';
 
 const Questionmulti = () => 
 {
     const navigate = useNavigate();
 
-    const navigatetoMultiplayer = () => 
+    const navigatetoMultiplayer = async () => 
     {
+        setResultMap(await generateTrack(`https://open.spotify.com/playlist/37i9dQZEVXbLRQDuF5jeBp`))
         navigate('/multiplayer', {state:{id:1,name:'default'}})
     }
 

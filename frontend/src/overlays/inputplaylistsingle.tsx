@@ -10,22 +10,7 @@ import {
 import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import { generateTrack } from '../audioImplementation/GenerateSong';
-
-export var resultMapSinglePlayer : Map<string, any>;
-resultMapSinglePlayer = new Map<string, any>();
-
-var prevPlaylistLink = ""
-export function setPrevPlaylistLink(newValue: string) {
-    prevPlaylistLink = newValue;
-}
-
-export function setResultMapSinglePlayer(newMap: Map<string, any>) {
-    resultMapSinglePlayer = newMap;
-}
-
-export function getPrevPlaylistLink() {
-    return prevPlaylistLink;
-}
+import { resultMap, setResultMap } from '../resultMap';
 
 // export const NewSongSingle = () => {
 //     const navigate = useNavigate();
@@ -59,11 +44,9 @@ const Inputplaylistsingle = () =>
             console.log(`Found element ${text}, but it wasn't an input`)
         } else {
             console.log(text.value)
-            setPrevPlaylistLink(text.value)
-            console.log(prevPlaylistLink)
-            resultMapSinglePlayer  = await generateTrack(text.value)
-            console.log(resultMapSinglePlayer.get(`Response`))
-            if (resultMapSinglePlayer.get(`Response`) === `Success`) {
+            setResultMap(await generateTrack(text.value))
+            console.log(resultMap.get(`Response`))
+            if (resultMap.get(`Response`) === `Success`) {
                 setInvalid(false)
                 navigate('/singleplayer')
             }

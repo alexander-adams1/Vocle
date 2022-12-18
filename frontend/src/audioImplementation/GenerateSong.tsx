@@ -37,6 +37,7 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, any>> {
                 dataMap.set(`Tracks and Artists List`, response.TracksandArtistsList)
                 dataMap.set(`TrackName`, response.TrackName)
                 dataMap.set(`ArtistName`, response.ArtistName)
+                dataMap.set(`PlaylistID`, playlistID)
                 resolve(dataMap)
             }
             else if (response.Result === `Error`) {

@@ -10,9 +10,7 @@ import {
 import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import { generateTrack } from '../audioImplementation/GenerateSong';
-
-export var resultMapMultiPlayer : Map<string, any>;
-resultMapMultiPlayer = new Map<string, any>();
+import { resultMap, setResultMap } from '../resultMap';
 
 const Inputplaylistmulti = () =>
 {
@@ -27,9 +25,9 @@ const Inputplaylistmulti = () =>
             console.log(`Found element ${text}, but it wasn't an input`)
         } else {
             console.log(text.value)
-            resultMapMultiPlayer  = await generateTrack(text.value)
-            console.log(resultMapMultiPlayer.get(`Response`))
-            if (resultMapMultiPlayer.get(`Response`) === `Success`) {
+            setResultMap(await generateTrack(text.value))
+            console.log(resultMap.get(`Response`))
+            if (resultMap.get(`Response`) === `Success`) {
                 setInvalid(false)
                 navigate('/multiplayer')
             }

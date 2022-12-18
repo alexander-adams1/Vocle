@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { resultMapSinglePlayer, getPrevPlaylistLink, setResultMapSinglePlayer} from './overlays/inputplaylistsingle';
+import { resultMap, setResultMap } from './resultMap';
 import {generateTrack} from './audioImplementation/GenerateSong';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
-    const [imageURL, setImageURL] = useState(resultMapSinglePlayer.get(`AlbumURL`))
-    const [songTitle, setSongTitle] = useState(resultMapSinglePlayer.get(`TrackName`))
-    const [artistName, setArtistName] = useState(resultMapSinglePlayer.get(`ArtistName`))
+    const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
+    const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
+    const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
 
     const [showGameOver, setShowGameOver] = useState(true)
     const navigate = useNavigate();
@@ -24,8 +24,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
         {window.location.reload();}
         console.log('back to singleplayer')
         // setShowGameOver(false)
-        const tempMap = await generateTrack(getPrevPlaylistLink())
-        setResultMapSinglePlayer(tempMap)
+        setResultMap(await generateTrack(resultMap.get(`PlaylistID`)))
     }
 
    
