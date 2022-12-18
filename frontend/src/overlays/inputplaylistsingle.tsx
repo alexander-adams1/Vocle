@@ -11,7 +11,8 @@ import { render } from '@testing-library/react';
 import Home from '../mainPages/Home';
 import { generateTrack } from '../audioImplementation/GenerateSong';
 
-export var resultMap : Map<string, any> = new Map<string, any>();
+export var resultMap : Map<string, any>;
+resultMap = new Map<string, any>();
 
 const Inputplaylistsingle = () =>
 {

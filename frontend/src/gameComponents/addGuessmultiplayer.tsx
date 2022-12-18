@@ -10,10 +10,9 @@ import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { keyboardKey } from '@testing-library/user-event';
 import GameOverScreen from '../GameOver';
+import { resultMap } from '../overlays/inputplaylistsingle';
 
 export const TEXT_Submit_button = "Submit-button"
-
-const correctSong: string = '22 - Taylor Swift'
 
 function AddSongMultiplayer() {
     var [service, setService] = useState<{song: string, key: string, isCorrect: number }[]>([]);
@@ -60,10 +59,6 @@ function AddSongMultiplayer() {
       };
   
       document.addEventListener('keydown', handleKeyPress);
-  
-      return () => {
-        document.removeEventListener('keydown', handleKeyPress);
-      };
     }, []);
 
     const handleServiceAdd = () => {
@@ -88,9 +83,9 @@ function AddSongMultiplayer() {
         if (newSong !== 'Know the song? Search for the artist/title') {
           if(key !== 'none')
           {
-          console.log(correctSong)
+          console.log(resultMap.get(`Track Answer`))
           console.log(newSong)
-          if(newSong === correctSong)
+          if(newSong === resultMap.get(`Track Answer`))
           {
             setGameOver(true);
             setWin(true)

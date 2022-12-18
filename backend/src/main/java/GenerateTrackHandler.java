@@ -73,7 +73,7 @@ public class GenerateTrackHandler implements Route {
     this.responseMap.put("Result", "Success");
     String trackSongName = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("name");
     String trackArtistName = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONArray("artists").get(0).toString()).getString("name");
-    this.trackID = (trackSongName + "-" + trackArtistName);
+    this.trackID = (trackSongName + " - " + trackArtistName);
     String trackURL = TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getString("preview_url");
     String albumURL = new JSONObject(TrackDataJSON.getJSONArray("items").getJSONObject(track_number).getJSONObject("track").getJSONObject("album").getJSONArray("images").get(0).toString()).getString("url");
     ArrayList<String> trackNameAndArtistList = new ArrayList<>();
