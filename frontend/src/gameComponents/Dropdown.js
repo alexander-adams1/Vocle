@@ -1,13 +1,13 @@
 import { useState } from "react";
 import AsyncSelect from "react-select/async";
-import { resultMap } from "../overlays/inputplaylistsingle";
+import { resultMapSinglePlayer } from "../overlays/inputplaylistsingle";
 
 
 
 const Dropdown = () => {
     const mockOptions = []
 
-    resultMap.get(`Tracks and Artists List`).forEach((item, index) => {
+    resultMapSinglePlayer.get(`Tracks and Artists List`).forEach((item, index) => {
         console.log(item)
         const trackDictionary = {};
         trackDictionary.value = item

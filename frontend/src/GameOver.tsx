@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { resultMap } from './overlays/inputplaylistsingle';
+import { resultMapSinglePlayer } from './overlays/inputplaylistsingle';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
-    const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
-    const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
-    const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
+    const [imageURL, setImageURL] = useState(resultMapSinglePlayer.get(`AlbumURL`))
+    const [songTitle, setSongTitle] = useState(resultMapSinglePlayer.get(`TrackName`))
+    const [artistName, setArtistName] = useState(resultMapSinglePlayer.get(`ArtistName`))
 
     const navigate = useNavigate();
     const navigateHome = () => {

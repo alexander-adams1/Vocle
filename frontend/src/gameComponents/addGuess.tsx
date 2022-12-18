@@ -11,14 +11,14 @@ import { generateTrack, generateAccessToken } from '../audioImplementation/Gener
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import GameOverScreen from '../GameOver';
 import { SingleTimer } from '../timer/timer';
-import { resultMap } from '../overlays/inputplaylistsingle';
+import { resultMapSinglePlayer } from '../overlays/inputplaylistsingle';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
 
 // Adds the song guess to the screen
 function Addsong() {
-  console.log(resultMap.get(`Track Answer`))
+  console.log(resultMapSinglePlayer.get(`Track Answer`))
   // Initializes an empty array to keep track of the songs
   var [service, setService] = useState<{ song: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
@@ -44,7 +44,7 @@ function Addsong() {
         }
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
-          if (newSong === resultMap.get(`Track Answer`)) {
+          if (newSong === resultMapSinglePlayer.get(`Track Answer`)) {
             setGameOver(true); // TODO: Set to false in reset method
             setWin(true); // TODO: Set to false in reset method
             setService([...service, { song: newSong, isCorrect: 1 }]);

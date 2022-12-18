@@ -10,7 +10,7 @@ import { stringify } from 'querystring';
 import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
 import { keyboardKey } from '@testing-library/user-event';
 import GameOverScreen from '../GameOver';
-import { resultMap } from '../overlays/inputplaylistsingle';
+import { resultMapSinglePlayer } from '../overlays/inputplaylistsingle';
 
 export const TEXT_Submit_button = "Submit-button"
 
@@ -83,9 +83,9 @@ function AddSongMultiplayer() {
         if (newSong !== 'Know the song? Search for the artist/title') {
           if(key !== 'none')
           {
-          console.log(resultMap.get(`Track Answer`))
+          console.log(resultMapSinglePlayer.get(`Track Answer`))
           console.log(newSong)
-          if(newSong === resultMap.get(`Track Answer`))
+          if(newSong === resultMapSinglePlayer.get(`Track Answer`))
           {
             setGameOver(true);
             setWin(true)

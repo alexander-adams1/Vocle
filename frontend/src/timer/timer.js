@@ -1,7 +1,8 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import playAudio from '../audioImplementation/AudioPlayer';
-import { resultMap } from "../overlays/inputplaylistsingle";
+import { resultMapSinglePlayer } from "../overlays/inputplaylistsingle";
+import { resultMapMultiPlayer } from "../overlays/inputplaylistmulti";
 
 const multiMusicLength = 15
 
@@ -13,7 +14,7 @@ export const SingleTimer = (singleInterval) => {
   const [interval, setInterval] = useState([1, 2, 4, 8, 15, 30]);
 
   const start = () => {
-    console.log(resultMap.get(`TrackURL`))
+    console.log(resultMapSinglePlayer.get(`TrackURL`))
     audioRef.current.currentTime = 0;
     setRunning(true);
     audioRef.current.play()
@@ -33,7 +34,7 @@ export const SingleTimer = (singleInterval) => {
   }, [currentTime]);
   return (
     <div className="singletimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMapSinglePlayer.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to toggle play"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className={"button_image-" + running}></button></div> 
       </div>    
     <div className="singlegreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
@@ -72,14 +73,14 @@ export const MultiTimer = () => {
   if (running || songOver){
     return (
       <div className="multitimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMapMultiPlayer.get(`TrackURL`)} />  
     <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
     </div>
     )
     } else {
       return (
         <div className="multitimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMapMultiPlayer.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
