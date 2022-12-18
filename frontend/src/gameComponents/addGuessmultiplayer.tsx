@@ -86,8 +86,6 @@ function AddSongMultiplayer() {
         console.log(key)
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
-          if(key !== 'none')
-          {
           console.log(correctSong)
           console.log(newSong)
           if(newSong === correctSong)
@@ -109,7 +107,7 @@ function AddSongMultiplayer() {
             // TODO: Add method for bringing up the modal and ending the round
           }
         }
-      }
+      
       }
     }
   };
