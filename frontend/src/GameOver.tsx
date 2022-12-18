@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { resultMapSinglePlayer, getNewSong } from './overlays/inputplaylistsingle';
+import { resultMapSinglePlayer} from './overlays/inputplaylistsingle';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
@@ -16,7 +16,6 @@ export default function GameOverScreen({win}: {win: boolean}) {
 
     const navigateSingleplayer = () => {
         {window.location.reload();}
-        getNewSong();
         console.log('back to singleplayer')
         // setShowGameOver(false)
 

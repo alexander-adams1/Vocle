@@ -68,15 +68,5 @@ const Inputplaylistsingle = () =>
     
 };
 
-export async function getNewSong() {
-    if (prevPlaylistLink == null) {
-        console.log('no previous playlist loaded')
-    }
-    else {
-        console.log(prevPlaylistLink)
-        resultMapSinglePlayer = await generateTrack(prevPlaylistLink)
-        console.log(resultMapSinglePlayer.get(`Response`))
-    }
-}
 
 export default Inputplaylistsingle;
