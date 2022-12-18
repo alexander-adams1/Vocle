@@ -79,6 +79,10 @@ function Addsong() {
     }
   };
 
+  const resetVisually = () => {
+    service.splice(0, service.length)
+  }
+
   return (
     <>
       <div className="services">
