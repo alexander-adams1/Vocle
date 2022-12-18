@@ -2,7 +2,6 @@ import { useState } from "react";
 import AsyncSelect from "react-select/async";
 import { resultMapSinglePlayer } from "../overlays/inputplaylistsingle";
 import { resultMapMultiPlayer } from "../overlays/inputplaylistmulti";
-import { resourceLimits } from "worker_threads";
 
 
 const Dropdown = () => {
