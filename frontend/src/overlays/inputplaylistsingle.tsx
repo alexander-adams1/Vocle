@@ -19,9 +19,31 @@ export function setPrevPlaylistLink(newValue: string) {
     prevPlaylistLink = newValue;
 }
 
+export function setResultMapSinglePlayer(newMap: Map<string, any>) {
+    resultMapSinglePlayer = newMap;
+}
+
 export function getPrevPlaylistLink() {
     return prevPlaylistLink;
 }
+
+// export const NewSongSingle = () => {
+//     const navigate = useNavigate();
+//     async function getNewSong() {
+//         if (prevPlaylistLink == null) {
+//             console.log('no previous playlist')
+//         }
+
+//         else{
+//             console.log(prevPlaylistLink)
+//             resultMapSinglePlayer = await generateTrack(prevPlaylistLink)
+//             if (resultMapSinglePlayer.get(`Response`) === `Success`) {
+//                 navigate('/')
+//                 navigate('/singleplayer')
+//             }
+//         }
+//     }
+// }
 
 const Inputplaylistsingle = () =>
 {

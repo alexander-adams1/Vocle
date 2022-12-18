@@ -13,26 +13,22 @@ import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addG
 
 import playAudio from '../audioImplementation/AudioPlayer';
 
-class Singleplayer extends Component {
-    state = {
-        displayAnswer: false
-    }
+function Singleplayer() {
+    // state = {
+    //     displayAnswer: false
+    // }
 
-    displayAnswerSingle = () => {
-        console.log('called')
-        this.setState({
-            displayAnswer: !this.state.displayAnswer
-        })
-    }
+    // displayAnswerSingle = () => {
+    //     console.log('called')
+    //     this.setState({
+    //         displayAnswer: !this.state.displayAnswer
+    //     })
+    // }
 
+    var resultMapSinglePlayer = new Map<string, any>(); 
 
-    render() {
+    // render() {
         
-
-        // if (this.state.displayAnswer) {
-        //     <div className="addGuess"> Skipped Guess</div>
-        // }
-
         const submitSong = () => {
             const text: Element | null = document.getElementById('greatness')
             if (text == null) {
@@ -47,15 +43,6 @@ class Singleplayer extends Component {
             }
             console.log("submit called")
         }
-
-        // const skipSong = () => {
-        //     console.log("song skipped")
-
-        //     return (
-        //         <div className="addGuess"> Skipped Song
-        //         </div>
-        //     )
-        // }
 
         return (
             <div className="v10_9" aria-label={TEXT_Submit_button_singleplayer}>
@@ -76,7 +63,7 @@ class Singleplayer extends Component {
                 </div>
                 <div><GoHome /> </div></div>
         )
-    }
+    // }
 }
 
 export default Singleplayer;

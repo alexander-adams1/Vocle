@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { resultMapSinglePlayer} from './overlays/inputplaylistsingle';
+import { resultMapSinglePlayer, getPrevPlaylistLink, setResultMapSinglePlayer} from './overlays/inputplaylistsingle';
+import {generateTrack} from './audioImplementation/GenerateSong';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
@@ -16,11 +17,18 @@ export default function GameOverScreen({win}: {win: boolean}) {
 
     const navigateSingleplayer = () => {
         {window.location.reload();}
-        console.log('back to singleplayer')
-        // setShowGameOver(false)
-
+        //
     }
 
+    async function getNewSong() {
+        {window.location.reload();}
+        console.log('back to singleplayer')
+        // setShowGameOver(false)
+        const tempMap = await generateTrack(getPrevPlaylistLink())
+        setResultMapSinglePlayer(tempMap)
+    }
+
+   
 
 
     //need to set imageURL, songTitle, and artistName thru API calls to the backend.

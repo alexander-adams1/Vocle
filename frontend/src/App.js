@@ -7,16 +7,20 @@ import playAudio from './audioImplementation/AudioPlayer';
 import GameOver from './GameOver';
 
 class App extends Component{
+  
   render() {
     console.log("app")
     // Contains information for which endpoint should render which page
+
+    const resultMapSingleplayer = new Map();
+
     return (
           <Routes>
             <Route path = "*" element={< Home />} />
             <Route path = "/singleplayer"
-              element={< Singleplayer />} />
+              element={<Singleplayer />} />
             <Route path = "/multiplayer"
-              element={< Multiplayer />} />
+              element={<Multiplayer />} />
             <Route path = "/gameover" element = {<GameOver />} />
           </Routes>
     )
