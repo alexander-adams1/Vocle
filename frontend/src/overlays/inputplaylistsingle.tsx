@@ -14,6 +14,15 @@ import { generateTrack } from '../audioImplementation/GenerateSong';
 export var resultMapSinglePlayer : Map<string, any>;
 resultMapSinglePlayer = new Map<string, any>();
 
+var prevPlaylistLink = ""
+export function setPrevPlaylistLink(newValue: string) {
+    prevPlaylistLink = newValue;
+}
+
+export function getPrevPlaylistLink() {
+    return prevPlaylistLink;
+}
+
 const Inputplaylistsingle = () =>
 {
     const navigate = useNavigate();
@@ -28,6 +37,8 @@ const Inputplaylistsingle = () =>
             console.log(`Found element ${text}, but it wasn't an input`)
         } else {
             console.log(text.value)
+            setPrevPlaylistLink(text.value)
+            console.log(prevPlaylistLink)
             resultMapSinglePlayer  = await generateTrack(text.value)
             console.log(resultMapSinglePlayer.get(`Response`))
             if (resultMapSinglePlayer.get(`Response`) === `Success`) {
@@ -40,6 +51,7 @@ const Inputplaylistsingle = () =>
             }
         }
     }
+
 
     console.log("its being called")
     return(
@@ -55,5 +67,16 @@ const Inputplaylistsingle = () =>
 
     
 };
+
+export async function getNewSong() {
+    if (prevPlaylistLink == null) {
+        console.log('no previous playlist loaded')
+    }
+    else {
+        console.log(prevPlaylistLink)
+        resultMapSinglePlayer = await generateTrack(prevPlaylistLink)
+        console.log(resultMapSinglePlayer.get(`Response`))
+    }
+}
 
 export default Inputplaylistsingle;

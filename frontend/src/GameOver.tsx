@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { resultMapSinglePlayer } from './overlays/inputplaylistsingle';
+import { resultMapSinglePlayer, getNewSong } from './overlays/inputplaylistsingle';
 import "./GameOver.css";
 
 export default function GameOverScreen({win}: {win: boolean}) {
@@ -8,19 +8,27 @@ export default function GameOverScreen({win}: {win: boolean}) {
     const [songTitle, setSongTitle] = useState(resultMapSinglePlayer.get(`TrackName`))
     const [artistName, setArtistName] = useState(resultMapSinglePlayer.get(`ArtistName`))
 
+    const [showGameOver, setShowGameOver] = useState(true)
     const navigate = useNavigate();
     const navigateHome = () => {
         navigate('/', {state:{id:1,name:'default'}})
     }
+
     const navigateSingleplayer = () => {
         {window.location.reload();}
+        getNewSong();
         console.log('back to singleplayer')
+        // setShowGameOver(false)
+
     }
+
+
 
     //need to set imageURL, songTitle, and artistName thru API calls to the backend.
     
     return (
-        <div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
+        <div>
+        {showGameOver && (<div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
             {/* album cover will be retrieved from API call */}
             <img className="album-cover" id = "album-cover" src = {imageURL}></img>
             {/* song name and artist will be retrieved from API call */}
@@ -38,7 +46,8 @@ export default function GameOverScreen({win}: {win: boolean}) {
                         </div> */}
                     {!win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You didn't get this Vocle. Better luck next time!</span></div>}
                     {win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You win!</span></div>}
-        </div>
+        </div>)}
+        </div>           
     )
     
 }
