@@ -785,6 +785,14 @@
     font-family: Avenir;
   }
 
+  .dropdown_class1 {
+    background: blue;
+    position: absolute;
+    top: 0px;
+    z-index: 99999;
+    font-family: Avenir;
+  }
+
   .multiplayer {
     width: 100%;
     height: 953px;

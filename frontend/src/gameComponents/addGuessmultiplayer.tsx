@@ -22,7 +22,7 @@ function AddSongMultiplayer() {
     const [q, setq] = useState(true)
     const [z, setz] = useState(true)
     const [m, setm] = useState(true)
-    let key = 'none'
+    const [key, setKey] = useState('none')
    
     let array = new Map<string, string>()
     array.set('p', 'User2(p)')
@@ -39,19 +39,19 @@ function AddSongMultiplayer() {
       if(key === 'none')
       {
         if (event.key === 'q') {
-            key = 'q'
+            setKey('q')
             console.log(key)
         }
         if (event.key === 'p') {
-          key = 'p'
+          setKey('p')
           console.log(key)
         }
        if (event.key === 'm') {
-        key = 'm'
+        setKey('m')
         console.log(key)
        }
         if (event.key === 'z') {
-          key = 'z'
+          setKey('z')
         console.log(key)
       }
     }
@@ -59,10 +59,14 @@ function AddSongMultiplayer() {
       };
   
       document.addEventListener('keydown', handleKeyPress);
+      return () => {
+        document.removeEventListener('keydown', handleKeyPress);
+      };
     }, []);
 
     const handleServiceAdd = () => {
       console.log("song called")
+      console.log(key)
       // Resets newSong
       let newSong = '';
       // Gets the text from the dropdown
@@ -78,7 +82,7 @@ function AddSongMultiplayer() {
         if (typeof text.textContent === 'string') {
           newSong = text.textContent
         }
-        console.log(key)
+        
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
           if(key !== 'none')
@@ -90,17 +94,17 @@ function AddSongMultiplayer() {
             setGameOver(true);
             setWin(true)
             setService([...service, { song: newSong, key, isCorrect: 1}]);
-            key = 'none'
+            setKey('none')
           }
           else if (service.length < 3) {
             setService([...service, { song: newSong, key, isCorrect: 0}]);
             console.log(newSong, key)
-            key = 'none'
+            setKey('none')
           } else {
             setService([...service, { song: newSong, key, isCorrect: 0}]);
             setGameOver(true);
             console.log('called')
-            key = 'none'
+            setKey('none')
             // TODO: Add method for bringing up the modal and ending the round
           }
         }
