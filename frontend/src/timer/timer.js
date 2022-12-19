@@ -1,11 +1,10 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import { resultMap } from "../resultMap";
-<<<<<<< HEAD
+
 import { isArrowFunction } from "typescript";
-=======
 import userEvent from "@testing-library/user-event";
->>>>>>> 058950469a66d55bb3ee761e76a0cdee787ec37a
+
 
 const multiMusicLength = 30
 
