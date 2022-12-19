@@ -1,8 +1,9 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import { resultMap } from "../resultMap";
+import { isArrowFunction } from "typescript";
 
-const multiMusicLength = 15
+const multiMusicLength = 30
 
 export const SingleTimer = (singleInterval) => {
   const audioRef = useRef(null);
@@ -40,11 +41,14 @@ export const SingleTimer = (singleInterval) => {
   )
 };
 
-export const MultiTimer = () => {
+export const MultiTimer = (timer) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [running, setRunning] = useState(false);
   const [songOver, setSongOver] = useState(false);
+  //const [timeRemaining, setTimeRemaining] = useState(audioRef.current.duration);
+
+  // console.log(audioRef.current.duration)
 
   const start = () => {
     if (!songOver) {
@@ -62,17 +66,21 @@ export const MultiTimer = () => {
   };
 
   useEffect(() => {
+    if(!timer)
+    {
+      pause();
+    }
     if (currentTime > multiMusicLength && running) {
       pause();
       setSongOver(true);
     }
-  }, [currentTime]);
+  }, [currentTime, timer]);
 
   if (running || songOver){
     return (
       <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
-    <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
+    <div className="multigreenRectangle" id="timeremaining"> Time Remaining: {Math.floor(audioRef.current.duration - currentTime)} seconds </div>
     </div>
     )
     } else {
@@ -81,7 +89,7 @@ export const MultiTimer = () => {
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
-    <div className="multigreenRectangle"> Time Elapsed: {Math.floor(currentTime)} seconds </div>
+    <div className="multigreenRectangle"> Time Remaining: {Math.floor(currentTime)} seconds </div>
     </div>
       )
     }

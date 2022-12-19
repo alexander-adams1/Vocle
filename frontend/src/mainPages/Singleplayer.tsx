@@ -1,21 +1,18 @@
 import React, { useState, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Question from '../overlays/Questionssingleplayer';
 import Dropdown from '../gameComponents/Dropdown';
 import Home from './Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from '../gameComponents/listComponent';
 import { SingleTimer } from '../timer/timer';
-import GoHome from '../navigateHome';
+import {GoHome} from '../navigateHome';
 
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
+import { Singlemodal } from '../About';
 
 function Singleplayer() {
-    // state = {
-    //     displayAnswer: false
-    // }
-
     // displayAnswerSingle = () => {
     //     console.log('called')
     //     this.setState({
@@ -23,8 +20,38 @@ function Singleplayer() {
     //     })
     // }
 
-    // render() {
-        
+    
+    const [about, setAbout] = useState(false)
+    let aboutModal = null
+    
+    const spotify = () =>
+    {
+      window.open('https://www.spotify.com/', '_blank');
+  
+    }
+
+    const aboutOpen = () =>
+    {
+        setAbout(!about)
+        console.log(about)
+    }
+
+    if(about)
+    {
+        console.log(about)
+        aboutModal = (
+          <div>
+            <Singlemodal />
+          </div>
+        )
+    }
+    
+    const navigate = useNavigate();
+
+    const navigatetoHome = () => {
+        navigate('/')
+    }
+    
         const submitSong = () => {
             const text: Element | null = document.getElementById('greatness')
             if (text == null) {
@@ -42,6 +69,7 @@ function Singleplayer() {
 
         return (
             <div className="v10_9" aria-label={TEXT_Submit_button_singleplayer}>
+                {aboutModal}
                 
 
                 {/* <div className="v10_56"></div>
@@ -57,9 +85,12 @@ function Singleplayer() {
                     {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                     {/* <div className="v54_111"></div> */}
                 </div>
-                <div><GoHome /> </div></div>
+                <div className="header"><div className="header_div"><div className="header_background"> </div>
+            <span className="vocle_label" onClick={navigatetoHome}>Vocle</span><button className="information" onClick={aboutOpen}></button>
+            
+            <div className="stats"></div><button className="spotify" onClick={spotify}></button></div><div className="login"><div className="login_icon"></div></div></div></div>
         )
-    // }
+                    
 }
 
 export default Singleplayer;

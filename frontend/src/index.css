@@ -892,20 +892,6 @@
     text-align: center;
     z-index:1;
   }
-  .multi_guesses {
-    width: 777px;
-    height: 403px;
-    opacity: 1;
-    position: absolute;
-    top: 309px;
-    left: 376px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    overflow: hidden;
-    z-index:0;
-  }
   .v71_12 {
     width: 345px;
     position: absolute;
@@ -1149,7 +1135,7 @@
 
   .multigreenRectangle {
     height: 30px;
-    width: 500px;
+    width: 700px;
     color: rgba(59,183,101,1);
     position: absolute;
     top: 145px;
@@ -1202,7 +1188,7 @@
     width: 50%;
     flex: 1;
     top: 350px;;
-    left: 405px;
+    left: 350px;
     position: absolute;
     align-items: center;
     font-family: Proxima Nova;
@@ -1287,4 +1273,74 @@
     
   }
 
+  .v10_22 {
+    width: 508px;
+    height: 416px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: relative;
+    top: 200px;
+    left: 375px;
+    overflow: hidden;
+  }
+  .v10_21 {
+    width: 508px;
+    height: 416px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 475px;
+    overflow: hidden;
+    z-index: 99999;
+  }
+
+  .v10_27 {
+    width: 136px;
+    color: rgba(250,248,248,1);
+    position: absolute;
+    top: 13px;
+    left: 186px;
+    font-family: Avenir;
+    font-weight: Roman;
+    font-size: 48px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v35_4 {
+    width: 56px;
+    height: 56px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    left: 441px;
+    font-size: 50px;
+    text-align: center;
+  }
+  .v198_7 {
+    width: 452px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 134px;
+    left: 28px;
+    font-family: Avenir;
+    font-weight: Roman;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+  }
+
+  .v198_11 {
+    width: 452px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 134px;
+    left: 28px;
+    font-family: Avenir;
+    font-weight: Roman;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+  }
   

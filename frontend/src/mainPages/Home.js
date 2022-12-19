@@ -2,16 +2,18 @@ import React, { useState, SetStateAction, Component } from 'react'
 import 'react/jsx-runtime'
 import Questionsingle from '../overlays/Questionssingleplayer'
 import Questionmulti from '../overlays/Questionsmultiplayer';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Singleplayer from './Singleplayer';
 import LoginModal from '../overlays/loginmodal';
+import { Homemodal } from '../homeAbout';
 
 class Home extends Component {
 
   state = {
     displayQuestionsingle: false,
     displayQuestionmulti: false,
-    displayModal: false
+    displayModal: false,
+    displayAbout: false
   }
 
 
@@ -19,15 +21,24 @@ class Home extends Component {
     console.log('called')
     this.setState({
       displayQuestionsingle: !this.state.displayQuestionsingle,
+      displayModal: false,
+      displayAbout: false
+    })
+  }
+  displayAbout = () =>
+  {
+    this.setState({
+      displayAbout: !this.state.displayAbout,
+      displayQuestionsingle: false,
       displayModal: false
     })
   }
-
   displayQuestionMulti = () =>
   {
     this.setState({
       displayQuestionmulti: !this.state.displayQuestionmulti,
-      displayModal:false
+      displayModal:false,
+      displayAbout: false
     })
   }
 
@@ -35,9 +46,16 @@ class Home extends Component {
   displayModal = () => {
     this.setState({
       displayModal: !this.state.displayModal,
-      displayQuestionsingle: false
+      displayQuestionsingle: false,
+      displayAbout: false
     })
   }
+
+  spotify = () =>
+    {
+      window.open('https://www.spotify.com/', '_blank');
+  
+    }
 
   // prepareSingleplayerButtonPress = () => {
   //   singleplayerButton = document.getElementByID('singleplayer-button')
@@ -76,6 +94,7 @@ class Home extends Component {
     let singlequestions = null
     let multiquestions = null
     let modals = null
+    let about = null
 
     if (this.state.displayModal) {
       modals = (
@@ -83,6 +102,15 @@ class Home extends Component {
           <LoginModal />
         </div>
       )
+    }
+
+    if(this.state.displayAbout)
+    {
+        about = (
+          <div>
+            <Homemodal />
+          </div>
+        )
     }
     if (this.state.displayQuestionsingle) {
       singlequestions = (
@@ -101,6 +129,8 @@ class Home extends Component {
       )
     }
 
+    
+
     return (
       <div className="v1_3">
         <div className="v122_910">
@@ -116,8 +146,10 @@ class Home extends Component {
           <div className="v45_3"></div>
         </div>
         <div className="v71_26">
-          <div className="v71_31"></div>
-          <div className="v71_29"></div><span className="v71_28">Vocle</span>
+          <button className="v71_31" onClick={this.spotify}></button>
+          
+          <button className="v71_29" onClick={this.displayAbout}></button><span className="v71_28">Vocle</span>
+          {about }
           <div className="v71_30"></div>
           <div className="v71_33"></div>
         </div>
