@@ -15,7 +15,6 @@ import { resultMap } from '../resultMap';
 
 export const TEXT_Submit_button_singleplayer = "Submit-button"
 
-
 // Adds the song guess to the screen
 function Addsong() {
   console.log(resultMap.get(`Track Answer`))
@@ -79,9 +78,14 @@ function Addsong() {
     }
   };
 
-  const resetVisually = () => {
+  function onGameOverClose() {
+    
     service.splice(0, service.length)
+    setGameOver(false)
+    setWin(false)
+    setInterval(0)
   }
+  
 
   return (
     <>
@@ -104,9 +108,9 @@ function Addsong() {
         ))}
       </div>
       <div className="open-game-over">
-        {gameOver && <GameOverScreen win={win}/>}
+        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose}/>}
       </div>
-      <div><SingleTimer singleInterval={interval}/></div>
+      <div><SingleTimer singleInterval={interval} gameOver = {gameOver}/></div>
     </>
 
   )

@@ -141,6 +141,7 @@ function AddSongMultiplayer() {
     }
   };
 
+<<<<<<< HEAD
 
   return (
     <><button className="submit_button_multi" aria-label="Click here to submit your guess" onClick={handleServiceAdd}>
@@ -148,6 +149,19 @@ function AddSongMultiplayer() {
       </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button} >SUBMIT</span>
     </button>
       <div className="output" role="output" aria-label="guess added">
+=======
+  function onGameOverClose() {
+
+  }
+
+  
+return(
+    <><button className="submit_button_multi" aria-label="Click here to submit your guess">
+    <div className="submit_button_multi_background">
+    </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
+  </button>
+  <div className="output" role="output" aria-label="guess added">
+>>>>>>> 058950469a66d55bb3ee761e76a0cdee787ec37a
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
             <li className={"output_el-" + item.isCorrect} aria-label={item.song} key={index}>{array.get(item.keyStroke) + ": " + item.song}</li>
@@ -155,7 +169,11 @@ function AddSongMultiplayer() {
         ))}
       </div>
       <div className="open-game-over">
+<<<<<<< HEAD
         {gameOver && <GameOverScreen win={win} />}
+=======
+        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose}/>}
+>>>>>>> 058950469a66d55bb3ee761e76a0cdee787ec37a
       </div>
       <div><MultiTimer timer={timer}/></div>
     </>)
