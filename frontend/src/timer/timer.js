@@ -1,6 +1,5 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
-import playAudio from '../audioImplementation/AudioPlayer';
 import { resultMap } from "../resultMap";
 
 const multiMusicLength = 15

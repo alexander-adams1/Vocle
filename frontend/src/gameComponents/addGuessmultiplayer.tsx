@@ -113,11 +113,11 @@ return(
     <><button className="submit_button_multi" aria-label="Click here to submit your guess">
     <div className="submit_button_multi_background">
     </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
-  </button><div className="multi_guesses"></div>
+  </button>
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
-            <li className={"output_multi-" + item.isCorrect}  aria-label={item.song} key={index}>{array.get(item.keyStroke) + ": " + item.song}</li>
+            <li className={"output_el-" + item.isCorrect}  aria-label={item.song} key={index}>{array.get(item.keyStroke) + ": " + item.song}</li>
           </ul>
         ))}
       </div>

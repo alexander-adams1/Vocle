@@ -895,7 +895,6 @@
   .multi_guesses {
     width: 777px;
     height: 403px;
-    background: rgba(255,255,255,0.5);
     opacity: 1;
     position: absolute;
     top: 309px;
@@ -1252,7 +1251,7 @@
     display: inline-block;
     border: 1px solid rgba(59,183,101,1);
     margin: 1px;
-    padding: 0px;
+    padding: 10px;
     width: 700px;
     justify-content: center;
     font-family: Avenir;
