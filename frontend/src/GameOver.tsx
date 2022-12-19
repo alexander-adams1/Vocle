@@ -4,7 +4,11 @@ import { resultMap, setResultMap } from './resultMap';
 import {generateTrack} from './audioImplementation/GenerateSong';
 import "./GameOver.css";
 
-export default function GameOverScreen({win}: {win: boolean}) {
+interface GameOverProps{
+    win: boolean;
+    onGameOverClose: Function
+}
+export default function GameOverScreen({win, onGameOverClose}: GameOverProps) {
     const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
     const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
     const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
@@ -22,6 +26,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
     }
 
     async function getNewSong() {
+        onGameOverClose();
         setShowGameOver(false)
         setResultMap(await generateTrack(resultMap.get(`PlaylistID`)));
         navigate(`/singleplayer`)
@@ -37,7 +42,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
     
     return (
         <div>
-        {showGameOver && (<div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
+        (<div className="game-over-screen" id = "game-over-screen" aria-label = "game over screen">
             {/* album cover will be retrieved from API call */}
             <img className="album-cover" id = "album-cover" src = {imageURL}></img>
             {/* song name and artist will be retrieved from API call */}
@@ -55,7 +60,7 @@ export default function GameOverScreen({win}: {win: boolean}) {
                         </div> */}
                     {!win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You didn't get this Vocle. Better luck next time!</span></div>}
                     {win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You win!</span></div>}
-        </div>)}
+        </div>)
         </div>           
     )
     

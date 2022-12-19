@@ -1,10 +1,11 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import { use1Second } from "./useSeconds";
 import { resultMap } from "../resultMap";
+import userEvent from "@testing-library/user-event";
 
 const multiMusicLength = 15
 
-export const SingleTimer = (singleInterval) => {
+export const SingleTimer = (singleInterval, gameOver) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [running, setRunning] = useState(false);
@@ -13,6 +14,7 @@ export const SingleTimer = (singleInterval) => {
 
   const start = () => {
     console.log(resultMap.get(`TrackURL`))
+    console.log('play')
     audioRef.current.currentTime = 0;
     setRunning(true);
     audioRef.current.play()
@@ -22,6 +24,11 @@ export const SingleTimer = (singleInterval) => {
     audioRef.current.pause();
   }
 
+  const reset = () => {
+    audioRef.current.currentTime = 0;
+    updateCurrentTime();
+  }
+
   const updateCurrentTime = () => {
     setCurrentTime(audioRef.current.currentTime);
   };
@@ -29,7 +36,16 @@ export const SingleTimer = (singleInterval) => {
     if ((currentTime > interval[Object.values(singleInterval)[0]] && running) || currentTime >= audioRef.current.duration) {
       pause();
     }
+    
   }, [currentTime]);
+
+  useEffect(() => {
+    if(gameOver) {
+      console.log('timer reset');
+      
+    }
+  }, [gameOver])
+
   return (
     <div className="singletimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />

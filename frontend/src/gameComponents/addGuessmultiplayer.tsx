@@ -108,6 +108,10 @@ function AddSongMultiplayer() {
     }
   };
 
+  function onGameOverClose() {
+
+  }
+
   
 return(
     <><button className="submit_button_multi" aria-label="Click here to submit your guess">
@@ -122,7 +126,7 @@ return(
         ))}
       </div>
       <div className="open-game-over">
-        {gameOver && <GameOverScreen win={win}/>}
+        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose}/>}
       </div>
       </> )
 }
