@@ -71,7 +71,7 @@ function Multiplayer() {
         return (
             <div className="multiplayer" aria-label="This is the page for multiplayer Vocle">
                 {aboutModal}
-                <AddSongMultiplayer />
+                <MultiTimer />
                 <div className="dropdown_bar_multi" aria-label="Input your guess here">
                     <Dropdown />
                     <div className="bottom_of_page" >

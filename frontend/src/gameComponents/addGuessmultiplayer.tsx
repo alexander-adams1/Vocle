@@ -14,7 +14,12 @@ import { resultMap } from '../resultMap';
 import { MultiTimer } from '../timer/timer';
 export const TEXT_Submit_button = "Submit-button"
 
-function AddSongMultiplayer() {
+interface MultiGuessProps {
+  play: Function;
+  pause: Function;
+}
+
+function AddSongMultiplayer({play, pause}: MultiGuessProps) {
   var [service, setService] = useState<{ song: string, keyStroke: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
@@ -81,6 +86,11 @@ function AddSongMultiplayer() {
           console.log(timer)
         }
       }
+      if (timer) {
+        play();
+      } else {
+        pause();
+      }
     };
     
 
@@ -141,15 +151,6 @@ function AddSongMultiplayer() {
     }
   };
 
-<<<<<<< HEAD
-
-  return (
-    <><button className="submit_button_multi" aria-label="Click here to submit your guess" onClick={handleServiceAdd}>
-      <div className="submit_button_multi_background">
-      </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button} >SUBMIT</span>
-    </button>
-      <div className="output" role="output" aria-label="guess added">
-=======
   function onGameOverClose() {
 
   }
@@ -161,7 +162,6 @@ return(
     </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
   </button>
   <div className="output" role="output" aria-label="guess added">
->>>>>>> 058950469a66d55bb3ee761e76a0cdee787ec37a
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
             <li className={"output_el-" + item.isCorrect} aria-label={item.song} key={index}>{array.get(item.keyStroke) + ": " + item.song}</li>
@@ -169,13 +169,9 @@ return(
         ))}
       </div>
       <div className="open-game-over">
-<<<<<<< HEAD
-        {gameOver && <GameOverScreen win={win} />}
-=======
         {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose}/>}
->>>>>>> 058950469a66d55bb3ee761e76a0cdee787ec37a
       </div>
-      <div><MultiTimer timer={timer}/></div>
+      {/* <div><MultiTimer timer={timer}/></div> */}
     </>)
 }
 
