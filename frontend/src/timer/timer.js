@@ -63,6 +63,7 @@ export const SingleTimer = (singleInterval, gameOver) => {
 export const MultiTimer = (timer) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [running, setRunning] = useState(false);
   const [songOver, setSongOver] = useState(false);
 
@@ -79,6 +80,7 @@ export const MultiTimer = (timer) => {
 
   const updateCurrentTime = () => {
     setCurrentTime(audioRef.current.currentTime);
+    setDuration(audioRef.current.duration)
   };
 
   useEffect(() => {
@@ -99,7 +101,7 @@ export const MultiTimer = (timer) => {
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
-    <div className="multigreenRectangle"> Time Remaining: {Math.floor(currentTime)} seconds </div>
+    <div className="multigreenRectangle"> Time Remaining: 30 seconds </div>
     </div>
     <div><AddSongMultiplayer start={start} pause={pause}/></div>
     </>
@@ -109,7 +111,7 @@ export const MultiTimer = (timer) => {
         <>
       <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
-    <div className="multigreenRectangle" id="timeremaining"> Time Remaining: {Math.floor(audioRef.current.duration - currentTime)} seconds </div>
+    <div className="multigreenRectangle" id="timeremaining"> Time Remaining: {Math.floor(duration - currentTime)} seconds </div>
     </div>
     <div><AddSongMultiplayer start={start} pause={pause}/></div>
     </>

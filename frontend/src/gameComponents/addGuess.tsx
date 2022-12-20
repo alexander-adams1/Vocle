@@ -92,11 +92,11 @@ function Addsong() {
       <div className="services">
         <div className="first-division">
           <div className="v54_92">
-            <button className="v54_91" onClick={handleServiceAdd} ><span className="v54_90" role="submit">SUBMIT</span>
+            <button className="v54_91" onClick={handleServiceAdd} ><span className="v54_90" role="submit">Submit</span>
             </button>
           </div>
           <div className="v54_93"><button className="v54_94" onClick={handleNullSongAdd}>
-            <span className="v54_95">SKIP</span>
+            <span className="v54_95">Skip</span>
           </button></div>
         </div></div>
 

@@ -159,17 +159,24 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   };
 
   function onGameOverClose() {
-    service.splice(0, service.length)
-    setGameOver(false)
-    setWin(false)
-    
+    service.splice(0, service.length);
+    setGameOver(false);
+    setWin(false);
+    setWinner('none');
+    setGuess(true);
+    setq(true);
+    setm(true);
+    setz(true);
+    setp(true);
+    setTimer(false);
+    setKey('none');
   }
 
   
 return(
     <><button className="submit_button_multi" aria-label="Click here to submit your guess">
     <div className="submit_button_multi_background">
-    </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
+    </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>Submit</span>
   </button>
   <div className="userGuess">
     {!guess && <div>{array.get(key)}: input your guess</div>}

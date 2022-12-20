@@ -48,7 +48,7 @@
     left: 10px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Avenir;
-    font-weight: Medium;
+    font-weight: bold;
     font-size: 48px;
     opacity: 1;
     text-align: center;
@@ -105,6 +105,7 @@
     left: 103px;
     overflow: hidden;
     z-index: 0;
+    border-width: 0px;
   }
   .v71_29 {
     width: 77px;
@@ -118,7 +119,8 @@
     top: 30px;
     left: 356px;
     overflow: hidden;
-    z-index: 0
+    z-index: 0;
+    border-width: 0px;
   }
   .v71_28 {
     width: 248px;
@@ -177,17 +179,17 @@
     z-index: 0
   }
   .v10_8 {
-    width: 231px;
+    width: 250px;
     color: rgba(59,183,101,1);
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 5px;
     font-family: Avenir;
-    font-weight: Medium;
+    font-weight: bold;
     font-size: 48px;
     opacity: 1;
     text-align: left;
-    z-index: 0
+    z-index: 1;
   }
 
   .v54_46 {
@@ -228,16 +230,21 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
-    z-index: 0
+    z-index: 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-width: 1px;
   }
   .v46_10 {
     width: 218px;
     color: rgba(255,255,255,1);
     position: absolute;
-    top: 11px;
+    top: 7px;
     left: 11px;
     font-family: Avenir;
-    font-weight: Semi Bold;
+    font-weight: Bold;
     font-size: 25px;
     opacity: 1;
     text-align: center;
@@ -265,6 +272,11 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-width: 1px;
   }
   .v10_65 {
     width: 218px;
@@ -273,8 +285,8 @@
     top: 11px;
     left: 11px;
     font-family: Avenir;
-    font-weight: Semi Bold;
-    font-size: 25px;
+    font-weight: Bold;
+    font-size: 23px;
     opacity: 1;
     text-align: center;
     z-index: 1
@@ -385,16 +397,34 @@
     left: 0px;
     overflow: hidden;
     z-index: 10;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-width: 0px;
   }
   .v54_90 {
     width: 154px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 9px;
+    top: 16px;
     left: 17px;
     font-family: Avenir;
-    font-weight: Black;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index: 9999;
+  }
+  .v54_90:hover {
+    width: 154px;
+    color: white;
+    position: absolute;
+    top: 16px;
+    left: 17px;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
     opacity: 1;
     text-align: center;
     z-index: 9999;
@@ -419,17 +449,33 @@
     position: absolute;
     top: 0px;
     left: 0px;
-
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-width: 0px;
   }
   .v54_95 {
     width: 91px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 9px;
+    top: 16px;
     left: 49px;
     font-family: Avenir;
-    font-weight: Black;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v54_95:hover {
+    width: 91px;
+    color: white;
+    position: absolute;
+    top: 16px;
+    left: 49px;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
     opacity: 1;
     text-align: center;
   }
@@ -615,6 +661,7 @@
     top: 31px;
     left: 377px;
     overflow: hidden;
+    border-width: 0px;
   }
   .stats {
     width: 65px;
@@ -641,6 +688,7 @@
     top: 31px;
     left: 124px;
     overflow: hidden;
+    border-width: 0px;
   }
   .login {
     width: 98px;
@@ -802,7 +850,7 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
-    z-index:0
+    z-index: 0;
   }
   .dropdown_bar {
     width: 800px;
@@ -867,6 +915,11 @@
     left: 1200px;
     overflow: hidden;
     z-index:0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-width: 0px;
   }
   .submit_button_multi_background {
     width: 188px;
@@ -883,14 +936,29 @@
     width: 148px;
     color: rgba(0,0,0,1);
     position: absolute;
-    top: 9px;
+    top: 15px;
     left: 20px;
     font-family: Avenir;
-    font-weight: Medium;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 30px;
     opacity: 1;
     text-align: center;
     z-index:1;
+    vertical-align: middle;
+  }
+  .submit_button_multi_label:hover {
+    width: 148px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-family: Avenir;
+    font-weight: bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+    z-index:1;
+    vertical-align: middle;
+    color: white;
   }
   .v71_12 {
     width: 345px;
