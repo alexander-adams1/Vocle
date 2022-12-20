@@ -7,8 +7,12 @@ import Singleplayer from './Singleplayer';
 import LoginModal from '../overlays/loginmodal';
 import { Homemodal } from '../overlays/homeAbout';
 
-class Home extends Component {
 
+//The first page that gets accessed on the webiste, containing the buttons necessary to access modals to access the singleplayer and 
+//multiplayer home pages along with the about information and spotify link.
+class Home extends Component {
+  //Since the page is getting rendered, we need to use state instead of useState and call setState to change the states of the variables 
+  //in order to access the modals
   state = {
     displayQuestionsingle: false,
     displayQuestionmulti: false,
@@ -16,7 +20,7 @@ class Home extends Component {
     displayAbout: false
   }
 
-
+  //functions to switch the states of the modals
    displayQuestionSingle = () => {
     console.log('called')
     this.setState({
@@ -95,7 +99,7 @@ class Home extends Component {
     let multiquestions = null
     let modals = null
     let about = null
-
+    //navigation to the different modals
     if (this.state.displayModal) {
       modals = (
         <div>
