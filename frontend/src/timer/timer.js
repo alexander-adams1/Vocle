@@ -6,23 +6,29 @@ import AddSongMultiplayer from '../gameComponents/addGuessmultiplayer';
 import { isArrowFunction } from "typescript";
 import userEvent from "@testing-library/user-event";
 
-
+// The max length of musical playback
 const multiMusicLength = 30
 
+// The implementation for the timing of the singleplayer mode
 export const SingleTimer = (singleInterval, gameOver) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [running, setRunning] = useState(false);
 
+  // The different intervals in singleplayer
   const [interval, setInterval] = useState([1, 2, 4, 8, 15, 30]);
 
+  // The method for restarting the song after pausing
   const start = () => {
     console.log(resultMap.get(`TrackURL`))
     console.log('play')
+    // Resets the time to the beginning of the song
     audioRef.current.currentTime = 0;
     setRunning(true);
     audioRef.current.play()
   }
+
+  // The functionality for pausing in singleplayer
   const pause = () => {
     setRunning(false);
     audioRef.current.pause();
@@ -33,9 +39,11 @@ export const SingleTimer = (singleInterval, gameOver) => {
     updateCurrentTime();
   }
 
+  // Updates the current time
   const updateCurrentTime = () => {
     setCurrentTime(audioRef.current.currentTime);
   };
+  // Pauses the audio when the currentTime is above the interval
   useEffect(() => {
     if ((currentTime > interval[Object.values(singleInterval)[0]] && running) || currentTime >= audioRef.current.duration) {
       pause();
@@ -50,6 +58,7 @@ export const SingleTimer = (singleInterval, gameOver) => {
     }
   }, [gameOver])
 
+  // Shows the timer on the page
   return (
     <div className="singletimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
@@ -60,6 +69,7 @@ export const SingleTimer = (singleInterval, gameOver) => {
   )
 };
 
+// Functionality for multiplayer timer
 export const MultiTimer = (timer) => {
   const audioRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -67,39 +77,40 @@ export const MultiTimer = (timer) => {
   const [running, setRunning] = useState(false);
   const [songOver, setSongOver] = useState(false);
 
+  // Functionality for starting the song in multiplayer
   function start() {
     if (!songOver) {
       setRunning(true);
       audioRef.current.play()
     }
   }
+  // Pausing in multiplayer
   function pause() {
     setRunning(false);
     audioRef.current.pause();
   }
 
+  // Updates the current time and what the duration of the song is
   const updateCurrentTime = () => {
     setCurrentTime(audioRef.current.currentTime);
     setDuration(audioRef.current.duration)
   };
 
   useEffect(() => {
-    // if(!timer)
-    // {
-    //   pause();
-    // }
+    // Pauses the song if the clip goes over 30 seconds
     if (currentTime > multiMusicLength && running) {
       pause();
       setSongOver(true);
     }
   }, [currentTime, timer]);
 
+  // Sets the HTML at the beginning vs after the song starts playing
   if (currentTime === 0){
     return (
       <>
         <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
-      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
+      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start} aria-label = "start button"> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Remaining: 30 seconds </div>
     </div>
@@ -118,47 +129,3 @@ export const MultiTimer = (timer) => {
       )
     }
 };
-
-// CHANGE RETURN STATEMENT TO THIS WHEN FIGURE OUT HOW TO PAUSE AUDIO:
-
-// if (running){
-//   return (
-//     <div className="multitimerclass">
-//     <div className="multigreenRectangle"> Time Elapsed: {seconds} seconds </div>
-//     </div>
-//   )
-//   } else {
-//     return (
-//       <div className="multitimerclass">
-//         <div className="PlayButton" aria-label="click to play the song"> <div onClick={start}> <div className="v54_101"></div><button className="v54_100"></button></div> 
-//         </div>    
-//       <div className="multigreenRectangle"> Time Elapsed: {seconds} seconds </div>
-//       </div>
-//     )
-//   }
-
-// const Timer = () => {
-//         const [counter, setCounter] = useState(0);
-//             const [startTimer, setStartTimer] = useState(false);
-//             const [timerId, setTimerId] = useState(0);
-        
-//             useEffect(()=> {
-//                 let intervalId = null;
-//                 if(startTimer)
-//                 {
-//                     intervalId = setInterval(() => {
-//                         setTimerId(prev => prev +=1 )
-//                     }, 500)
-//                 setTimerId(intervalId);
-//                 }
-//                 else{
-//                     clearInterval(timerId)
-//                 }
-//             }, [setStartTimer]) 
-
-//             return (
-//                     <div className="v71_40">
-//                     <div className="v71_41"></div><span className="v71_42">Points:</span>
-//                     <div className="v89_4"></div></div><span className="v71_47">Time Elapsed: Seconds</span>
-//             )
-//         }

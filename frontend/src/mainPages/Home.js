@@ -26,7 +26,8 @@ class Home extends Component {
     this.setState({
       displayQuestionsingle: !this.state.displayQuestionsingle,
       displayModal: false,
-      displayAbout: false
+      displayAbout: false,
+      displayQuestionmulti: false
     })
   }
   displayAbout = () =>
@@ -42,7 +43,8 @@ class Home extends Component {
     this.setState({
       displayQuestionmulti: !this.state.displayQuestionmulti,
       displayModal:false,
-      displayAbout: false
+      displayAbout: false,
+      displayQuestionsingle: false
     })
   }
 

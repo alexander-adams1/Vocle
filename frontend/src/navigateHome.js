@@ -5,7 +5,8 @@ import {
 import React, {useState} from "react";
 import { Singlemodal } from "./overlays/About";
 
-
+//goes back to the home screen
+//not used anymore because we have to call it within the singleplayer and multiplayer in order to display the about modal
 
 // Used to link the Vocle header back to home
 export const GoHome = () => {

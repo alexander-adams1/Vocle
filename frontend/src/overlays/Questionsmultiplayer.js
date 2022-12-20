@@ -14,10 +14,14 @@ import Multiplayer from '../mainPages/Multiplayer';
 import { resultMap, setResultMap } from '../resultMap';
 import { generateTrack } from '../audioImplementation/GenerateSong';
 
+/**
+ * This function returns the modal for asking the user which playlist they want to use
+ */
 const Questionmulti = () => 
 {
     const navigate = useNavigate();
 
+    // If the user wants to use the default playlist, the below playlist is the one that will be used
     const navigatetoMultiplayer = async () => 
     {
         setResultMap(await generateTrack(`https://open.spotify.com/playlist/37i9dQZEVXbLRQDuF5jeBp`))
@@ -33,9 +37,9 @@ const Questionmulti = () =>
         setCustom(true)
     }
 
+    // Otherwise, the modal for asking for a user's input on playlist will pop up
     if (custom) {
         console.log("im being called");
-        // TODO: need to have the input box to get the spotify playlist URL to load in. hide the other div elements
         return(
             <div>
                 <Inputplaylistmulti />
@@ -46,6 +50,7 @@ const Questionmulti = () =>
     }
 
     console.log('calling on my phone')
+    // Only shows up if the input playlist multiplayer doesn't
     if(!custom)
     {
     return (

@@ -30,6 +30,9 @@ import { resultMap, setResultMap } from '../resultMap';
 //     }
 // }
 
+/**
+ * The modal for taking in the playlist input for multiplayer
+ */
 const Inputplaylistsingle = () =>
 {
     const navigate = useNavigate();
@@ -46,6 +49,7 @@ const Inputplaylistsingle = () =>
             console.log(text.value)
             setResultMap(await generateTrack(text.value))
             console.log(resultMap.get(`Response`))
+            // If the playlist input is valid, navigate to singlplayer
             if (resultMap.get(`Response`) === `Success`) {
                 setInvalid(false)
                 navigate('/singleplayer')

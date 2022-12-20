@@ -9,6 +9,9 @@ import {
 import {useState} from "react";
 import Home from "../mainPages/Home";
 
+/**
+ * The Modal for login (which we haven't implemented yet)
+ */
 const LoginModal = () => 
 {
     console.log("catcha man")

@@ -21,7 +21,7 @@ class App extends Component{
               element={<Singleplayer />} />
             <Route path = "/multiplayer"
               element={<Multiplayer />} />
-            <Route path = "/gameover" element = {<GameOver />} />
+            {/* <Route path = "/gameover" element = {<GameOver />} /> */}
           </Routes>
     )
   }
