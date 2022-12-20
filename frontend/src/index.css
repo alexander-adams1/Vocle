@@ -1412,48 +1412,16 @@
     text-align: center;
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+.userGuess {
+  margin: auto;
+    width: 50%;
+    flex: 1;
+    top: 725px;;
+    left: 650px;
+    color: white;
+    position: absolute;
+    align-items: center;
+    font-family: Avenir;
+    font-weight: Regular;
+    font-size: 20px;
+}
