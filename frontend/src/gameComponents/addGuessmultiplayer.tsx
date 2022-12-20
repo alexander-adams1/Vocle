@@ -62,30 +62,35 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
     const handleKeyPress: EventListener = (event: KeyboardEventInit) => {
       if (event.key !== undefined && array.get(event.key) !== undefined) {
         if (guess) {
+          console.log(guess)
           console.log("Yes")
           if (event.key === 'q' && q) {
             setKey('q')
             setq(false)
-            setTimer(false)       
+            setTimer(false) 
+            setGuess(false)      
           }
           else if (event.key === 'p' && p) {
             setKey('p')
             setp(false)
             setTimer(false)
+            setGuess(false)
           }
           else if (event.key === 'm' && m) {
             setKey('m')
             setm(false)
             setTimer(false)
+            setGuess(false)
             
           }
           else if (event.key === 'z' && z) {
             setKey('z')
             setz(false)
             setTimer(false)
+            setGuess(false)
           }
-          setGuess(false)
-          console.log(guess)
+          
+          
         }
       }
       
