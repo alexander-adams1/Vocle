@@ -176,7 +176,7 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
 return(
     <><button className="submit_button_multi" aria-label="Click here to submit your guess">
     <div className="submit_button_multi_background">
-    </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
+    </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>Submit</span>
   </button>
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
