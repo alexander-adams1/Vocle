@@ -152,7 +152,10 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
   };
 
   function onGameOverClose() {
-
+    service.splice(0, service.length)
+    setGameOver(false)
+    setWin(false)
+    
   }
 
   
@@ -169,7 +172,7 @@ return(
         ))}
       </div>
       <div className="open-game-over">
-        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose}/>}
+        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose} showSingleplayer={false}/>}
       </div>
       {/* <div><MultiTimer timer={timer}/></div> */}
     </>)

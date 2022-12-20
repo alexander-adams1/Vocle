@@ -6,9 +6,10 @@ import "./GameOver.css";
 
 interface GameOverProps{
     win: boolean;
-    onGameOverClose: Function
+    onGameOverClose: Function;
+    showSingleplayer: boolean;
 }
-export default function GameOverScreen({win, onGameOverClose}: GameOverProps) {
+export default function GameOverScreen({win, onGameOverClose, showSingleplayer}: GameOverProps) {
     const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
     const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
     const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
@@ -29,9 +30,16 @@ export default function GameOverScreen({win, onGameOverClose}: GameOverProps) {
         onGameOverClose();
         setShowGameOver(false)
         setResultMap(await generateTrack(resultMap.get(`PlaylistID`)));
-        navigate(`/singleplayer`)
         console.log(resultMap)
-        console.log('back to singleplayer')
+
+        if (showSingleplayer) {
+            navigate(`/singleplayer`);
+            console.log('back to singleplayer');
+        }  
+        else {
+            navigate(`/multiplayer`);
+            console.log('multiplayer')
+        }      
         // setShowGameOver(false)
     }
 

@@ -7,7 +7,6 @@ import Home from './Home';
 import { render } from '@testing-library/react';
 import { ListComponent } from '../gameComponents/listComponent';
 import { SingleTimer } from '../timer/timer';
-import {GoHome} from '../navigateHome';
 
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
 import { Singlemodal } from '../About';
