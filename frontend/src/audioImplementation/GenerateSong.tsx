@@ -40,7 +40,7 @@ async function generateTrack(playlistURL : string) : Promise<Map<string, any>> {
                 dataMap.set(`PlaylistID`, playlistID)
                 resolve(dataMap)
             }
-            else if (response.Result === `Error`) {
+            else if (response.Result === `Invalid Playlist`) {
                 dataMap.set(`Response`, response.Result)
                 resolve(dataMap)
             }
