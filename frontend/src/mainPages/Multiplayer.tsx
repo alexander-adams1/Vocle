@@ -7,7 +7,7 @@ import Home from './Home';
 import { MultiTimer } from '../timer/timer';
 import {GoHomeMulti } from '../navigateHome';
 import AddSongMultiplayer from '../gameComponents/addGuessmultiplayer'
-import { Multimodal, Singlemodal } from '../About';
+import { Multimodal, Singlemodal } from '../overlays/About';
 
 
 function Multiplayer() {

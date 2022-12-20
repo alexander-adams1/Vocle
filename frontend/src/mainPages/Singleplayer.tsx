@@ -9,7 +9,7 @@ import { ListComponent } from '../gameComponents/listComponent';
 import { SingleTimer } from '../timer/timer';
 
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
-import { Singlemodal } from '../About';
+import { Singlemodal } from '../overlays/About';
 
 function Singleplayer() {
     // displayAnswerSingle = () => {

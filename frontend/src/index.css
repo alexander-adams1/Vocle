@@ -829,7 +829,7 @@
   .dropdown_class {
     background: blue;
     position: absolute;
-    top: 0px;
+    top: 215px;
     z-index: 99999;
     font-family: Avenir;
   }
@@ -855,16 +855,16 @@
   }
   .dropdown_bar {
     width: 800px;
-    height: 400px;
+    height: 600px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     opacity: 1;
-    position: absolute;
-    top: 89vh;
+    position: fixed;
+    top: 60vh;
     left: 367px;
     overflow: hidden;
-    z-index:10;
+    z-index:100000;
   }
   .dropdown_bar_multi {
     width: 780px;
@@ -873,11 +873,11 @@
     background-position: center center;
     background-size: cover;
     opacity: 1;
-    position: absolute;
-    top: 650px;
+    position: fixed;
+    top: 440px;
     left: 367px;
     overflow: hidden;
-    z-index:10;
+    z-index:1000;
   }
   .v54_116 {
     width: 777px;
