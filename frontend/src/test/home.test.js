@@ -34,20 +34,21 @@ import userEvent from '@testing-library/user-event';
 // </div>
 // </div>`
 
+// Tests whether the dropdown menu renders
 test('render dropdown menu', () => {
   render(<Dropdown />)
   const inputButton = screen.getByRole('combobox', 'dropdown')
   expect(inputButton).toBeInTheDocument()
 });
 
+// Tests whether the submit button in singleplayer renders
 test('render submit singleplayer', () => {
   render(<Addsong />)
   const inputButton = screen.getByRole('submit')
   expect(inputButton).toBeInTheDocument()
 });
 
-
-
+// Tests whether the input received after clicked the submit button is what we expect
 test('check if input is retrieved by the submit button', () => {
   render(<Singleplayer />)
   const inputButton = screen.getByRole('combobox', 'dropdown')

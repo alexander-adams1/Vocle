@@ -4,6 +4,9 @@ import { resultMap, setResultMap } from './resultMap';
 import {generateTrack} from './audioImplementation/GenerateSong';
 import "./GameOver.css";
 
+//Called from Singleplayer and Multiplayer to show the song cover, title, and artist, along with text if the user won or lost
+//in addition, play again and home buttons are displayed if the user wants to play again or go back to the home screen
+
 interface GameOverProps{
     win: boolean;
     onGameOverClose: Function;

@@ -37,7 +37,6 @@ const Questionsingle = () =>
     // Prompts the user to input their default playlist
     if (custom) {
         console.log("im being called");
-        // TODO: need to have the input box to get the spotify playlist URL to load in. hide the other div elements
         return(
             <div>
                 <Inputplaylistsingle />

@@ -12,6 +12,9 @@ import Home from '../mainPages/Home';
 import { generateTrack } from '../audioImplementation/GenerateSong';
 import { resultMap, setResultMap } from '../resultMap';
 
+/**
+ * The modal for taking in the playlist input for multiplayer
+ */
 const Inputplaylistmulti = () =>
 {
     const navigate = useNavigate();
@@ -27,6 +30,7 @@ const Inputplaylistmulti = () =>
             console.log(text.value)
             setResultMap(await generateTrack(text.value))
             console.log(resultMap.get(`Response`))
+            // Navigates to multiplayer if the playlist input is valid
             if (resultMap.get(`Response`) === `Success`) {
                 setInvalid(false)
                 navigate('/multiplayer')

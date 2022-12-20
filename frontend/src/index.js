@@ -12,6 +12,8 @@ import {
 import Singleplayer from './mainPages/Singleplayer';
 import Home from './mainPages/Home';
 
+//Calls the App in order to render the site
+
 const root = ReactDOM.createRoot(
   document.getElementById('App')
 );
