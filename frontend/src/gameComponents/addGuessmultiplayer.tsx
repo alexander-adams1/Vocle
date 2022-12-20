@@ -110,6 +110,9 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   }, [key, m,  p, q, z, guess, timer]);
   
 
+  /**
+   * Handles adding a guess in multiplayer
+   */
   const handleServiceAdd = () => {
     setTimer(true)
     console.log(timer)
@@ -155,7 +158,6 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
               setTimer(false);
               console.log('called')
               setKey('none')
-              // TODO: Add method for bringing up the modal and ending the round
             }
           }
         }
