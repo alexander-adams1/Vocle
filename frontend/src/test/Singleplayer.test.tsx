@@ -3,7 +3,7 @@ import {render, screen} from '@testing-library/react';
 import Singleplayer from '../mainPages/Singleplayer'; 
 import Dropdown from '../gameComponents/Dropdown';
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
-import { Singlemodal } from '../About';
+import { Singlemodal } from '../overlays/About';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 
