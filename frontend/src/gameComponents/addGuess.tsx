@@ -1,14 +1,5 @@
-import React, { useState, SetStateAction, Component } from 'react'
+import { useState } from 'react'
 import 'react/jsx-runtime'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Question from '../overlays/Questionssingleplayer';
-import Dropdown from './Dropdown';
-import Home from '../mainPages/Home';
-import { render } from '@testing-library/react';
-import { ListComponent } from './listComponent';
-import { stringify } from 'querystring';
-import { generateTrack, generateAccessToken } from '../audioImplementation/GenerateSong';
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
 import GameOverScreen from '../GameOver';
 import { SingleTimer } from '../timer/timer';
 import { resultMap } from '../resultMap';
@@ -44,19 +35,15 @@ function Addsong() {
         // If the input text isn't simply the placeholder text
         if (newSong !== 'Know the song? Search for the artist/title') {
           if (newSong === resultMap.get(`Track Answer`)) {
-            setGameOver(true); // TODO: Set to false in reset method
-            setWin(true); // TODO: Set to false in reset method
+            setGameOver(true);
+            setWin(true);
             setService([...service, { song: newSong, isCorrect: 1 }]);
-            // TODO: Add method for bringing up the modal and ending the round
           } else if (service.length < 5) {
             setService([...service, { song: newSong, isCorrect: 0 }]);
             setInterval(interval + 1);
-            // generateAccessToken().then(response => console.log(response))
           } else {
-            // TODO: add this code into restart game --> service.splice(0, service.length);
             setService([...service, { song: newSong, isCorrect: 0 }]);
-            setGameOver(true); // TODO: Set to false in reset method
-            // TODO: Add method for bringing up the modal and ending the round
+            setGameOver(true);
           }
         }
       }
@@ -78,6 +65,9 @@ function Addsong() {
     }
   };
 
+  /**
+   * Resets the game on close
+   */
   function onGameOverClose() {
     
     service.splice(0, service.length)

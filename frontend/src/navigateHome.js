@@ -3,7 +3,7 @@ import {
     useNavigate
 } from "react-router-dom";
 import React, {useState} from "react";
-import { Singlemodal } from "./About";
+import { Singlemodal } from "./overlays/About";
 
 
 

@@ -5,7 +5,7 @@ import Questionmulti from '../overlays/Questionsmultiplayer';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Singleplayer from './Singleplayer';
 import LoginModal from '../overlays/loginmodal';
-import { Homemodal } from '../homeAbout';
+import { Homemodal } from '../overlays/homeAbout';
 
 class Home extends Component {
 
