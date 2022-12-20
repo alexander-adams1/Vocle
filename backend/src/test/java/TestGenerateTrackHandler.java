@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import okio.Buffer;
 import org.junit.Assert;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -150,7 +151,7 @@ public class TestGenerateTrackHandler {
   /**
    * Tests that if invalid parameters are inputted the GenerateTrack endpoint serializes a Map
    * containing the Result being Invalid Parameters.
-   * @throws IOException if the connection fails for some reason 
+   * @throws IOException if the connection fails for some reason
    */
   @Test
   public void generatePlaylistInformationInvalidParameters() throws IOException {
@@ -162,5 +163,11 @@ public class TestGenerateTrackHandler {
     Map<String, Object> actualTrackResponse =
         moshi.adapter(Map.class).fromJson(new Buffer().readFrom(clientTrackConnection.getInputStream()));
     Assert.assertEquals("Invalid Parameters", actualTrackResponse.get("Result"));
+  }
+
+  /** Handles teardown after all tests have been run. */
+  @AfterAll
+  public static void disconnect() {
+    Spark.stop();
   }
 }
