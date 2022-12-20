@@ -171,6 +171,9 @@ return(
     <div className="submit_button_multi_background">
     </div><span className="submit_button_multi_label" role="Submit" aria-label={TEXT_Submit_button}  onClick={handleServiceAdd}>SUBMIT</span>
   </button>
+  <div className="userGuess">
+    {!guess && <div>{array.get(key)}: input your guess</div>}
+  </div>
   <div className="output" role="output" aria-label="guess added">
         {service.map((item, index) => (
           <ul className="output_list" key={index}>
