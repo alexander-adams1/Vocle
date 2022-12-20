@@ -80,14 +80,14 @@ function Singleplayer() {
 
                 {/* THIS IS THE OLD BUTTON, I DON'T THINK WE'LL NEED: <div className="v54_108"><div className="v54_101"></div><div className="v54_100"></div></div> */}
 
-                <div className="dropdown_bar" ><Dropdown />
+                <div className="dropdown_bar" aria-label = "dropdown for guesses"><Dropdown />
                     {/* <div className="v54_109"></div><span className="v54_110">Know it? Search for the artist/title</span> */}
                     {/* <div className="v54_111"></div> */}
                 </div>
                 <div className="header"><div className="header_div"><div className="header_background"> </div>
-            <span className="vocle_label" onClick={navigatetoHome}>Vocle</span><button className="information" onClick={aboutOpen}></button>
+            <span className="vocle_label" onClick={navigatetoHome}>Vocle</span><button className="information" onClick={aboutOpen} aria-label = "information about vocle"></button>
             
-            <div className="stats"></div><button className="spotify" onClick={spotify}></button></div><div className="login"><div className="login_icon"></div></div></div></div>
+            <div className="stats"></div><button className="spotify" onClick={spotify} aria-label="link to spotify.com"></button></div><div className="login"><div className="login_icon"></div></div></div></div>
         )
                     
 }
