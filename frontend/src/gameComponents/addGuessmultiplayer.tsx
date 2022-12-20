@@ -15,11 +15,11 @@ import { MultiTimer } from '../timer/timer';
 export const TEXT_Submit_button = "Submit-button"
 
 interface MultiGuessProps {
-  play: Function;
+  start: Function;
   pause: Function;
 }
 
-function AddSongMultiplayer({play, pause}: MultiGuessProps) {
+function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   var [service, setService] = useState<{ song: string, keyStroke: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
@@ -28,7 +28,7 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
   const [m, setm] = useState(true)
   const [z, setz] = useState(true)
   const [p, setp] = useState(true)
-  const [timer, setTimer] = useState(true)
+  const [timer, setTimer] = useState(false)
   const [key, setKey] = useState('none');
 
   let array = new Map<string, string>()
@@ -51,6 +51,7 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
         {
           console.log("yessir")
           setGameOver(true)
+          setTimer(false)
         }
     }
 }
@@ -83,15 +84,17 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
             setTimer(false)
           }
           setGuess(false)
-          console.log(timer)
+          console.log(guess)
         }
       }
-      if (timer) {
-        play();
-      } else {
-        pause();
-      }
+      
     };
+
+    if (timer) {
+      start();
+    } else {
+      pause();
+    }
     
 
     document.addEventListener('keydown', handleKeyPress);
@@ -102,7 +105,7 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
   
 
   const handleServiceAdd = () => {
-    setTimer(false)
+    setTimer(true)
     console.log(timer)
     console.log("song called")
     
@@ -130,7 +133,8 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
             console.log(newSong)
             if (newSong === resultMap.get(`Track Answer`)) {
               setGameOver(true);
-              setWin(true)
+              setWin(true);
+              setTimer(false);
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 1 }]);
               setKey('none')
             }
@@ -141,6 +145,7 @@ function AddSongMultiplayer({play, pause}: MultiGuessProps) {
             } else {
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 0 }]);
               setGameOver(true);
+              setTimer(false);
               console.log('called')
               setKey('none')
               // TODO: Add method for bringing up the modal and ending the round

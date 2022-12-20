@@ -66,13 +66,13 @@ export const MultiTimer = (timer) => {
   const [running, setRunning] = useState(false);
   const [songOver, setSongOver] = useState(false);
 
-  const start = () => {
+  function start() {
     if (!songOver) {
       setRunning(true);
       audioRef.current.play()
     }
   }
-  const pause = () => {
+  function pause() {
     setRunning(false);
     audioRef.current.pause();
   }
@@ -92,26 +92,26 @@ export const MultiTimer = (timer) => {
     }
   }, [currentTime, timer]);
 
-  if (running || songOver){
+  if (currentTime === 0){
     return (
       <>
-      <div className="multitimerclass">
-      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
-    <div className="multigreenRectangle" id="timeremaining"> Time Remaining: {Math.floor(audioRef.current.duration - currentTime)} seconds </div>
-    </div>
-    <div><AddSongMultiplayer /></div>
-    </>
-    )
-    } else {
-      return (
-        <>
         <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
       <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Remaining: {Math.floor(currentTime)} seconds </div>
     </div>
-    <div><AddSongMultiplayer /></div>
+    <div><AddSongMultiplayer start={start} pause={pause}/></div>
+    </>
+    )
+    } else {
+      return (
+        <>
+      <div className="multitimerclass">
+      <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />  
+    <div className="multigreenRectangle" id="timeremaining"> Time Remaining: {Math.floor(audioRef.current.duration - currentTime)} seconds </div>
+    </div>
+    <div><AddSongMultiplayer start={start} pause={pause}/></div>
     </>
       )
     }
