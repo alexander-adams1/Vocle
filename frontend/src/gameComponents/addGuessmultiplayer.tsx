@@ -159,10 +159,17 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   };
 
   function onGameOverClose() {
-    service.splice(0, service.length)
-    setGameOver(false)
-    setWin(false)
-    
+    service.splice(0, service.length);
+    setGameOver(false);
+    setWin(false);
+    setWinner('none');
+    setGuess(true);
+    setq(true);
+    setm(true);
+    setz(true);
+    setp(true);
+    setTimer(false);
+    setKey('none');
   }
 
   
