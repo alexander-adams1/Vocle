@@ -11,6 +11,8 @@ import { SingleTimer } from '../timer/timer';
 import Addsong, { TEXT_Submit_button_singleplayer } from '../gameComponents/addGuess';
 import { Singlemodal } from '../overlays/About';
 
+//contains all the functionality for Singleplayer to work, containing addSong, which contains the singleTimer, and the dropdown menu
+
 function Singleplayer() {
     // displayAnswerSingle = () => {
     //     console.log('called')
@@ -23,6 +25,7 @@ function Singleplayer() {
     const [about, setAbout] = useState(false)
     let aboutModal = null
     
+    //link to spotify
     const spotify = () =>
     {
       window.open('https://www.spotify.com/', '_blank');
@@ -35,6 +38,7 @@ function Singleplayer() {
         console.log(about)
     }
 
+    //boolean to open the about information modal
     if(about)
     {
         console.log(about)
@@ -50,7 +54,7 @@ function Singleplayer() {
     const navigatetoHome = () => {
         navigate('/')
     }
-    
+        //this is now done within AddGuess since that is where the submit button is contained
         const submitSong = () => {
             const text: Element | null = document.getElementById('greatness')
             if (text == null) {

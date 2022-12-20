@@ -9,12 +9,20 @@ import { MultiTimer } from '../timer/timer';
 import AddSongMultiplayer from '../gameComponents/addGuessmultiplayer'
 import { Multimodal, Singlemodal } from '../overlays/About';
 
+//this class contains the functionality for the multiplayer game to work, containing within it the multiTimer which
+//contains addGuessmultiplayer along with the DropDown menu.
+
 
 function Multiplayer() {
+
+    //since this page does not need to be rendered since it gets called from the home page, we can implement useState 
+    //and useNavigate
     const navigate = useNavigate();
     const [about, setAbout] = useState(false)
     let aboutModal = null
-    
+
+
+    //link to spotify 
     const spotify = () =>
     {
       window.open('https://www.spotify.com/', '_blank');
@@ -27,6 +35,8 @@ function Multiplayer() {
         console.log(about)
     }
 
+
+    //boolean to open the about modal
     if(about)
     {
         console.log(about)
