@@ -47,7 +47,7 @@ const Inputplaylistmulti = () =>
         <div className="textBoxUserPlaylist">
             {!invalid && <span className="instructionsText">Put a link to your playlist here!</span>}
             {invalid && <span className="instructionsText">Invalid playlist. Please try again.</span>}
-                <input className="textBox" id="textBox" type="text" placeholder="URL Link" ></input>
+                <input className="textBox" id="textBox" type="text" placeholder="Spotify Playlist URL" ></input>
             <button className="submitUserPlaylist" id="button" onClick={getText}> Submit</button>
             <p className="output" id="output1"></p>
         </div>
