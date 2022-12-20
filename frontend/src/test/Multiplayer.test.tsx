@@ -41,6 +41,5 @@ test('losing game over screen executes', () => {
     expect(playAgainButton).toBeInTheDocument();
     expect(homeButton).toBeInTheDocument();
 }, 30000);
-  
-    
+   
 })

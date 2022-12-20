@@ -29,7 +29,7 @@ Errors/Bugs: N/A
 
 Tests:
 
-Frontend: the frontend tests written test if the site, the singleplayer and multiplayer along with all additional components appear in the HTML document when rendering the site. The submit button is tested as well to ensure that the submit button is rendered correctly when accessing the drop down menu information and displaying the guess component onto the screen.
+Frontend: the frontend tests written test if the site, the singleplayer and multiplayer along with all additional components appear in the HTML document when rendering the site. The submit button is tested as well to ensure that the submit button is rendered correctly when accessing the drop down menu information and displaying the guess component onto the screen. The play button for the multiplayer gamemode is also tested to see if it times out properly after 30 seconds and displays the Game Over screen.
 
 Backend:
 
@@ -37,7 +37,7 @@ The backend tests were written to test the validity of our endpoints accounting 
 
 How to run tests:
 
-Navigate to the frontend directory of the project by using the command cd frontend and then running the command npm test
+Navigate to the frontend directory of the project by using the command cd frontend and then running the command `npm test`
 
 In the backend run `mvn package` to compile the program and then `mvn test` to run the tests. 
 
