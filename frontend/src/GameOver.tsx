@@ -8,8 +8,9 @@ interface GameOverProps{
     win: boolean;
     onGameOverClose: Function;
     showSingleplayer: boolean;
+    winner: string;
 }
-export default function GameOverScreen({win, onGameOverClose, showSingleplayer}: GameOverProps) {
+export default function GameOverScreen({win, onGameOverClose, showSingleplayer, winner}: GameOverProps) {
     const [imageURL, setImageURL] = useState(resultMap.get(`AlbumURL`))
     const [songTitle, setSongTitle] = useState(resultMap.get(`TrackName`))
     const [artistName, setArtistName] = useState(resultMap.get(`ArtistName`))
@@ -67,7 +68,8 @@ export default function GameOverScreen({win, onGameOverClose, showSingleplayer}:
                         <span className="share-button-label">Share</span>
                         </div> */}
                     {!win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You didn't get this Vocle. Better luck next time!</span></div>}
-                    {win && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You win!</span></div>}
+                    {win && showSingleplayer && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">You win!</span></div>}
+                    {win && !showSingleplayer && <div className="end-game-class"><div className="v182_74"></div><span className="end-game-label">{"User " + winner + " wins!"}</span></div>}
         </div>)
         </div>           
     )

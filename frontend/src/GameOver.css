@@ -23,18 +23,22 @@
     z-index: 999999;
   }
   .song-name {
-    width: 25vw;
+    width: 30vw;
     /* color: url("../images/v172_10.png"); */
     color: rgba(217,217,217,1);
     position: absolute;
     top: 50vh;
-    left: 37.5vw;
+    left: 35vw;
     font-family: "Noto Sans", sans-serif;
     font-weight: bolder;
     font-size: 30px;
     opacity: 1;
     text-align: center;
     z-index: 999999;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .artist-name {
     width: 20vw;
@@ -49,6 +53,10 @@
     opacity: 1;
     text-align: center;
     z-index: 999999;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .return-home-class {
     width: 20vw;

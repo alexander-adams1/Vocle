@@ -23,6 +23,7 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   var [service, setService] = useState<{ song: string, keyStroke: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
+  const [winner, setWinner] = useState('none');
   const [guess, setGuess] = useState(true);
   const [q, setq] = useState(true)
   const [m, setm] = useState(true)
@@ -135,8 +136,9 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
               setGameOver(true);
               setWin(true);
               setTimer(false);
+              setWinner(key);
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 1 }]);
-              setKey('none')
+              setKey('none');
             }
             else if (service.length < 3) {
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 0 }]);
@@ -177,7 +179,7 @@ return(
         ))}
       </div>
       <div className="open-game-over">
-        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose} showSingleplayer={false}/>}
+        {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose} showSingleplayer={false} winner={winner}/>}
       </div>
       {/* <div><MultiTimer timer={timer}/></div> */}
     </>)
