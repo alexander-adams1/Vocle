@@ -4,6 +4,8 @@ import { resultMap, setResultMap } from './resultMap';
 import {generateTrack} from './audioImplementation/GenerateSong';
 import "./GameOver.css";
 
+//Called from Singleplayer and Multiplayer 
+
 interface GameOverProps{
     win: boolean;
     onGameOverClose: Function;

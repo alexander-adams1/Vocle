@@ -7,6 +7,7 @@ import GameOver from './GameOver';
 
 class App extends Component{
   
+  //Gets called from index, showing all the possible paths for all the pages(home, singleplayer, multiplayer, and gameover)
   render() {
     console.log("app")
     // Contains information for which endpoint should render which page
