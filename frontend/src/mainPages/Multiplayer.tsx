@@ -5,7 +5,7 @@ import Question from '../overlays/Questionssingleplayer';
 import Dropdown from '../gameComponents/Dropdown';
 import Home from './Home';
 import { MultiTimer } from '../timer/timer';
-import {GoHomeMulti } from '../navigateHome';
+// import {GoHomeMulti } from '../navigateHome';
 import AddSongMultiplayer from '../gameComponents/addGuessmultiplayer'
 import { Multimodal, Singlemodal } from '../overlays/About';
 

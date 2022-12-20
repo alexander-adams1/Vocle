@@ -110,7 +110,7 @@ export const MultiTimer = (timer) => {
       <>
         <div className="multitimerclass">
       <audio ref={audioRef} onTimeUpdate={updateCurrentTime} src={resultMap.get(`TrackURL`)} />
-      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start}> <div className="v54_101"></div><button className="button_image-false"></button></div> 
+      <div className="PlayButton" aria-label="click to play the song"> <div onClick={running ? pause : start} aria-label = "start button"> <div className="v54_101"></div><button className="button_image-false"></button></div> 
       </div>    
     <div className="multigreenRectangle"> Time Remaining: 30 seconds </div>
     </div>
