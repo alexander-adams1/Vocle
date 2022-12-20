@@ -11,6 +11,7 @@ beforeEach(() => {
     render(<App />);
 })
 
+// Tests whether the dropdown bar renders
 test('renders dropdown', () => {
     const {container} = render(<Singleplayer />);
     const drop = container.getElementsByClassName("dropdown_bar")
@@ -18,6 +19,7 @@ test('renders dropdown', () => {
     expect(drop.length).toBe(1);
 });
 
+// Tests that the about modal shows up when we expect
 test('about modal shows up', () => {
     render(<Singleplayer />);
     const aboutButton = screen.getByRole("button", {name: "information about vocle"});
@@ -32,6 +34,7 @@ test('about modal shows up', () => {
     expect(infoPopup).toBeNull();
 });
 
+// Tests that all buttons show up that we expect
 test('all buttons show up', () => {
     render(<Singleplayer />);
     const aboutButton = screen.getByRole("button", {name: "information about vocle"});
@@ -47,6 +50,7 @@ test('all buttons show up', () => {
     expect(dropdown).toBeInTheDocument();
 });
 
+// Tests that "Guess skipped" shows up when we click skip guess in singleplayer
 test('skip guess', () => {
     render(<Singleplayer />);
     const skipButton = screen.getByRole(/.*/, {name: "skip guess"});
@@ -56,6 +60,7 @@ test('skip guess', () => {
     expect(guessSkipped).toBeInTheDocument();
 })
 
+// Tests that the losing screen pops up when expected
 test('losing game over screen executes', () => {
     render(<Singleplayer />);
     const skipButton = screen.getByRole(/.*/, {name: "skip guess"});
