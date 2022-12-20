@@ -19,12 +19,16 @@ interface MultiGuessProps {
   pause: Function;
 }
 
+/**
+ * Function for adding a guess to the screen in multiplayer
+ */
 function AddSongMultiplayer({start, pause}: MultiGuessProps) {
   var [service, setService] = useState<{ song: string, keyStroke: string, isCorrect: number }[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
   const [winner, setWinner] = useState('none');
   const [guess, setGuess] = useState(true);
+  // Booleans for whether a specific player can make a guess
   const [q, setq] = useState(true)
   const [m, setm] = useState(true)
   const [z, setz] = useState(true)
@@ -57,7 +61,7 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
     }
 }
 
-
+// Determines when a user can make a guess and which user is actually making the guess
   useEffect(() => {
     const handleKeyPress: EventListener = (event: KeyboardEventInit) => {
       if (event.key !== undefined && array.get(event.key) !== undefined) {
@@ -96,6 +100,7 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
       
     };
 
+    // Determines whether the song should be playing or not
     if (timer) {
       start();
     } else {
@@ -140,6 +145,7 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
           if (key !== 'none') {
             console.log(resultMap.get(`Track Answer`))
             console.log(newSong)
+            // If the answer is correct, bring up the game winning screen
             if (newSong === resultMap.get(`Track Answer`)) {
               setGameOver(true);
               setWin(true);
@@ -149,10 +155,12 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
               setKey('none');
             }
             else if (service.length < 3) {
+              // If more guesses are possible, add the guess (which is incorrect in this case)
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 0 }]);
               console.log(newSong, key)
               setKey('none')
             } else {
+              // Otherwise, set the game to over but as a loss
               setService([...service, { song: newSong, keyStroke: key, isCorrect: 0 }]);
               setGameOver(true);
               setTimer(false);
@@ -165,6 +173,9 @@ function AddSongMultiplayer({start, pause}: MultiGuessProps) {
     }
   };
 
+  /**
+   * Function for restarting the game
+   */
   function onGameOverClose() {
     service.splice(0, service.length);
     setGameOver(false);
@@ -198,7 +209,6 @@ return(
       <div className="open-game-over">
         {gameOver && <GameOverScreen win={win} onGameOverClose={onGameOverClose} showSingleplayer={false} winner={winner}/>}
       </div>
-      {/* <div><MultiTimer timer={timer}/></div> */}
     </>)
 }
 

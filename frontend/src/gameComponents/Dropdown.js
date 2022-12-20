@@ -8,6 +8,7 @@ import { resultMap } from "../resultMap";
 const Dropdown = () => {
     const songOptions = []
 
+    // Gets the list of tracks in artists in a given playlist
     resultMap.get(`Tracks and Artists List`).forEach((item, index) => {
         console.log(item)
         const trackDictionary = {};
@@ -15,8 +16,6 @@ const Dropdown = () => {
         trackDictionary.label = item
         songOptions.push(trackDictionary)
     })
-
-    // mocking data taken from backend API request.
      
     // dictates which option in the list is to be returned (based on which was selected)
     const handleChange = (selectedOption) => {
@@ -34,17 +33,6 @@ const Dropdown = () => {
             callback(filteredOptions);
         }, 2000);
     };
-
-    const colorStyles = {
-        control: styles => ({...styles, zIndex: 9999}),
-        option: (styles, {isDisabled, isFocused, isSelected}) => {
-            return {
-                ...styles,
-                zIndex: isDisabled ? 0: 9999,
-                cursor: isDisabled ? 'not-allowed' : 'default'
-            };
-        }
-    }
 
     return <AsyncSelect className="dropdown_class" role="submit" aria-label="dropdown" id="dropdown_class" menuPlacement="auto" placeholder={<div>Know the song? Search for the artist/title</div>} loadOptions={loadOptions} onChange={handleChange} />
    
